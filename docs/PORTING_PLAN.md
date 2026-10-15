@@ -33,7 +33,7 @@ Record (a) commit SHA + source input hash, (b) editor/AssetRipper/SDK build vers
 
 ### P00 — Reproducible source and original editor setup (ACTIVE)
 
-**Do:** Verify owned source 6.4.2 APK hash against [audit](TECHNICAL_AUDIT.md), ZIP CRC and `5.6.4p3` header. Install **exact Unity 5.6.4p3** from official archive, verify editor starts and a blank desktop project runs. Locally reproduce Android version gameplay for a reference matrix (menu, load, movement, feeding, health/death, save, audio); capture notes/screenshots privately. Record available Unity 2018.2 + PSP2 toolchain inventory **without attempting a migration**.
+**Do:** Verify owned source 6.4.2 APK hash against [audit](TECHNICAL_AUDIT.md), ZIP CRC and `5.6.4p3` header. Install **exact Unity 5.6.4p3** from official archive, verify editor starts and a blank desktop project runs. Locally reproduce Android version gameplay for a reference matrix (menu, load, movement, feeding, health/death, save, audio); capture notes/screenshots privately. Record available Unity 2018.2 + PSP2 toolchain inventory **without attempting a migration**, and record the complete [tool installation/inventory checklist](TOOLS.md). Do not infer PSP2 availability from a standard public Unity installer.
 
 **Acceptance:** APK hash and Unity version verified; editor version screen/log and PC blank scene execution demonstrated; baseline gameplay observations documented; environment constraints recorded. **Static APK audit alone does not close the gate.**
 
@@ -63,7 +63,7 @@ Record (a) commit SHA + source input hash, (b) editor/AssetRipper/SDK build vers
 
 ### P05 — Migration clone to Unity 2018.2 (LOCKED)
 
-**Do:** Copy (never upgrade in place) the approved Unity 5.6 project. Pin exact selected 2018.2 editor and identify the functional PSP2 target version available locally. Handle engine API changes, assemblies, serialization and UnityScript migration; keep GUID/fileID mappings intact. Compile a representative test scene on PC and audit all warnings/errors.
+**Do:** Copy (never upgrade in place) the approved Unity 5.6 project. Pin exact selected 2018.2 editor and identify the functional PSP2 target version available locally. Handle engine API changes, assemblies, serialization and UnityScript migration; keep GUID/fileID mappings intact. The official UnityScript-to-C# converter documents a Unity 2017.3–2018.1.x support window; any temporary 2018.1 bridge is **conditional** and must not bypass the approved original-engine baseline. Compile a representative test scene on PC and audit all warnings/errors.
 
 **Acceptance:** native Unity 2018.2 project imports and compiles with zero unaccounted errors, scenes/sprite/prefab references verified, differences documented. **Merely opening in 2018.2 is not acceptance.**
 

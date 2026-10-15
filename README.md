@@ -34,7 +34,7 @@ Agents **MUST NOT** jump ahead. Formal phase approvals are maintained in [`docs/
 - [Rules for Codex, AI agents and contributors](AGENTS.md)
 - [Technical audit and reproducible APK identity](docs/TECHNICAL_AUDIT.md)
 - [Experiment history: PASS / FAIL / NOT TESTED](docs/EXPERIMENTS.md)
-- [Download tools and references](docs/TOOLS.md)
+- **[Complete toolchain: current downloads, dependencies and install order](docs/TOOLS.md)**
 
 ## Local source preparation
 
