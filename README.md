@@ -42,6 +42,7 @@ Agents **MUST NOT** jump ahead. Formal phase approvals are maintained in [`docs/
 - [xdelta3 research: Predators, Pocket Mortys and future HSE delivery](docs/XDELTA_UNITY_PORTS_RESEARCH.md)
 - [Set up ignored local Tool Codex and official download links](docs/TOOL_CODEX_LOCAL_SETUP.md)
 - [Codex unattended local first-run task (P00 → approved P01)](docs/CODEX_LOCAL_RECOVERY_TASK.md)
+- **[Codex offline Unity 5.6 project staging (scoped owner authorization; no Unity installed)](docs/CODEX_UNITY56_OFFLINE_EXPORT_PROMPT.md)**
 - [Technical audit and reproducible APK identity](docs/TECHNICAL_AUDIT.md)
 - [Experiment history: PASS / FAIL / NOT TESTED](docs/EXPERIMENTS.md)
 - **[Complete toolchain: current downloads, dependencies and install order](docs/TOOLS.md)**

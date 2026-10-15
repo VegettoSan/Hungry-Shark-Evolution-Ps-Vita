@@ -39,6 +39,12 @@ Record (a) commit SHA + source input hash, (b) editor/AssetRipper/SDK build vers
 
 **Acceptance:** APK hash and Unity version verified; editor version screen/log and PC blank scene execution demonstrated; baseline gameplay observations documented; environment constraints recorded. **Static APK audit alone does not close the gate.**
 
+### P00 scoped offline recovery staging authorization (owner request 2026-10-14)
+
+The repository owner expressly requested **an unattended local preparation of the original Unity 5.6.4p3 project BEFORE installing Unity 5.6**, as described in [`docs/CODEX_UNITY56_OFFLINE_EXPORT_PROMPT.md`](CODEX_UNITY56_OFFLINE_EXPORT_PROMPT.md). This is a **limited preparatory experiment during P00**, not approval or transition of P00/P01/P02. It permits *offline-only* APK hash/CRC checks, private full extraction, AssetRipper project export, managed-assembly/static reference inventory, and safe reversible **static fixes** in a private copy. **No Unity Editor execution, verified compilation/gameplay claim, altered mechanics, shader optimization, Unity 2018 migration, PSP2 code, user-release extractor or VPK.**
+
+Codex may carry out the preparatory extraction despite P01's normal gate **solely because the owner explicitly authorized that scope**; recorded stage state remains P00 ACTIVE, P01/P02 LOCKED and no gate may be marked APPROVED. Do not use this exception to claim later deliverables PASS or circumvent the signed-off editor/device criteria. When Unity 5.6 becomes available, the owner must still satisfy the P00 validation gate, explicitly approve it, and then validate P01's already prepared evidence normally. Never auto-promote stages. Private outputs remain outside Git.
+
 ### P01 — Extract everything needed for recovery (LOCKED)
 
 **Do:** Run our `tools/Preparar_Hungry_Shark_Evolution_6.4.2.py` locally, verify reconstructed 15 `.splitN` groups, preserve original `Data/Managed` assemblies. Import Unity serialized files **with managed assemblies** into AssetRipper as a single source set. Export into disposable Unity 5.6 project. Use ILSpy on recovered game scripts and note types, field names, scene `MonoBehaviour` links, GUID/fileID mapping, 18 serialized `levelN` files, textures, animation, shaders, audio, prefabs and dependencies.
