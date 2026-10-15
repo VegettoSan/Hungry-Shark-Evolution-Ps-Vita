@@ -74,4 +74,4 @@ These rules apply to the **entire repository**.
 - **Vita prototype:** built with PSP2, boots and renders on real hardware with logs.
 - **Playable:** controls, gameplay, save, audio and stability validated on hardware.
 
-Current confirmed stage: **P00 ACTIVE, formal approval pending; Unity recovery/build/device stages remain untested**.
+Current formal stage: **P00 ACTIVE, 0/13 phases approved**. Focused owner-requested Unity 5.6 recovery, source compilation and editor checks have evidence; the owner reports brief gameplay and model visibility. A standalone PC build, complete regression/Android comparison and stable baseline remain unverified. Unity 2018/PSP2/device stages remain untested. Read [the current recovery status](docs/RECOVERY_STATUS_2026-10-15.md) before treating historical offline-only status as current; no acceptance criteria or phase approvals are changed.

@@ -9,7 +9,11 @@
       "name": "Reproducible source and original editor",
       "gate": "Input SHA-256, Unity 5.6.4p3 installation and Android gameplay reference captured",
       "status": "ACTIVE",
-      "evidence": [],
+      "evidence": [
+        "docs/TECHNICAL_AUDIT.md",
+        "docs/EXPERIMENTS.md",
+        "docs/RECOVERY_STATUS_2026-10-15.md"
+      ],
       "approved_by": null,
       "approved_at": null,
       "approval_reference": null

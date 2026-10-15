@@ -2,7 +2,7 @@
 
 Community research and development repository for a **native PlayStation Vita port** of *Hungry Shark Evolution*, preserving original gameplay logic and Unity assets wherever technically possible.
 
-> **Status (2026-10-14):** static APK audit complete; **P00 (original editor/environment validation) ACTIVE**. No Unity editor reconstruction, PC gameplay or Vita VPK has yet been proven.
+> **Status (2026-10-15):** private recovery opens in **Unity 5.6.4p3**; source compilation, shader/material checks and model inventories have evidence. The owner reports entering gameplay and moving with keyboard/mouse. **P00 remains ACTIVE; no phase is approved.** A tested standalone PC build, complete gameplay/Android comparison and stable baseline are still pending. No Unity 2018 migration or Vita test has been performed. See the [current recovery status and remaining gates](docs/RECOVERY_STATUS_2026-10-15.md).
 
 ## Reference build
 
@@ -35,6 +35,7 @@ Agents **MUST NOT** jump ahead. Formal phase approvals are maintained in [`docs/
 
 - [Detailed sequential project plan](docs/PORTING_PLAN.md)
 - [Current phase approval ledger](docs/PHASE_GATES.json)
+- **[Current Unity 5.6 recovery, repairs, evidence and next steps](docs/RECOVERY_STATUS_2026-10-15.md)**
 - [Rules for Codex, AI agents and contributors](AGENTS.md)
 - [Halo 2D PSP2 evidence / Unity 2018.2.19f1](docs/HALO2D_PSP2_REFERENCE.md)
 - [PS Vita shader research, visual parity and 30/60 FPS targets](docs/SHADERS_PSVITA_REFERENCE.md)
@@ -65,4 +66,4 @@ This prepares split Unity `Data/` files, including `Data/Managed/`, **not** a co
 
 *Hungry Shark Evolution* and original game code/assets belong to their rights holders. **Do not distribute** APK/XAPK/OBB, decompiled code, extracted game assets, Sony/Unity restricted SDKs, credentials or unauthorized VPKs. Work from individually obtained lawful inputs; the repository contains only public tools, technical reports, rules and scripts. Not affiliated with Ubisoft or the game's developers.
 
-No game runtime or performance claim is verified until its documented gate has been tested on the indicated platform.
+Individual source/editor test results are documented with their limits. Full runtime, parity and performance claims require the corresponding platform tests and gate evidence; a successful editor probe does not establish standalone PC or Vita gameplay.

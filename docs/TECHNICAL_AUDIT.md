@@ -1,6 +1,6 @@
 # APK technical audit — Hungry Shark Evolution 6.4.2
 
-**Audit date:** 2026-10-14. **Evidence type:** direct static examination of the user-supplied APK and managed assembly metadata. **No Vita build/runtime test.**
+**Original audit date:** 2026-10-14. **Recovery status updated:** 2026-10-15. The APK identity and binary inventory below are static evidence; subsequent Unity 5.6 editor checks are distinguished in [the current recovery report](RECOVERY_STATUS_2026-10-15.md). **No Vita build/runtime test.**
 
 ## Reproducible input
 
@@ -63,6 +63,8 @@ An independently examined 14.5.0 XAPK uses **Unity 6000.0.68f1 + IL2CPP**, with 
 
 **Verified in static audit:** APK integrity, package/version, Unity version, Mono/assemblies, file inventory, fragment layout, key managed metadata, native library list. The local Python extractor was exercised against the supplied sample and produced a reconstructed `Data/` directory.
 
-**Not yet tested:** AssetRipper export fidelity, scene and MonoBehaviour GUID resolution, recovered code compilation, UnityScript migration, offline service isolation, Unity 2018.2 PSP2 build, Vita FPS/memory, actual gameplay. No VPK exists.
+**VERIFIED in subsequent recovery:** AssetRipper export exists, recovered sources compile in the examined Unity 5.6 configurations, targeted editor shader/material and desktop service contracts pass, and all 20 playable shark prefabs and 2957 meshes are present. The owner reports gameplay entry, keyboard/mouse movement and seeing the models. See [checkpoints and limitations](RECOVERY_STATUS_2026-10-15.md) and [the experiment history](EXPERIMENTS.md).
+
+**UNTESTED or incomplete:** full export/serialization fidelity across every scene, closure of initial uGUI/null-script/layout findings, exact Android visual parity, full core gameplay/save/audio regression, a standalone PC executable, Unity 2018.2 migration, PSP2 builds and Vita FPS/memory/runtime. No VPK exists. These pending checks are not negated by successful isolated tests or the owner's brief editor session.
 
 Source APK bytes and the full asset inventory are **intentionally not committed**. Use the local tool and compare your sample hash.

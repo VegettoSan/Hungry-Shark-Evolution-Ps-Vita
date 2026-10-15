@@ -1,5 +1,7 @@
 # Codex local assignment — Hungry Shark Evolution 6.4.2 → Unity 5.6.4p3
 
+> **Current-machine update (2026-10-15):** offline staging finished and the owner subsequently installed Unity 5.6.4p3 and requested focused editor repairs/checks. Read [the current recovery status](RECOVERY_STATUS_2026-10-15.md) and the [follow-up authorization record](PORTING_PLAN.md#follow-up-owner-requests-focused-unity-56-repairs-2026-10-15). The original assignment below remains a reusable gated procedure, not a statement that Unity is still absent on this machine. No phase approval or later-engine authorization is implied.
+
 **Tooling first:** use ignored `Tool Codex/` folder in the Windows clone, read [download/folder map](TOOL_CODEX_LOCAL_SETUP.md), run `tools/check_tool_codex.ps1`, and read its `Tool Codex/_tool_inventory.txt` report before asking for tools or browsing. The two Unity editors remain outside the repo.
 
 **Owner-authorized offline-only exception (2026-10-14):** [CODEX_UNITY56_OFFLINE_EXPORT_PROMPT.md](CODEX_UNITY56_OFFLINE_EXPORT_PROMPT.md) explicitly authorizes private extraction and AssetRipper project staging during P00 **even though Unity 5.6 is not installed**, with no phase approval. **Use that specialized document for this exact request.** This general task retains its normal stage gate for all other work.

@@ -7,11 +7,16 @@ Use **PASS** only for reproducibly observed success; **FAIL** for an actually at
 | 2026-10-14 | AUD-001 | HSE 6.4.2 / v228 APK, SHA-256 `52b7d875...`, ZIP/manifest/Unity headers | **PASS (static)** | 5.6.4p3, Mono, 18 `levelN` serialized files, assembly metadata; see [audit](TECHNICAL_AUDIT.md) |
 | 2026-10-14 | EXT-001 | Python local extractor, original 6.4.2 APK | **PASS (local)** | Reassembled 15 split groups and preserved `Managed`; does **not** prove project recovery |
 | 2026-10-14 | CMP-001 | Later HSE 14.5.0 XAPK, Unity 6 / IL2CPP | **PASS (static comparison)** | Poorer first candidate for a Unity 2018.2 Vita workflow; not a runtime failure |
-| — | IMP-001 | AssetRipper import/export with Mono DLLs | **NOT TESTED** | Capture AssetRipper version, log, missing scripts, asset references |
-| — | ORIG-001 | Unity 5.6.4p3 editor reconstruction, import, PC gameplay | **NOT TESTED** | Exact source-editor build plus original engine PC executable required before migration |\n| — | EDT-001 | Unity 2018.2 editor compilation **after** P04 approval | **NOT TESTED** | Capture editor/build-target version, compile errors and fixes |
+| 2026-10-15 update | IMP-001 | AssetRipper import/export with Mono DLLs | **EXPORTED / FIDELITY PARTIAL**; initially NOT TESTED | OFF-003 and subsequent recovery records below supersede the initial untested state; original export remains intact |
+| 2026-10-15 update | ORIG-001 | Unity 5.6.4p3 editor reconstruction, import, PC gameplay | **PARTIAL**; initially NOT TESTED | Sources and targeted shaders/contracts tested; owner reports editor gameplay. Native PC executable and full regression still required; see [current status](RECOVERY_STATUS_2026-10-15.md) |
+| — | EDT-001 | Unity 2018.2 editor compilation **after** P04 approval | **NOT TESTED** | Capture editor/build-target version, compile errors and fixes |
 | — | VIT-001 | Real PSP2 native build and hardware test | **NOT TESTED** | Capture VPK/build logs, real hardware behavior and FPS |
 
-## Gated stage state\n\nCurrent first incomplete gate: **P00 ACTIVE**, not formally approved. See [the ledger](PHASE_GATES.json) and [the end-to-end plan](PORTING_PLAN.md). Previously recorded static PASS does not authorize moving directly to AssetRipper or Unity 2018.\n\n## Append-only record template
+## Gated stage state
+
+Current first incomplete gate: **P00 ACTIVE**, not formally approved. See [the ledger](PHASE_GATES.json), [the end-to-end plan](PORTING_PLAN.md) and [the current recovery status](RECOVERY_STATUS_2026-10-15.md). Owner-authorized preparatory recovery and focused Unity 5.6 repairs are recorded below; their success does not approve a phase or authorize Unity 2018/PSP2 work. Earlier rows retain their historical test scope unless explicitly superseded.
+
+## Append-only record template
 
 ```text
 ID:
@@ -141,3 +146,9 @@ Source APK SHA-256: `52b7d8754ab8fec75c3b656a0dc5ec8dc849565adc402487a3ac093f6a4
 | Date (UTC) | ID | Tool / command or settings | Observed result | Private evidence / next action |
 | --- | --- | --- | --- | --- |
 | 2026-10-15 | MODELS-001 | Python 3.14 SHA-256 and serialized GUID/fileID traversal; original AssetRipper object map; ILSpy 11.1 original SharkStats | **VERIFIED:** all 2957 exported mesh assets and their meta match the intact export; original object map contains 2957 game meshes plus 13 Unity built-ins. All 1167 original prefabs are present. All 20 playable prefabs match the intact export, with no unresolved references in the traversed dependencies. All 981 animation clips, 12 controllers and 37 avatars, including meta, match. Mosasaur and its selector model are present; its compressed primary mesh has 1541 vertices. Original visibility method matches recovered source. Owner subsequently confirms seeing the model and others | `Checkpoints/18_shark_models.json` locates private inventories and `Audit_Report.md`. No Unity project or progress changes; no new editor probe or exhaustive visual/runtime test. Initial reporting helper encountered a Unity built-in mesh GUID, then correctly separated built-ins from exported meshes. No phase approval or Vita test |
+
+## Consolidated documentation and gate-readiness review
+
+| Date (UTC) | ID | Input / tool / settings | Observed result | Evidence / next action |
+| --- | --- | --- | --- | --- |
+| 2026-10-15 | DOCSTATE-001 | Same audited 6.4.2 APK identity; existing private checkpoints 01–18, shader-source census, owner test reports; Python phase-ledger checker and documentation reference checks | **VERIFIED:** consolidated extraction, source/shader/material/platform/input/lifecycle repairs and model audit; separated measured checks, owner reports and incomplete gold/runtime probes. Added P00 evidence references without changing any phase status or approval field. No new Unity/gameplay/device test | [Current recovery status and pending acceptance](RECOVERY_STATUS_2026-10-15.md). Next formal transition remains P00→P01 after outstanding P00 evidence and explicit approval; native PC gameplay/build and baseline acceptance precede Unity 2018 migration |

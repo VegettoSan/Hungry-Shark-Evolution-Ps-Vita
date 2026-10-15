@@ -4,6 +4,8 @@
 
 **Status:** `P00 ACTIVE`; **all subsequent phases LOCKED**. Prior APK static research is evidence, **not** user approval of P00.
 
+**Recovery update (2026-10-15):** the private Unity 5.6 project has since received focused owner-authorized editor repairs and tests, beyond the initial offline preparation. [Current evidence, remaining checks and phase readiness](RECOVERY_STATUS_2026-10-15.md) distinguish these technical results from gate acceptance. The ledger has no approvals; the acceptance criteria below remain in force.
+
 **Declared PS Vita identity:** `HGSKE1178` / **Hungry Shark Evolution Vita** ([single-source JSON](../config/port_identity.json)); see [APK user-data and filesystem study](DATA_EXTRACTION_AND_LAYOUT.md). This declaration does not approve later Unity/PSP2 phase work.
 
 ## Engine order (MUST NOT be reversed)
@@ -44,6 +46,12 @@ Record (a) commit SHA + source input hash, (b) editor/AssetRipper/SDK build vers
 The repository owner expressly requested **an unattended local preparation of the original Unity 5.6.4p3 project BEFORE installing Unity 5.6**, as described in [`docs/CODEX_UNITY56_OFFLINE_EXPORT_PROMPT.md`](CODEX_UNITY56_OFFLINE_EXPORT_PROMPT.md). This is a **limited preparatory experiment during P00**, not approval or transition of P00/P01/P02. It permits *offline-only* APK hash/CRC checks, private full extraction, AssetRipper project export, managed-assembly/static reference inventory, and safe reversible **static fixes** in a private copy. **No Unity Editor execution, verified compilation/gameplay claim, altered mechanics, shader optimization, Unity 2018 migration, PSP2 code, user-release extractor or VPK.**
 
 Codex may carry out the preparatory extraction despite P01's normal gate **solely because the owner explicitly authorized that scope**; recorded stage state remains P00 ACTIVE, P01/P02 LOCKED and no gate may be marked APPROVED. Do not use this exception to claim later deliverables PASS or circumvent the signed-off editor/device criteria. When Unity 5.6 becomes available, the owner must still satisfy the P00 validation gate, explicitly approve it, and then validate P01's already prepared evidence normally. Never auto-promote stages. Private outputs remain outside Git.
+
+### Follow-up owner requests: focused Unity 5.6 repairs (2026-10-15)
+
+After installing Unity 5.6.4p3, the owner expressly requested repairs for compiler diagnostics, NGUI, desktop Android-service boundaries, shader/material recovery, camera initialization, Windows input/turbo, startup/cleanup exceptions and model completeness. These requests authorized those private repairs and targeted editor checks, with backups and diffs. They superseded the initial offline-only restriction **for those requested operations**, without approving P00/P01/P02 or authorizing migration, PSP2 work, release packaging or speculative gameplay changes.
+
+The [recovery status](RECOVERY_STATUS_2026-10-15.md) and [experiments](EXPERIMENTS.md) record what was actually observed, including failed or incomplete probes. The original offline checkpoint remains historical. Existing preparatory results may be reviewed when their phase opens; they do not replace its acceptance tests or explicit owner approval.
 
 ### P01 — Extract everything needed for recovery (LOCKED)
 

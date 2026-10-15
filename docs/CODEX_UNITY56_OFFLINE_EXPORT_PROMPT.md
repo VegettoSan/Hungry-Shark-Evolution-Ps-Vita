@@ -1,5 +1,7 @@
 # Codex: offline Unity 5.6.4p3 project export — user-authorized preparation
 
+> **Historical task scope:** the offline export is completed. Unity 5.6.4p3 was subsequently installed and used for the owner's focused repair requests. For the current project, results and remaining gates, read [the recovery status](RECOVERY_STATUS_2026-10-15.md). The original offline instructions below remain unchanged; they must not be mistaken for the present editor availability or phase acceptance.
+
 > **Explicit owner instruction (2026-10-14):** Prepare as much of the *Hungry Shark Evolution 6.4.2* Unity **5.6.4p3** project as realistically possible **without installing or running Unity 5.6**. The user will test/open it later. The owner specifically authorizes this **one-time offline preparatory extraction, AssetRipper export, and safe static repair**, while keeping the formal phase gate **P00 ACTIVE**. This is NOT owner approval of P00, P01 or P02. It is NOT permission to migrate to 2018.2 or to publish original game files.
 
 ## Copy-paste into local Codex (Spanish)

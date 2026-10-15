@@ -1,5 +1,7 @@
 # Offline recovery preparation — 2026-10-15 UTC
 
+> **Historical checkpoint, before editor testing.** Subsequent owner-requested repairs and actual Unity 5.6.4p3 checks are summarized in [the current recovery status](RECOVERY_STATUS_2026-10-15.md). Statements below such as EDITOR_NOT_TESTED describe this earlier operation, not the current project. Its inventories and outstanding findings remain evidence unless a later experiment explicitly closes them.
+
 This work used the owner's [P00 offline staging authorization](CODEX_UNITY56_OFFLINE_EXPORT_PROMPT.md). **P00 remains ACTIVE; all later phases remain LOCKED.** No Unity editor, Unity 2018 migration, PSP2 implementation or device test was performed. No proprietary output was added to Git.
 
 **VERIFIED:** the exact audited APK passed SHA-256, CRC, package/version and Unity 5.6.4p3 Mono checks. The existing extractor produced 2295 logical Data files, including 15 numerically reconstructed groups from 86 fragments, 18 levelN files and 21 assemblies. Each joined output was checked against the original fragments.
