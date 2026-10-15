@@ -87,15 +87,15 @@ Record (a) commit SHA + source input hash, (b) editor/AssetRipper/SDK build vers
 
 ### P09 — Core gameplay on physical Vita (LOCKED)
 
-**Do:** Restore shark locomotion, collision, spawn, food/feeding, health, death/retry, camera and HUD. Run a comparable short gameplay segment using the real Vita controls; preserve mechanics verified on PC.
+**Do:** Restore shark locomotion, collision, spawn, food/feeding, health, death/retry, camera and HUD. Run a comparable short gameplay segment using **a minimal, tested Vita input path** (for example an already existing compatible legacy axis) to prove gameplay; preserve mechanics verified on PC. **This is not the P10 complete control integration**: the full standardized Halo 2D Input Manager merge, all button aliases, dead-zone calibration and touchscreen regression testing remain P10.
 
 **Acceptance:** repeatable playable core offline loop on Vita without crash; video/logs and comparison with P06 supplied.
 
 ### P10 — Controls/audio/save and Vita lifecycle (LOCKED)
 
-**Do:** Map sticks/D-pad/face buttons and optional touch to existing game input paths, without rewriting controllers. Validate audio, music and effects, virtual keyboard only if required, saves through Vita-compatible storage, cold launch, suspend/resume and clean exit. Preserve save semantics; record Android-only feature exclusions.
+**Do:** Prefer **Halo 2D's standard Unity 2018.2.19f1 Input Manager bindings** as documented in [the verified mapping](HALO2D_PSP2_REFERENCE.md#reusing-halo-2ds-standard-unity-input-manager-verified-p10-reference-only). Back up HSE's project settings and **merge only necessary alternative axis/button entries**; never replace HSE InputManager wholesale, assume physical button numbers, or import Halo's custom VitaInputManager script unreviewed. Preserve original HSE keyboard/mouse/touch behavior, use built-in `Input.GetAxis/GetButton` where its original consumers support them, and validate direction/dead zone and duplicates on physical Vita. Map sticks/D-pad/face buttons and optional touch to existing game input paths, without rewriting controllers. Validate audio, music and effects, virtual keyboard only if required, saves through Vita-compatible storage, cold launch, suspend/resume and clean exit. Preserve save semantics; record Android-only feature exclusions.
 
-**Acceptance:** controls and audio matrix PASS; save survives process restart; suspend/resume verified; gameplay still passes regression tests.
+**Acceptance:** physical controller test matrix shows joystick axes including invert/dead zone, D-pad, action/menu buttons, touch and desktop fallback correctly mapped without gameplay changes; zero missing-axis exceptions and no broken original input. Controls and audio matrix PASS; save survives process restart; suspend/resume verified; gameplay still passes regression tests.
 
 ### P11 — Performance, memory and long-run reliability (LOCKED)
 
