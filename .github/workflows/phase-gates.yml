@@ -7,6 +7,8 @@ on:
       - 'tools/check_phase_gates.py'
       - '.github/workflows/phase-gates.yml'
       - 'docs/PORTING_PLAN.md'
+      - 'config/port_identity.json'
+      - 'docs/DATA_EXTRACTION_AND_LAYOUT.md'
   pull_request:
 permissions:
   contents: read

@@ -19,6 +19,10 @@ Community research and development repository for a **native PlayStation Vita po
 
 The newer 14.5.0 package uses Unity 6 / IL2CPP and is not our initial porting baseline.
 
+## Vita identity and game data layout
+
+**Official port name: Hungry Shark Evolution Vita** · **Title ID: `HGSKE1178`**. The intended application directory is `ux0:app/HGSKE1178/`, subject to actual PSP2 packaging tests. The APK's original Unity `Data/` is **developer recovery input**, NOT a verified copy-and-play PSP2 asset pack. Read [APK extraction and Vita data/app/save layout](docs/DATA_EXTRACTION_AND_LAYOUT.md) and [canonical identity](config/port_identity.json). Identity is defined now; Unity 2018 game/PSP2 implementation remains locked until the corresponding phase.
+
 ## NON-NEGOTIABLE development order
 
 **6.4.2 APK → recover Unity 5.6.4p3 project → get original gameplay working in Unity 5.6.4p3 on PC → explicitly approve the original-engine baseline → migrate a separate copy to Unity 2018.2 → prove gameplay again on PC → verify PSP2 toolchain on actual Vita → port and test actual game on Vita.**
@@ -34,6 +38,7 @@ Agents **MUST NOT** jump ahead. Formal phase approvals are maintained in [`docs/
 - [Rules for Codex, AI agents and contributors](AGENTS.md)
 - [Halo 2D PSP2 evidence / Unity 2018.2.19f1](docs/HALO2D_PSP2_REFERENCE.md)
 - [PS Vita shader research, visual parity and 30/60 FPS targets](docs/SHADERS_PSVITA_REFERENCE.md)
+- [Developer vs. user APK extraction and Vita app data storage](docs/DATA_EXTRACTION_AND_LAYOUT.md)
 - [Codex unattended local first-run task (P00 → approved P01)](docs/CODEX_LOCAL_RECOVERY_TASK.md)
 - [Technical audit and reproducible APK identity](docs/TECHNICAL_AUDIT.md)
 - [Experiment history: PASS / FAIL / NOT TESTED](docs/EXPERIMENTS.md)

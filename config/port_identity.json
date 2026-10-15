@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "title_id": "HGSKE1178",
+  "display_name": "Hungry Shark Evolution Vita",
+  "target_platform": "PSP2",
+  "source_android_package": "com.fgol.HungrySharkEvolution",
+  "source_version": "6.4.2",
+  "source_unity": "5.6.4p3",
+  "target_unity_editor": "2018.2.19f1",
+  "planned_install_directory": "ux0:app/HGSKE1178/",
+  "runtime_app_mount": "app0:",
+  "full_content_id": "UNDEFINED_PENDING_AUTHORIZED_TOOLCHAIN",
+  "integration_status": "DEFINED_ONLY_UNTIL_P05_PSP2_BUILD"
+}

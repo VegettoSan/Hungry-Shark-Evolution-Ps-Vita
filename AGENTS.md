@@ -11,6 +11,13 @@ These rules apply to the **entire repository**.
 5. Run `python tools/check_phase_gates.py`. If it fails, **STOP** and correct the ledger (without fabricating approval).
 6. Only perform work allowed by the **single ACTIVE phase**. If the phase is AWAITING_APPROVAL or BLOCKED, focus exclusively on its proof or corrective work. **Never implement a LOCKED phase.**
 
+## Identity, original APK data and Vita storage
+
+- User-approved title ID **`HGSKE1178`** and display name **Hungry Shark Evolution Vita**: use [config/port_identity.json](config/port_identity.json) as canonical values for the future Unity 2018 PSP2 settings, extractor and docs. Never reuse Halo 2D title, content IDs or secrets.
+- Read [docs/DATA_EXTRACTION_AND_LAYOUT.md](docs/DATA_EXTRACTION_AND_LAYOUT.md) before packaging or extraction work. Standard app installation is `ux0:app/<TITLEID>/` (runtime `app0:`); saved progress requires its separately verified persistent-data path, not the installed app directory.
+- **Developer full extraction and final end-user minimal extraction are different products.** In approved P01 preserve all reconstructed Unity `Data/` and Mono assemblies; do not copy original Android serialized files into the Unity PSP2 runtime and claim success.
+- Exact PSP2 data subtree and final end-user data set are **UNTESTED** pending real device tests (P07–P12). Do not invent paths or a converter; research/documentation in P00 does not unlock implementation.
+
 ## Mandatory engine progression
 
 - **Unity 5.6.4p3 is the original engine**; validate the native Unity 5.6 PC executable and preserve an approved stable baseline **before** creating a Unity 2018.2 migration clone.

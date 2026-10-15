@@ -2,6 +2,8 @@
 
 **Purpose:** give Codex a bounded, reproducible task for preparing the user's **own Windows PC** for restoring HSE 6.4.2 in original Unity 5.6.4p3, with minimal model-token waste.
 
+**Identity/data policy:** the app will be named **Hungry Shark Evolution Vita**, Title ID **HGSKE1178** (see [identity JSON](../config/port_identity.json)). Consult [APK-to-Vita data design](DATA_EXTRACTION_AND_LAYOUT.md). An entire Android Unity Data extraction is appropriate for developer research once P01 is approved; it is NOT evidence that raw Android Unity serialized files can be deployed into a PSP2 VPK, and it is NOT the final public extractor.
+
 **Run mode:** **LOCAL WINDOWS** using Codex desktop/CLI opened in this cloned repository. **Do not use Codex Cloud** unless the owner has specifically and lawfully provided the private APK and necessary editor/tool access to that isolated environment. An APK attached to a different ChatGPT Project is **not automatically a file on this PC or a Codex cloud worker**.
 
 **Before starting:** user should save their **owned** 6.4.2 APK in a private local folder outside this repository. Provide its actual full path in the first message. Do not attach/share the copyrighted APK to GitHub, tickets or logs. Leave the Windows PC powered and awake while local tasks operate; cloud tasks differ.

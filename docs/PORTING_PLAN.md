@@ -4,6 +4,8 @@
 
 **Status:** `P00 ACTIVE`; **all subsequent phases LOCKED**. Prior APK static research is evidence, **not** user approval of P00.
 
+**Declared PS Vita identity:** `HGSKE1178` / **Hungry Shark Evolution Vita** ([single-source JSON](../config/port_identity.json)); see [APK user-data and filesystem study](DATA_EXTRACTION_AND_LAYOUT.md). This declaration does not approve later Unity/PSP2 phase work.
+
 ## Engine order (MUST NOT be reversed)
 
 1. **Original game 6.4.2** is a **Unity 5.6.4p3 / Mono** Android build. Unity officially released 5.6.4p3 **2017-11-20**, before the 2018 release family.
@@ -63,7 +65,7 @@ Record (a) commit SHA + source input hash, (b) editor/AssetRipper/SDK build vers
 
 ### P05 — Migration clone to Unity 2018.2 (LOCKED)
 
-**Do:** Copy (never upgrade in place) the approved Unity 5.6 project. Prefer the verified Halo 2D **2018.2.19f1** editor (do not force 2018.2.21f1); pin its exact version and identify the actually working PSP2 target module locally. Handle engine API changes, assemblies, serialization and UnityScript migration; keep GUID/fileID mappings intact. Inventory recovered shader/material names and attempt faithful shader compilation/visual parity before proposing simplifications; the [PS Vita shader research](SHADERS_PSVITA_REFERENCE.md) is **reference, not automatic rewrite criteria**. The official UnityScript-to-C# converter documents a Unity 2017.3–2018.1.x support window; any temporary 2018.1 bridge is **conditional** and must not bypass the approved original-engine baseline. Compile a representative test scene on PC and audit all warnings/errors.
+**Do:** Copy (never upgrade in place) the approved Unity 5.6 project. Use the declared application name **Hungry Shark Evolution Vita** and prepare **HGSKE1178** for later PSP2 package identity, without copying Halo 2D credentials/content identifiers. Prefer the verified Halo 2D **2018.2.19f1** editor (do not force 2018.2.21f1); pin its exact version and identify the actually working PSP2 target module locally. Handle engine API changes, assemblies, serialization and UnityScript migration; keep GUID/fileID mappings intact. Inventory recovered shader/material names and attempt faithful shader compilation/visual parity before proposing simplifications; the [PS Vita shader research](SHADERS_PSVITA_REFERENCE.md) is **reference, not automatic rewrite criteria**. The official UnityScript-to-C# converter documents a Unity 2017.3–2018.1.x support window; any temporary 2018.1 bridge is **conditional** and must not bypass the approved original-engine baseline. Compile a representative test scene on PC and audit all warnings/errors.
 
 **Acceptance:** native Unity 2018.2 project imports and compiles with zero unaccounted errors, scenes/sprite/prefab references verified, differences documented. **Merely opening in 2018.2 is not acceptance.**
 
@@ -75,13 +77,13 @@ Record (a) commit SHA + source input hash, (b) editor/AssetRipper/SDK build vers
 
 ### P07 — Independent native PSP2 toolchain smoke test (LOCKED)
 
-**Do:** Using the confirmed Unity 2018.2 installation, build a minimal **independent** test scene to PSP2. Verify device executable packaging, actual PS Vita launch, GPU first frame, input, audio placeholder, app suspend/resume and logging. Do not confuse custom homebrew VitaSDK with the proprietary Unity PSP2 module.
+**Do:** Using the confirmed Unity 2018.2 installation, build a minimal **independent** test scene to PSP2. Log `Application.dataPath`, `Application.streamingAssetsPath`, `Application.persistentDataPath` and check `app0:` read-only access on physical Vita to determine real PSP2 layout. Verify device executable packaging, actual PS Vita launch, GPU first frame, input, audio placeholder, app suspend/resume and logging. Do not confuse custom homebrew VitaSDK with the proprietary Unity PSP2 module.
 
 **Acceptance:** photo/log from **physical Vita** showing Unity PSP2 sample running; toolchain/platform version recorded. If the module cannot legally be obtained or used, **BLOCKED**, not assumed solved.
 
 ### P08 — Hungry Shark boot/UI on physical Vita (LOCKED)
 
-**Do:** Build the first real recovered game scene for PSP2; load Unity resources with monitored RAM/VRAM. Validate real **PSP2 shader compilation and material correctness**, including pink/missing effects, alpha, depth, lighting and water, and fix shader/material API and startup platform dependencies carefully. Preserve camera bounds and correct 960×544 presentation and menu controls.
+**Do:** Inspect actual VPK built files under installed app `ux0:app/HGSKE1178/`, and verify an additional user-data relative path only if a loader is necessary. Do not overwrite Unity-generated PSP2 player data with original Android serialized files. Build the first real recovered game scene for PSP2; load Unity resources with monitored RAM/VRAM. Validate real **PSP2 shader compilation and material correctness**, including pink/missing effects, alpha, depth, lighting and water, and fix shader/material API and startup platform dependencies carefully. Preserve camera bounds and correct 960×544 presentation and menu controls.
 
 **Acceptance:** stable boot → title/menu → transition to gameplay scene on physical hardware with logs and screenshots; no unrelated placeholder passed off as the game.
 
@@ -105,7 +107,7 @@ Record (a) commit SHA + source input hash, (b) editor/AssetRipper/SDK build vers
 
 ### P12 — Release readiness and handoff (LOCKED)
 
-**Do:** Perform clean reproducible build on a known environment, full physical Vita regression, install/uninstall/save tests, version documentation, troubleshooting, issue template, tested limitations and attribution. Define lawful distribution: repository scripts and documentation may be shared; proprietary game data and restricted SDK/runtime require legal authorization. If rights are not established, ship no unauthorized proprietary binary/VPK; prefer a legally compliant end-user conversion workflow where permissible.
+**Do:** After obtaining a real tested content dependency manifest and verifying legitimate conversion/distribution, implement a user-owned APK data extractor **only if the runtime supports separately provided assets**; verify output checksums, correct app-path staging, missing-data reporting and reinstall data preservation. Never advertise Android binary Unity Data as PSP2-compatible without tests. Perform clean reproducible build on a known environment, full physical Vita regression, install/uninstall/save tests, version documentation, troubleshooting, issue template, tested limitations and attribution. Define lawful distribution: repository scripts and documentation may be shared; proprietary game data and restricted SDK/runtime require legal authorization. If rights are not established, ship no unauthorized proprietary binary/VPK; prefer a legally compliant end-user conversion workflow where permissible.
 
 **Acceptance:** owner explicitly signs release checklist, physical Vita evidence exists, copyright/license constraints satisfied, release notes accurate. **Not a production release until all checks pass.**
 

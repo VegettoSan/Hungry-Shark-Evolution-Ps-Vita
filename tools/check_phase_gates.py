@@ -88,6 +88,26 @@ def check(data):
     print(f"PHASE GATES OK: current={data['current_phase']} / approved={sum(x['status'] == 'APPROVED' for x in phases)}/{len(phases)}")
 
 
+def check_port_identity():
+    path = ROOT / "config" / "port_identity.json"
+    with path.open("r", encoding="utf-8") as source:
+        identity = json.load(source)
+    title_id = identity.get("title_id")
+    display = identity.get("display_name")
+    if not isinstance(title_id, str) or not re.fullmatch(r"[A-Z0-9]{9}", title_id):
+        fail("PS Vita Title ID must be nine uppercase alphanumeric characters")
+    if title_id != "HGSKE1178" or display != "Hungry Shark Evolution Vita":
+        fail("Port identity changed: expected HGSKE1178 / Hungry Shark Evolution Vita")
+    if identity.get("target_platform") != "PSP2":
+        fail("Target platform must stay PSP2")
+    if identity.get("planned_install_directory") != "ux0:app/" + title_id + "/":
+        fail("Planned Vita app directory differs from Title ID")
+    if identity.get("source_version") != "6.4.2" or identity.get("source_unity") != "5.6.4p3":
+        fail("Source APK identity changed unexpectedly")
+    print("PORT IDENTITY OK: HGSKE1178 / Hungry Shark Evolution Vita")
+
+
 if __name__ == "__main__":
     with LEDGER.open("r", encoding="utf-8") as handle:
         check(json.load(handle))
+    check_port_identity()
