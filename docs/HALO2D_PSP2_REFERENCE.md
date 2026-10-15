@@ -51,6 +51,10 @@ The project owner explicitly authorized reusing the **Project Settings > Input M
 4. **Potential input issue** noted in static review: in `VitaInputManager.cs`, the Square-button release branch calls `OnCrossUp` rather than `OnSquareUp`. Do not reuse the controller verbatim without a test-driven review.
 5. The `Library/PlayerDataCache/PSP2` assembly presence can help verify which Unity platform assemblies existed historically but these are vendor/player-specific output, not a distribution or build dependency to commit.
 
+## Shader/rendering reference
+
+Halo 2D's Unity 2018.2.19f1 **Built-in Render Pipeline** and PSP2 build configuration provide a useful historical *render pipeline* reference, **not proof** that any particular Hungry Shark shader is compatible. PSP2 has its own Unity shader compiler; consult [candidate optimizations and hardware validation methodology](SHADERS_PSVITA_REFERENCE.md). Keep original HSE visual effects until validated, and benchmark any changes on hardware.
+
 ## Approved reuse strategy
 
 **Now, P00:** log that **the preferred Unity 2018.2 editor version is 2018.2.19f1** based on file evidence. On the actual PC, record the path, `Help > About` value, installed PSP2 module visibility and any legitimate build target access. Do **not** migrate HSE or mark P00 approved from GitHub evidence alone.

@@ -17,6 +17,7 @@ These rules apply to the **entire repository**.
 - **Physical PS Vita gameplay** must pass independent tests; a Unity test scene or a VPK merely installing is not equivalent to a working port.
 - Unity 5.6.4p3 is a 2017 editor, **earlier than Unity 2018.2**. Existing Mono DLLs and UnityScript code do not guarantee full source or working script references.
 - Use a native Unity PSP2 player; Android `libunity.so` is not portable unchanged.
+- **Shader optimization reference:** [docs/SHADERS_PSVITA_REFERENCE.md](docs/SHADERS_PSVITA_REFERENCE.md) provides candidates and benchmarking methods, **NOT mandatory shader substitutions**. Target **30 FPS stable in gameplay**, investigate **60 FPS if measurements permit**. P01–P04 preserve original-engine appearance; P05–P06 require Unity 2018.2 visual parity; P07–P08 handle actual PSP2 shader compatibility; P11 performs measured optimization. Do not implement later phases early or claim FPS absent Vita measurements.
 - **P10 input policy:** reuse/merge the **legacy Unity Input Manager mappings** from [Halo 2D's ProjectSettings/InputManager.asset](https://github.com/VegettoSan/Halo2D_PsVita/blob/main/Halo%202D/ProjectSettings/InputManager.asset), not an unverified custom input rewrite. See [measured source mappings and caveats](docs/HALO2D_PSP2_REFERENCE.md#reusing-halo-2ds-standard-unity-input-manager-verified-p10-reference-only). Preserve the recovered HSE settings; never overwrite wholesale. The actual input integration remains **LOCKED** until P09 approval.
 
 ## Approval authority and evidence

@@ -63,13 +63,13 @@ Record (a) commit SHA + source input hash, (b) editor/AssetRipper/SDK build vers
 
 ### P05 — Migration clone to Unity 2018.2 (LOCKED)
 
-**Do:** Copy (never upgrade in place) the approved Unity 5.6 project. Prefer the verified Halo 2D **2018.2.19f1** editor (do not force 2018.2.21f1); pin its exact version and identify the actually working PSP2 target module locally. Handle engine API changes, assemblies, serialization and UnityScript migration; keep GUID/fileID mappings intact. The official UnityScript-to-C# converter documents a Unity 2017.3–2018.1.x support window; any temporary 2018.1 bridge is **conditional** and must not bypass the approved original-engine baseline. Compile a representative test scene on PC and audit all warnings/errors.
+**Do:** Copy (never upgrade in place) the approved Unity 5.6 project. Prefer the verified Halo 2D **2018.2.19f1** editor (do not force 2018.2.21f1); pin its exact version and identify the actually working PSP2 target module locally. Handle engine API changes, assemblies, serialization and UnityScript migration; keep GUID/fileID mappings intact. Inventory recovered shader/material names and attempt faithful shader compilation/visual parity before proposing simplifications; the [PS Vita shader research](SHADERS_PSVITA_REFERENCE.md) is **reference, not automatic rewrite criteria**. The official UnityScript-to-C# converter documents a Unity 2017.3–2018.1.x support window; any temporary 2018.1 bridge is **conditional** and must not bypass the approved original-engine baseline. Compile a representative test scene on PC and audit all warnings/errors.
 
 **Acceptance:** native Unity 2018.2 project imports and compiles with zero unaccounted errors, scenes/sprite/prefab references verified, differences documented. **Merely opening in 2018.2 is not acceptance.**
 
 ### P06 — Prove Unity 2018.2 PC gameplay parity (LOCKED)
 
-**Do:** Re-run the complete frozen P03/P04 regression suite in the 2018.2 desktop build, compare original-engine behaviors, saves, HUD, touch simulation, collisions, animation, sound and scene changes. Fix and repeat any regression **before** starting Vita work.
+**Do:** Re-run the complete frozen P03/P04 regression suite in the 2018.2 desktop build, compare original-engine behaviors, saves, HUD, touch simulation, collisions, animation, sound and scene changes. Include side-by-side shader/material effects and underwater transparency using the [rendering reference](SHADERS_PSVITA_REFERENCE.md). Fix and repeat any regression **before** starting Vita work.
 
 **Acceptance:** same approved offline gameplay scenarios run on PC with documented equivalence (allowing explained rendering differences); real PC executable demonstrated. Owner explicitly approves 2018.2 desktop parity. **P07 forbidden until approved.**
 
@@ -81,7 +81,7 @@ Record (a) commit SHA + source input hash, (b) editor/AssetRipper/SDK build vers
 
 ### P08 — Hungry Shark boot/UI on physical Vita (LOCKED)
 
-**Do:** Build the first real recovered game scene for PSP2; load Unity resources with monitored RAM/VRAM. Fix shader/material API and startup platform dependencies carefully. Preserve camera bounds and correct 960×544 presentation and menu controls.
+**Do:** Build the first real recovered game scene for PSP2; load Unity resources with monitored RAM/VRAM. Validate real **PSP2 shader compilation and material correctness**, including pink/missing effects, alpha, depth, lighting and water, and fix shader/material API and startup platform dependencies carefully. Preserve camera bounds and correct 960×544 presentation and menu controls.
 
 **Acceptance:** stable boot → title/menu → transition to gameplay scene on physical hardware with logs and screenshots; no unrelated placeholder passed off as the game.
 
@@ -99,9 +99,9 @@ Record (a) commit SHA + source input hash, (b) editor/AssetRipper/SDK build vers
 
 ### P11 — Performance, memory and long-run reliability (LOCKED)
 
-**Do:** Measure real Vita FPS, stutter, allocations, scene transitions, RAM/VRAM and GPU faults using baseline and repeatable scenes. Apply **one measured optimization at a time** (textures, LOD, draw calls, shader choices, pooled data), with before/after logs and gameplay regression checks. Never turn off correctness checks merely to gain frames.
+**Do:** Aim for **30 FPS stable in real gameplay (33.33 ms/frame)** as the primary design goal; **60 FPS (16.67 ms/frame)** is an optional stretch goal only when feasible. Neither target is a demonstrated result. Measure real Vita FPS, stutter, allocations, scene transitions, RAM/VRAM and GPU faults using baseline and repeatable scenes. Apply **one measured optimization at a time** (textures, LOD, draw calls, shader choices, pooled data), using the [optional shader trials and A/B methodology](SHADERS_PSVITA_REFERENCE.md) when relevant, with before/after logs and gameplay regression checks. Never turn off correctness checks merely to gain frames.
 
-**Acceptance:** owner-approved device-specific FPS/stability target defined from **measured baseline**, met in multiple test sessions; no fatal crashes or gameplay regressions, all compromises documented. Do not invent a target number before hardware measurements.
+**Acceptance:** attempt the **30 FPS stable gameplay** goal, investigate **60 FPS** if benchmarks justify it, and use an **owner-approved, evidence-based** FPS/stability acceptance threshold after collecting a real-device baseline. Both numerical targets are *design goals*, not measured facts or blanket shader rules. Requirements may only change via owner-approved plan revision; all compromises documented, no fatal crashes or gameplay regressions.
 
 ### P12 — Release readiness and handoff (LOCKED)
 

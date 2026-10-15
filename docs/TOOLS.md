@@ -67,6 +67,10 @@ In [Unity 2018.2 scripting restrictions](https://docs.unity.cn/2018.2/Documentat
 | **[Ghidra](https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.1.4_build)** | **12.1.4** | Only if evidence shows essential logic trapped in ARM Android `.so` plugins. Native Android ABI code is not the Unity PSP2 runtime; this is a research/adapter task, not direct recompilation. |
 | **[Temurin JDK 21](https://adoptium.net/temurin/releases/?version=21)** | Current patched JDK 21 LTS | Java dependency for Ghidra/Apktool/JADX CLI. Do not install separately if a suitable bundled Java runtime already covers the selected tool. |
 
+## PS Vita shader reference archive (for P05–P11; not a P00 dependency)
+
+**[Official Unity 2018.2.19f1 Built-in Shaders ZIP](https://download.unity3d.com/download_unity/06990f28ba00/builtin_shaders-2018.2.19f1.zip)** is the **exact historical Unity 2018.2.19f1 shader-source reference**. Unity [lists a Shaders archive for that editor](https://unity.com/releases/editor/whats-new/2018.2.19f1). Use it to inspect compatible ShaderLab/Cg include patterns; **do not copy all shaders or assume PSP2 performance**. The binary URL was not downloaded/tested during this research. See [the source-backed research and 30/60 FPS test methodology](SHADERS_PSVITA_REFERENCE.md). Shader review is non-binding; gameplay correctness and gate order remain mandatory.
+
 ## 6. Media repair and platform optimization (P02–P11, only as needed)
 
 | Tool | Latest verified / download | Purpose |

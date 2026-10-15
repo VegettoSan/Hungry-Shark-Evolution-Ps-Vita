@@ -33,6 +33,7 @@ Agents **MUST NOT** jump ahead. Formal phase approvals are maintained in [`docs/
 - [Current phase approval ledger](docs/PHASE_GATES.json)
 - [Rules for Codex, AI agents and contributors](AGENTS.md)
 - [Halo 2D PSP2 evidence / Unity 2018.2.19f1](docs/HALO2D_PSP2_REFERENCE.md)
+- [PS Vita shader research, visual parity and 30/60 FPS targets](docs/SHADERS_PSVITA_REFERENCE.md)
 - [Technical audit and reproducible APK identity](docs/TECHNICAL_AUDIT.md)
 - [Experiment history: PASS / FAIL / NOT TESTED](docs/EXPERIMENTS.md)
 - **[Complete toolchain: current downloads, dependencies and install order](docs/TOOLS.md)**
