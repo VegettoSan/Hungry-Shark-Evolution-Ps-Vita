@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "application": "Hungry Shark Evolution 6.4.2 (Unity 5.6.4p3)",
+  "baseline_sha256": "52b7d8754ab8fec75c3b656a0dc5ec8dc849565adc402487a3ac093f6a481f7a",
+  "current_phase": "P00",
+  "phases": [
+    {
+      "id": "P00",
+      "name": "Reproducible source and original editor",
+      "gate": "Input SHA-256, Unity 5.6.4p3 installation and Android gameplay reference captured",
+      "status": "ACTIVE",
+      "evidence": [],
+      "approved_by": null,
+      "approved_at": null,
+      "approval_reference": null
+    },
+    {
+      "id": "P01",
+      "name": "Full asset and code recovery",
+      "gate": "Unity 5.6 project recovery, scene/script references inventoried",
+      "status": "LOCKED",
+      "evidence": [],
+      "approved_by": null,
+      "approved_at": null,
+      "approval_reference": null
+    },
+    {
+      "id": "P02",
+      "name": "Unity 5.6 editor restore",
+      "gate": "Recovered project opens and compiles with accountable errors",
+      "status": "LOCKED",
+      "evidence": [],
+      "approved_by": null,
+      "approved_at": null,
+      "approval_reference": null
+    },
+    {
+      "id": "P03",
+      "name": "Unity 5.6 gameplay restoration",
+      "gate": "Desktop build plays core offline gameplay and comparisons pass",
+      "status": "LOCKED",
+      "evidence": [],
+      "approved_by": null,
+      "approved_at": null,
+      "approval_reference": null
+    },
+    {
+      "id": "P04",
+      "name": "Unity 5.6 stable baseline",
+      "gate": "Clean repeatable PC baseline frozen, evidence and regression suite",
+      "status": "LOCKED",
+      "evidence": [],
+      "approved_by": null,
+      "approved_at": null,
+      "approval_reference": null
+    },
+    {
+      "id": "P05",
+      "name": "Unity 2018.2 migration",
+      "gate": "Copied project compiles on target 2018.2, no destructive changes",
+      "status": "LOCKED",
+      "evidence": [],
+      "approved_by": null,
+      "approved_at": null,
+      "approval_reference": null
+    },
+    {
+      "id": "P06",
+      "name": "Unity 2018.2 desktop parity",
+      "gate": "Core PC gameplay matches approved Unity 5.6 baseline",
+      "status": "LOCKED",
+      "evidence": [],
+      "approved_by": null,
+      "approved_at": null,
+      "approval_reference": null
+    },
+    {
+      "id": "P07",
+      "name": "PSP2 toolchain smoke test",
+      "gate": "Independent native PSP2 sample builds and runs on physical Vita",
+      "status": "LOCKED",
+      "evidence": [],
+      "approved_by": null,
+      "approved_at": null,
+      "approval_reference": null
+    },
+    {
+      "id": "P08",
+      "name": "Vita boot and menus",
+      "gate": "Hungry Shark scene starts and menu renders without crash",
+      "status": "LOCKED",
+      "evidence": [],
+      "approved_by": null,
+      "approved_at": null,
+      "approval_reference": null
+    },
+    {
+      "id": "P09",
+      "name": "Vita core gameplay",
+      "gate": "Player shark controls, feed, health/death loops work on Vita",
+      "status": "LOCKED",
+      "evidence": [],
+      "approved_by": null,
+      "approved_at": null,
+      "approval_reference": null
+    },
+    {
+      "id": "P10",
+      "name": "Vita peripherals and saves",
+      "gate": "Physical controls, audio, save, lifecycle and offline flows tested",
+      "status": "LOCKED",
+      "evidence": [],
+      "approved_by": null,
+      "approved_at": null,
+      "approval_reference": null
+    },
+    {
+      "id": "P11",
+      "name": "Vita performance and stability",
+      "gate": "Measured optimization, repeatable gameplay and soak tests pass",
+      "status": "LOCKED",
+      "evidence": [],
+      "approved_by": null,
+      "approved_at": null,
+      "approval_reference": null
+    },
+    {
+      "id": "P12",
+      "name": "Release readiness",
+      "gate": "Hardware regression, legal distribution strategy and docs complete",
+      "status": "LOCKED",
+      "evidence": [],
+      "approved_by": null,
+      "approved_at": null,
+      "approval_reference": null
+    }
+  ]
+}

@@ -8,10 +8,10 @@ Use **PASS** only for reproducibly observed success; **FAIL** for an actually at
 | 2026-10-14 | EXT-001 | Python local extractor, original 6.4.2 APK | **PASS (local)** | Reassembled 15 split groups and preserved `Managed`; does **not** prove project recovery |
 | 2026-10-14 | CMP-001 | Later HSE 14.5.0 XAPK, Unity 6 / IL2CPP | **PASS (static comparison)** | Poorer first candidate for a Unity 2018.2 Vita workflow; not a runtime failure |
 | — | IMP-001 | AssetRipper import/export with Mono DLLs | **NOT TESTED** | Capture AssetRipper version, log, missing scripts, asset references |
-| — | EDT-001 | Unity 2018.2 editor compilation | **NOT TESTED** | Capture editor/build-target version, compile errors and fixes |
+| — | ORIG-001 | Unity 5.6.4p3 editor reconstruction, import, PC gameplay | **NOT TESTED** | Exact source-editor build plus original engine PC executable required before migration |\n| — | EDT-001 | Unity 2018.2 editor compilation **after** P04 approval | **NOT TESTED** | Capture editor/build-target version, compile errors and fixes |
 | — | VIT-001 | Real PSP2 native build and hardware test | **NOT TESTED** | Capture VPK/build logs, real hardware behavior and FPS |
 
-## Append-only record template
+## Gated stage state\n\nCurrent first incomplete gate: **P00 ACTIVE**, not formally approved. See [the ledger](PHASE_GATES.json) and [the end-to-end plan](PORTING_PLAN.md). Previously recorded static PASS does not authorize moving directly to AssetRipper or Unity 2018.\n\n## Append-only record template
 
 ```text
 ID:

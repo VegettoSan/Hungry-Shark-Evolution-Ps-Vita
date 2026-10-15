@@ -1,53 +1,57 @@
 # Hungry Shark Evolution — PS Vita Port
 
-Community research and development repository for a **native PlayStation Vita port** of *Hungry Shark Evolution*, preserving the original gameplay logic and Unity assets wherever technically possible.
+Community research and development repository for a **native PlayStation Vita port** of *Hungry Shark Evolution*, preserving original gameplay logic and Unity assets wherever technically possible.
 
-> **Status (2026-10-14): research / asset-recovery preparation. No playable PS Vita build or VPK has been produced or tested.**
+> **Status (2026-10-14):** static APK audit complete; **P00 (original editor/environment validation) ACTIVE**. No Unity editor reconstruction, PC gameplay or Vita VPK has yet been proven.
 
-## Chosen reference build
+## Reference build
 
 | Item | Audited result |
 | --- | --- |
 | Game | Hungry Shark Evolution **6.4.2**, Android versionCode **228** |
-| Unity player | **5.6.4p3**, confirmed from Unity serialized-file headers |
-| Script backend | **Mono**, not IL2CPP |
+| Original Unity player | **5.6.4p3** (official editor released November 20, 2017) |
+| Backend | **Mono**, not IL2CPP |
 | Main assembly | `Assembly-CSharp.dll` (4,958,208 bytes) |
-| Other game assemblies | `Assembly-CSharp-firstpass.dll`, `Assembly-UnityScript.dll`, `Assembly-UnityScript-firstpass.dll` |
-| Scene serialized files | `level0` through `level17` (18 files; **not** necessarily 18 gameplay levels) |
-| Architecture | Android `armeabi-v7a` |
-| Candidate Vita editor | Unity **2018.2** with a working, legitimately obtained PSP2 build target |
+| Other assemblies | `Assembly-CSharp-firstpass.dll`, `Assembly-UnityScript.dll`, `Assembly-UnityScript-firstpass.dll` |
+| Serialized scenes | `level0` through `level17` (18 files; not necessarily 18 gameplay levels) |
+| Android architecture | `armeabi-v7a` |
+| Candidate Vita editor | **Unity 2018.2 + an independently verified PSP2 build target** |
 
-The newer **14.5.0** Android package was also investigated, but uses Unity 6 / IL2CPP and is a much harder initial candidate. **6.4.2 is the working baseline, not a confirmed port.**
+The newer 14.5.0 package uses Unity 6 / IL2CPP and is not our initial porting baseline.
 
-## Approach
+## NON-NEGOTIABLE development order
 
-1. Audit a legally obtained local APK and reconstruct split Unity data files.
-2. Import Unity data **together with Managed assemblies** into [AssetRipper](https://github.com/AssetRipper/AssetRipper) and assess script / GUID / scene recovery.
-3. Examine the existing C# assemblies with [ILSpy](https://github.com/icsharpcode/ILSpy); preserve code behavior and serialized contracts where possible.
-4. Rebuild an export in Unity 2018.2 **on a separate copy**, resolve platform dependencies, then test a minimal scene.
-5. Generate a Vita-native player with Unity PSP2; add controls, offline services, save handling, renderer fixes and performance work incrementally.
+**6.4.2 APK → recover Unity 5.6.4p3 project → get original gameplay working in Unity 5.6.4p3 on PC → explicitly approve the original-engine baseline → migrate a separate copy to Unity 2018.2 → prove gameplay again on PC → verify PSP2 toolchain on actual Vita → port and test actual game on Vita.**
 
-The Android `libunity.so` is **not** a drop-in Vita runtime. This project does not claim that an APK can simply be imported and recompiled.
+Agents **MUST NOT** jump ahead. Formal phase approvals are maintained in [`docs/PHASE_GATES.json`](docs/PHASE_GATES.json), validated by a [CI checker](tools/check_phase_gates.py). Each phase needs evidence **and an explicit owner approval**; automated validation cannot substitute for hardware testing or human review.
 
-## Documentation
+**Read the [full start-to-finish gated plan](docs/PORTING_PLAN.md) before doing any work.**
 
-- [Technical audit and reproducible evidence](docs/TECHNICAL_AUDIT.md)
-- [Porting plan, milestones and success gates](docs/PORTING_PLAN.md)
-- [Experiment log: proven / failed / not attempted](docs/EXPERIMENTS.md)
-- [Tools and authoritative references](docs/TOOLS.md)
-- [Rules for AI agents and contributors](AGENTS.md)
+## Repository index
 
-## Local extraction (Windows / Python)
+- [Detailed sequential project plan](docs/PORTING_PLAN.md)
+- [Current phase approval ledger](docs/PHASE_GATES.json)
+- [Rules for Codex, AI agents and contributors](AGENTS.md)
+- [Technical audit and reproducible APK identity](docs/TECHNICAL_AUDIT.md)
+- [Experiment history: PASS / FAIL / NOT TESTED](docs/EXPERIMENTS.md)
+- [Download tools and references](docs/TOOLS.md)
 
-Requires Python 3 and your **own** APK of version 6.4.2.
+## Local source preparation
 
-- On Windows: drag the APK onto [`tools/ARRASTRAR_HUNGRY_SHARK_6.4.2.bat`](tools/ARRASTRAR_HUNGRY_SHARK_6.4.2.bat).
-- Cross-platform: `python tools/Preparar_Hungry_Shark_Evolution_6.4.2.py path/to/game.apk output_directory`
-- The tool creates `output_directory/Data/` and combines `.splitN` fragments in numeric order. **It does not recover the original Unity editor project.**
-- Keep `Data/Managed/` available during asset import. Record the APK SHA-256 to ensure test results are comparable.
+Requires Python 3 and a **user-supplied** copy of the original APK.
 
-## Copyright and distribution
+Windows: drag the APK onto [`tools/ARRASTRAR_HUNGRY_SHARK_6.4.2.bat`](tools/ARRASTRAR_HUNGRY_SHARK_6.4.2.bat).
 
-*Hungry Shark Evolution*, its code, art, audio, and other game assets belong to their respective owners. **No APK, extracted game DLLs, Unity assets, proprietary SDKs, or paid platform files are distributed here.** Contributors must use their own lawfully obtained input and respect applicable rights and licenses. Do not upload extracted content in commits, issues, logs, or releases. No affiliation with Ubisoft or the game's developers is implied.
+Cross-platform:
+```shell
+python tools/Preparar_Hungry_Shark_Evolution_6.4.2.py path/to/game.apk local-work/HSE642
+python tools/check_phase_gates.py
+```
 
-**No release should be described as working until it is tested on physical PS Vita hardware.**
+This prepares split Unity `Data/` files, including `Data/Managed/`, **not** a complete Unity editor project. AssetRipper and script recovery are separate steps.
+
+## Legal and reproducibility notes
+
+*Hungry Shark Evolution* and original game code/assets belong to their rights holders. **Do not distribute** APK/XAPK/OBB, decompiled code, extracted game assets, Sony/Unity restricted SDKs, credentials or unauthorized VPKs. Work from individually obtained lawful inputs; the repository contains only public tools, technical reports, rules and scripts. Not affiliated with Ubisoft or the game's developers.
+
+No game runtime or performance claim is verified until its documented gate has been tested on the indicated platform.

@@ -1,6 +1,29 @@
-# AGENTS.md — instructions for Codex, AI agents and contributors
+# AGENTS.md — mandatory rules for Codex, AI agents and contributors
 
-These rules apply to the entire repository. Read `README.md`, `docs/TECHNICAL_AUDIT.md`, `docs/PORTING_PLAN.md`, and `docs/EXPERIMENTS.md` **before** modifying code or claiming a milestone.
+These rules apply to the **entire repository**.
+
+## Required reading before any change
+
+1. Read [`docs/PORTING_PLAN.md`](docs/PORTING_PLAN.md) **in full** and [`docs/PHASE_GATES.json`](docs/PHASE_GATES.json).
+2. Read [`docs/TECHNICAL_AUDIT.md`](docs/TECHNICAL_AUDIT.md) and [`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md).
+3. Run `python tools/check_phase_gates.py`. If it fails, **STOP** and correct the ledger (without fabricating approval).
+4. Only perform work allowed by the **single ACTIVE phase**. If the phase is AWAITING_APPROVAL or BLOCKED, focus exclusively on its proof or corrective work. **Never implement a LOCKED phase.**
+
+## Mandatory engine progression
+
+- **Unity 5.6.4p3 is the original engine**; validate the native Unity 5.6 PC executable and preserve an approved stable baseline **before** creating a Unity 2018.2 migration clone.
+- **Unity 2018.2 PC gameplay must pass equivalent tests** before PSP2 port implementation.
+- **Physical PS Vita gameplay** must pass independent tests; a Unity test scene or a VPK merely installing is not equivalent to a working port.
+- Unity 5.6.4p3 is a 2017 editor, **earlier than Unity 2018.2**. Existing Mono DLLs and UnityScript code do not guarantee full source or working script references.
+- Use a native Unity PSP2 player; Android `libunity.so` is not portable unchanged.
+
+## Approval authority and evidence
+
+- Only the repo owner **VegettoSan** may approve stage transitions **explicitly**. An agent, an automated build or a green CI check is **not** the owner.
+- Record two independent evidence references, the owner's approval reference (GitHub issue/PR link), UTC date and owner ID in `docs/PHASE_GATES.json`. Next phase becomes ACTIVE **only after** the previous is APPROVED. Run `python tools/check_phase_gates.py` after each gate change.
+- Never infer "approval" from silence, no errors, or an assistant's own confidence. A FAIL or missing proof is BLOCKED/ACTIVE as appropriate, never APPROVED.
+- Review experimental results and phase scope with owner; document failed alternatives without secretly switching scope.
+- CI checks ledger shape/order; it **does not** independently validate the honesty of evidence or actual hardware behavior. Require manual GitHub branch-protection status checks and maintainer review to guard merges.
 
 ## Objective and constraints
 
@@ -38,4 +61,4 @@ These rules apply to the entire repository. Read `README.md`, `docs/TECHNICAL_AU
 - **Vita prototype:** built with PSP2, boots and renders on real hardware with logs.
 - **Playable:** controls, gameplay, save, audio and stability validated on hardware.
 
-Current confirmed stage: **audit complete; recovery/build/device stages remain untested**.
+Current confirmed stage: **P00 ACTIVE, formal approval pending; Unity recovery/build/device stages remain untested**.

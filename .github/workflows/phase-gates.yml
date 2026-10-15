@@ -1,0 +1,19 @@
+name: Phase gates
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/PHASE_GATES.json'
+      - 'tools/check_phase_gates.py'
+      - '.github/workflows/phase-gates.yml'
+      - 'docs/PORTING_PLAN.md'
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  phase-gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify phase order and approvals
+        run: python3 tools/check_phase_gates.py
