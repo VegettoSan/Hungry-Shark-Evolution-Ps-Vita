@@ -2,7 +2,7 @@
 
 Community research and development repository for a **native PlayStation Vita port** of *Hungry Shark Evolution*, preserving original gameplay logic and Unity assets wherever technically possible.
 
-> **Status (2026-10-15):** private recovery opens in **Unity 5.6.4p3**; source compilation, shader/material checks and model inventories have evidence. The owner reports entering gameplay and moving with keyboard/mouse. **P00 remains ACTIVE; no phase is approved.** A tested standalone PC build, complete gameplay/Android comparison and stable baseline are still pending. No Unity 2018 migration or Vita test has been performed. See the [current recovery status and remaining gates](docs/RECOVERY_STATUS_2026-10-15.md).
+> **Status (2026-10-15):** private recovery opens in **Unity 5.6.4p3**; the owner now **confirms gameplay, shaders/graphics, sound and save function work** in tested Editor sessions. Complete reproducible gameplay matrix, save-after-cold-restart, Android comparison and frozen baseline remain pending. A standalone Windows executable is **optional** under the owner's editor-based test decision. **P00 remains ACTIVE; 0 stages approved, no Unity 2018 migration or PS Vita build.** See [status](docs/RECOVERY_STATUS_2026-10-15.md) and [freeze/handoff](docs/UNITY56_BASELINE_AND_UNITY2018_HANDOFF.md).
 
 ## Reference build
 
@@ -36,6 +36,9 @@ Agents **MUST NOT** jump ahead. Formal phase approvals are maintained in [`docs/
 - [Detailed sequential project plan](docs/PORTING_PLAN.md)
 - [Current phase approval ledger](docs/PHASE_GATES.json)
 - **[Current Unity 5.6 recovery, repairs, evidence and next steps](docs/RECOVERY_STATUS_2026-10-15.md)**
+- **[Unity 5.6 confirmed systems, freeze checklist and Unity 2018 handoff](docs/UNITY56_BASELINE_AND_UNITY2018_HANDOFF.md)**
+- [Codex task: stage private Unity 5.6 baseline and evidence (no migration yet)](docs/CODEX_FREEZE_UNITY56_PREP.md)
+- [Codex future P05/P06 migration instructions (locked until P04 approval)](docs/CODEX_UNITY2018_MIGRATION_PREP.md)
 - [Rules for Codex, AI agents and contributors](AGENTS.md)
 - [Halo 2D PSP2 evidence / Unity 2018.2.19f1](docs/HALO2D_PSP2_REFERENCE.md)
 - [PS Vita shader research, visual parity and 30/60 FPS targets](docs/SHADERS_PSVITA_REFERENCE.md)

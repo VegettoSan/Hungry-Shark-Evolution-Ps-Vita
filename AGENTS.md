@@ -22,8 +22,8 @@ These rules apply to the **entire repository**.
 
 ## Mandatory engine progression
 
-- **Unity 5.6.4p3 is the original engine**; validate the native Unity 5.6 PC executable and preserve an approved stable baseline **before** creating a Unity 2018.2 migration clone.
-- **Unity 2018.2 PC gameplay must pass equivalent tests** before PSP2 port implementation.
+- **Unity 5.6.4p3 is the original engine**; validate the full original gameplay matrix on PC via **Unity Editor Play Mode** (owner-approved alternative to a standalone Windows EXE), verify cold save/load and preserve an **approved** stable baseline **before** creating a Unity 2018.2 migration clone. Read [freeze/handoff](docs/UNITY56_BASELINE_AND_UNITY2018_HANDOFF.md) and [current prep task](docs/CODEX_FREEZE_UNITY56_PREP.md).
+- **Unity 2018.2 PC gameplay must pass equivalent tests** (editor-based desktop regression is acceptable) before PSP2 port implementation. The [P05/P06 task](docs/CODEX_UNITY2018_MIGRATION_PREP.md) remains **locked until P04 explicit approval**.
 - **Physical PS Vita gameplay** must pass independent tests; a Unity test scene or a VPK merely installing is not equivalent to a working port.
 - Unity 5.6.4p3 is a 2017 editor, **earlier than Unity 2018.2**. Existing Mono DLLs and UnityScript code do not guarantee full source or working script references.
 - Use a native Unity PSP2 player; Android `libunity.so` is not portable unchanged.

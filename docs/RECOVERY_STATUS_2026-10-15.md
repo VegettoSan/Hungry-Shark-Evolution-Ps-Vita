@@ -4,6 +4,8 @@
 
 **VERIFIED:** existe una recuperación privada que abre en Unity **5.6.4p3**, con compilaciones de código y pruebas de shaders realizadas. El propietario informa que entra en gameplay, mueve el tiburón con teclado y ratón y, después de las últimas correcciones, «parece estar todo bien». También confirma que ve el mosasaurio y los demás modelos. Tras activar el altavoz de las opciones del propio juego confirma oír sonido; la captura nativa registra señal de audio en menú y gameplay. Es evidencia de pruebas breves; no equivale a completar la matriz de gameplay, disponer de un ejecutable PC probado o aprobar una fase.
 
+**Owner update (2026-10-15):** el propietario confirmó expresamente que **gameplay, shaders/gráficos y guardado funcionan** en Unity 5.6.4p3 Editor. Audio y movimiento habían sido confirmados previamente. Es **OWNER-CONFIRMED**, no prueba de guardado tras cerrar/reabrir, equivalencia exhaustiva Android, build PC o estabilidad larga. El ejecutable Windows se vuelve **opcional** conforme al [plan revisado](PORTING_PLAN.md) y al [handoff detallado](UNITY56_BASELINE_AND_UNITY2018_HANDOFF.md). **Fases sin aprobar.**
+
 Este documento actualiza el estado actual. [OFFLINE_RECOVERY_2026-10-15.md](OFFLINE_RECOVERY_2026-10-15.md) conserva el resultado histórico **anterior** a instalar/probar el editor. Las filas antiguas NOT TESTED siguen describiendo su momento; los experimentos posteriores aportan las comprobaciones nuevas.
 
 ## Archivos privados y trazabilidad
@@ -55,8 +57,8 @@ GameCamera: la línea 298 requería **HSE/BackgroundFish**. **VERIFIED:** Shader
 | Aserción `m_AssetToPrefab.empty()` | Observada históricamente, sin prefab/GUID causal identificado; no apareció en el último intervalo limitado examinado. No se declara resuelta. Solo investigar profundamente si se reproduce, guardando contexto; ningún prefab fue eliminado indiscriminadamente |
 | Referencias y serialización globales | El inventario inicial dejó 55 referencias uGUI pendientes de resolución nativa, ocho scripts nulos en seis prefabs y un mismatch de layout de MissionAchievementsManager. No existe un cierre global posterior de esos tres hallazgos. La auditoría limpia de tiburones no demuestra que todas las escenas estén libres de ellos |
 | Preloads y datos de iluminación | Dos entradas nulas de precarga y avisos de datos de iluminación requieren diagnóstico propio si persisten. No se han reconstruido ni descartado por conjetura |
-| Compilación/build | Hay compilaciones completas de fuentes con herramientas Unity en cuatro perfiles y pruebas dentro del editor. **UNTESTED:** build nativo PC completo, arranque del ejecutable y prueba independiente de Editor |
-| Gameplay y fidelidad | Falta matriz registrada de alimentación, hambre/salud, muerte/reintento, audio, UI, guardado/carga tras cerrar el proceso, perfil nuevo y continuado; comparación con Android. No se afirma paridad de todas las animaciones, shaders o mecánicas |
+| Compilación/build | Hay compilaciones de fuentes y comprobaciones dentro de Unity Editor. El propietario decidió que **no se requiere un ejecutable Windows** para aceptar P03/P04/P06 si se aporta una matriz completa y repetible en Editor Play Mode. Build PC standalone **no probado (opcional)**; no inferir prueba en reproductor separado |
+| Gameplay y fidelidad | **OWNER-CONFIRMED:** gameplay, shaders y gráficos funcionan; **OWNER-CONFIRMED:** guardado funciona. Falta matriz *registrada y repetible* de alimentación, hambre/salud, muerte/reintento, UI, guardado/carga **tras cerrar el proceso**, perfil nuevo/continuado y comparación con Android. No se afirma paridad visual de todas las animaciones/shaders/mecánicas |
 | Estabilidad | Pruebas breves del propietario y ventanas limitadas del log no equivalen a una sesión larga sin errores. Falta prueba repetible, incluyendo carga, pausa/reintento y cierre |
 | Otros motores y hardware | Unity 2018.2, PSP2, rendimiento y PS Vita física **UNTESTED**. No se inició migración ni adaptación Vita |
 
@@ -69,15 +71,15 @@ Esta tabla organiza la evidencia pendiente; no registra pruebas nuevas realizada
 | Caso | Evidencia disponible | Prueba que falta registrar |
 | --- | --- | --- |
 | Consola e importación | Compilaciones de fuentes y pruebas nativas de editor en distintos checkpoints | Importación actual, cero errores de compilación sin explicar y clasificación de avisos/referencias de la escena acordada |
-| Inicio y carga | Propietario informa menú → gameplay | Repetir desde el ejecutable PC offline, guardando log y versión de build |
+| Inicio y carga | Propietario confirma gameplay en Unity 5.6 | Repetir en **Editor Play Mode** con escena, logs y captura estructurada de la transición menú → juego; build Windows opcional |
 | Movimiento y cámara | Propietario confirma teclado/ratón; rutas originales conservadas | WASD/flechas, arrastre, seguimiento, pausas y transiciones; comparación Android |
 | Turbo | Contratos de acción Windows pasan; última prueba general positiva del propietario | Mantener Espacio/Ctrl, observar consumo/recarga y efecto original en gameplay; registrar resultado específico |
 | Comida, hambre y muerte | Lógica examinada conservada; sin matriz de ejecución completa | Comer, daño/hambre, muerte, reintento y retorno a menú |
-| Gráficos y modelos | Shaders/materiales probados según los checkpoints; modelos conservados y vistos por el propietario | Comparación de agua, cáusticas, transparencias, escudos, frenesí dorado y animaciones con Android |
+| Gráficos y modelos | **OWNER-CONFIRMED:** shaders y gráficos funcionan visualmente; pruebas de ShaderUtil, NGUI, modelos y materiales documentadas | Comparación *exhaustiva* de agua, cáusticas, transparencias, escudos, frenesí dorado y animaciones con Android |
 | Sonido e interfaz | Altavoz original activado por el propietario; señal nativa de música de menú, ambiente y efectos en gameplay, y confirmación auditiva. Parte de la interfaz vista durante las pruebas | Regresión completa de música/efectos, pausa, menús, cambio de tiburón y persistencia de la opción tras reiniciar |
-| Guardado y carga | No se alteró el formato ni se pretende simular servicios/progreso | Perfil nuevo y continuado, cerrar completamente el proceso y verificar persistencia; preservar el perfil actual |
+| Guardado y carga | **OWNER-CONFIRMED:** el guardado funciona en la sesión probada, sin cambios de formato | Verificar **cargar el progreso tras salir totalmente de Play Mode/cerrar Unity y reabrir**, perfil nuevo y continuado; respaldar save actual |
 | Servicios no disponibles | Contratos aislados evitan JNI/recompensas simuladas | Inicio offline del ejecutable y exclusiones claras de publicidad, compras, enlaces y autenticación |
-| Repetibilidad | Copia raw y checkpoints conservados | Importación/build limpios y repetir la matriz; archivar base Unity 5.6 con recibo y aceptación P04 |
+| Repetibilidad | Copia raw y checkpoints conservados | Importación limpia en una **copia privada**, repetir matriz en Unity Editor, capturar recibo/hashes, congelar base 5.6 solo con P04 aprobado |
 
 ## Fase real y siguiente paso
 
@@ -86,12 +88,12 @@ Esta tabla organiza la evidencia pendiente; no registra pruebas nuevas realizada
 | P00 — fuente y entorno | **ACTIVE** | APK y editor 5.6.4p3 verificados en las pruebas realizadas. Falta cerrar la referencia Android, evidencia de ejecución del proyecto PC vacío exigida por el plan, inventario de entorno objetivo y aprobación formal |
 | P01 — recuperación | **LOCKED** | Extracción, exportación, código, inventarios e integridad preparados. Revisar los hallazgos no resueltos y su clasificación cuando P00 quede aprobada |
 | P02 — restauración en editor | **LOCKED** | Gran parte del trabajo técnico realizado por encargos expresos del propietario: fuentes compilan, shaders probados y gameplay accesible. Falta el cierre documentado de importación/consola, escena mínima acordada y componentes esenciales |
-| P03 — gameplay PC | **LOCKED** | Prueba breve en Editor informada por el propietario. Falta ejecutable nativo y matriz completa comparada con Android |
-| P04 — base estable | **LOCKED** | Falta repetición desde importación/build limpios, matriz de regresión y archivo reproducible aceptado |
+| P03 — gameplay PC | **LOCKED** | **OWNER-CONFIRMED:** gameplay, shaders/gráficos y guardado funcionan. Falta matriz repetible y comparada con Android; **no es obligatorio EXE Windows** |
+| P04 — base estable | **LOCKED** | Falta repetición desde copia/importación limpias, guardado después de salir y reabrir, matriz de regresión y snapshot privado con aceptación expresa |
 | P05–P12 | **LOCKED** | No se han ejecutado ni se habilitan por estas reparaciones |
 
 **Siguiente transición formal posible: P00 → P01**, después de aportar lo que falta de P00 y su aprobación explícita. El trabajo ya preparado puede presentarse para revisar P01 y luego P02 en orden, sin repetir una extracción íntegra ni dar por aprobados los hallazgos.
 
-**Siguiente objetivo técnico recomendado: validar la base Unity 5.6 hasta P03/P04.** Primero registrar consola/importación actuales y las referencias pendientes, completar la referencia Android y después, con las fases correspondientes habilitadas, generar/probar el ejecutable PC y congelar la base. Los checkpoints permiten continuar las reparaciones Unity 5.6 expresamente autorizadas mientras se reúne esa evidencia; no autorizan saltar a otra fase.
+**Siguiente objetivo técnico recomendado: consolidar y documentar la base Unity 5.6 hasta P03/P04.** Primero registrar consola/importación actuales y referencias pendientes, completar referencia Android, repetir la matriz en Editor (el EXE Windows es opcional), verificar cold save/load y preparar el snapshot privado con hash para aceptación P04. Ver [checklist de handoff](UNITY56_BASELINE_AND_UNITY2018_HANDOFF.md) y [tarea preparatoria de Codex](CODEX_FREEZE_UNITY56_PREP.md). Los checkpoints permiten continuar las reparaciones Unity 5.6 expresamente autorizadas mientras se reúne esa evidencia; no autorizan saltar a otra fase.
 
 No corresponde migrar aún a Unity 2018.2.19f1. P05 exige antes P04 aprobada y la confirmación del propietario **«Unity 5.6.4p3 native baseline accepted»**. Cada transición requiere dos referencias de evidencia y un enlace de aprobación del propietario en una issue/PR del repositorio, con usuario y fecha UTC, tal como exige el plan. Pedir este resumen, confirmar que se ve un modelo o indicar que una prueba breve va bien no constituye esa aprobación.

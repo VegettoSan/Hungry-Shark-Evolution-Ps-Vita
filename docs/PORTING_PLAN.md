@@ -4,7 +4,7 @@
 
 **Status:** `P00 ACTIVE`; **all subsequent phases LOCKED**. Prior APK static research is evidence, **not** user approval of P00.
 
-**Recovery update (2026-10-15):** the private Unity 5.6 project has since received focused owner-authorized editor repairs and tests, beyond the initial offline preparation. [Current evidence, remaining checks and phase readiness](RECOVERY_STATUS_2026-10-15.md) distinguish these technical results from gate acceptance. The ledger has no approvals; the acceptance criteria below remain in force.
+**Recovery update (2026-10-15):** the owner now confirms gameplay, shaders/graphics and save work in Unity 5.6.4p3 editor (sound confirmed previously); see [handoff/acceptance checklist](UNITY56_BASELINE_AND_UNITY2018_HANDOFF.md) and [recovery evidence](RECOVERY_STATUS_2026-10-15.md). **The owner expressly chose editor-based PC validation instead of a standalone Windows EXE as the P03/P04 and P06 delivery format; the full scenario matrix, reproducibility and explicit phase approvals are unchanged.** P00 remains ACTIVE and no phase has been approved. No Unity 2018/Vita execution is implied.
 
 **Declared PS Vita identity:** `HGSKE1178` / **Hungry Shark Evolution Vita** ([single-source JSON](../config/port_identity.json)); see [APK user-data and filesystem study](DATA_EXTRACTION_AND_LAYOUT.md). This declaration does not approve later Unity/PSP2 phase work.
 
@@ -27,7 +27,8 @@ Official Unity references: [5.6.4p3](https://unity.com/releases/editor/whats-new
 - Once **and only once** phase N is `APPROVED`, phase N+1 becomes `ACTIVE`. The next phases remain `LOCKED`.
 - CI runs `tools/check_phase_gates.py` and checks a valid sequential ledger; it cannot independently verify real gameplay or that a GitHub URL truly represents consent. **Human review is mandatory.** For enforceable merge restrictions, set branch protection/rulesets to require the `phase-gates` status check and maintainer review.
 - Every attempt (including FAIL/BLOCKED) goes into [`EXPERIMENTS.md`](EXPERIMENTS.md) with precise tool version, source hash, setting, observed result and evidence. Logs must not contain copyrighted assets.
-- **Exceptions:** if a phase is impossible, do NOT auto-approve. Present its evidence and proposed, narrowly scoped acceptance-criteria change to the owner; only the owner can authorize revising this plan before re-running that phase. Never weaken gates to avoid work.
+- **Owner-approved validation-format change (2026-10-15):** the owner explicitly considers a Windows standalone executable unnecessary for this Vita port if the original Unity engine plays properly inside the editor; PC-level P03/P04 and P06 may therefore use documented **Unity Editor Play Mode** as an alternative to building a Windows EXE. This does **not** waive a complete gameplay matrix, cold-start save/load, clean reproduction, Android comparison, logs, owner approval or real hardware PSP2 testing. See [handoff](UNITY56_BASELINE_AND_UNITY2018_HANDOFF.md).
+- **Other exceptions:** if a phase is impossible, do NOT auto-approve. Present its evidence and proposed, narrowly scoped acceptance-criteria change to the owner; only the owner can authorize revising this plan before re-running that phase. Never weaken gates to avoid work.
 
 ### Evidence package for closing each gate
 
@@ -67,13 +68,13 @@ The [recovery status](RECOVERY_STATUS_2026-10-15.md) and [experiments](EXPERIMEN
 
 ### P03 — Restore actual Unity 5.6.4p3 PC gameplay (LOCKED)
 
-**Do:** Verify start → menu → start game → player shark moves → prey/food interaction → hunger/health progression → death/retry → UI → audio → save/load; test a fresh profile and a continued profile. Compare movement, timing and behavior with original Android baseline; only platform-specific services may be adapted. Produce a PC executable, not just a Unity editor screenshot.
+**Do:** Verify start → menu → start game → player shark moves → prey/food interaction → hunger/health progression → death/retry → UI → audio → save/load; test a fresh profile and a continued profile. Compare movement, timing and behavior with original Android baseline; only platform-specific services may be adapted. Desktop validation may run entirely in **Unity 5.6.4p3 editor Play Mode**, without producing a standalone Windows executable, per the owner's documented decision. **A screenshot by itself is not sufficient**: record the complete scenario matrix, editor settings, sanitized console/video or structured test transcript, save persisted across a restart, and Android comparison.
 
 **Acceptance:** an end-to-end **offline core gameplay loop** operates on desktop without fatal errors; each reference-matrix case has recorded PASS and comparison evidence. Offline store/ads not required but their exclusions must be documented.
 
 ### P04 — Freeze faithful original-engine reference (LOCKED)
 
-**Do:** Repeat P03 after clean import/build and fresh save. Catalog original-versus-PC divergences, eliminated hacks and known non-core exclusions. Archive local clean working Unity 5.6 project and sanitized build receipt, lock tests and commit checkpoint. Do not change the 5.6 baseline after approval; create a separate migration clone.
+**Do:** Repeat P03 after a clean import into a **separate project copy** and a fresh save, with editor Play Mode test receipt as the approved alternative to a standalone PC build. Confirm save after closing/reopening the editor/game; catalog original-versus-PC divergences, eliminated hacks and known non-core exclusions. Archive a private immutable Unity 5.6 source-project snapshot, its manifest/hashes, sanitized editor/test receipt and regression checklist. Do not change the 5.6 baseline after approval; create a separate migration clone **only when P05 becomes ACTIVE**.
 
 **Acceptance:** repeatable stable PC session, no regression to core mechanics, explicit owner confirmation **"Unity 5.6.4p3 native baseline accepted"**. **P05 is forbidden before this gate.**
 
@@ -85,9 +86,9 @@ The [recovery status](RECOVERY_STATUS_2026-10-15.md) and [experiments](EXPERIMEN
 
 ### P06 — Prove Unity 2018.2 PC gameplay parity (LOCKED)
 
-**Do:** Re-run the complete frozen P03/P04 regression suite in the 2018.2 desktop build, compare original-engine behaviors, saves, HUD, touch simulation, collisions, animation, sound and scene changes. Include side-by-side shader/material effects and underwater transparency using the [rendering reference](SHADERS_PSVITA_REFERENCE.md). Fix and repeat any regression **before** starting Vita work.
+**Do:** Re-run the complete frozen P03/P04 regression suite in **Unity 2018.2 editor Play Mode** (or optionally a PC standalone build), compare original-engine behaviors, saves, HUD, touch simulation, collisions, animation, sound and scene changes. Include side-by-side shader/material effects and underwater transparency using the [rendering reference](SHADERS_PSVITA_REFERENCE.md). Fix and repeat any regression **before** starting Vita work.
 
-**Acceptance:** same approved offline gameplay scenarios run on PC with documented equivalence (allowing explained rendering differences); real PC executable demonstrated. Owner explicitly approves 2018.2 desktop parity. **P07 forbidden until approved.**
+**Acceptance:** same approved offline gameplay scenarios run on PC with documented equivalence (allowing explained rendering differences); repeated documented desktop Editor Play Mode session **or** optional PC executable demonstrated. Owner explicitly approves 2018.2 desktop parity. **P07 forbidden until approved.**
 
 ### P07 — Independent native PSP2 toolchain smoke test (LOCKED)
 
