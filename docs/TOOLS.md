@@ -1,5 +1,7 @@
 # Toolchain and download checklist — Hungry Shark Evolution PS Vita
 
+**Current verified direct Windows x64 downloads, portable folder structure, prerequisites and local inventory checker:** [Tool Codex setup](TOOL_CODEX_LOCAL_SETUP.md). This general guide remains background; use the specific setup map to avoid downloading redundant tools. `Tool Codex/` is intentionally gitignored.
+
 **Verified against vendor/GitHub pages on 2026-10-14.** This is the **authoritative tools list**; do not create a second download list. Upstream "latest" releases can change, so record the **actual installed version and SHA-256** in the experiment record. Exact game/editor versions are pinned, irrespective of newer releases.
 
 **Current gate P00:** tools may be downloaded and inventoried, but **P01/P02+ implementation is LOCKED** until [PHASE_GATES.json](PHASE_GATES.json) is correctly advanced after owner approval. Installing software is not proof of game recovery or Vita compatibility.
@@ -65,7 +67,7 @@ In [Unity 2018.2 scripting restrictions](https://docs.unity.cn/2018.2/Documentat
 | **[JADX](https://github.com/skylot/jadx/releases/tag/v1.5.6)** | **1.5.6** (choose `jadx-gui-1.5.6-with-jre-win.zip` on Windows to avoid manual Java install) | Inspect Android Java/Dex `UnityPlayerActivity`, ads, Google services and custom bridge callbacks. Not a C# decompiler. |
 | **[Apktool](https://github.com/iBotPeaches/Apktool/releases/tag/v3.0.3)** · [install guide](https://apktool.org/docs/install/) | **3.0.3**; requires Java | Decode Android manifest/resources/Smali where JADX misses behavior. Not needed simply to unzip APK. |
 | **[Ghidra](https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.1.4_build)** | **12.1.4** | Only if evidence shows essential logic trapped in ARM Android `.so` plugins. Native Android ABI code is not the Unity PSP2 runtime; this is a research/adapter task, not direct recompilation. |
-| **[Temurin JDK 21](https://adoptium.net/temurin/releases/?version=21)** | Current patched JDK 21 LTS | Java dependency for Ghidra/Apktool/JADX CLI. Do not install separately if a suitable bundled Java runtime already covers the selected tool. |
+| **[Temurin JDK 25](https://adoptium.net/temurin/releases/?version=25)** | JDK 25, required by Ghidra 12.1.4 according to its current README | Java for Ghidra / optional Apktool. Bundled JADX JRE doesn't require this. Do not install separately if a suitable bundled Java runtime already covers the selected tool. |
 
 ## PS Vita shader reference archive (for P05–P11; not a P00 dependency)
 

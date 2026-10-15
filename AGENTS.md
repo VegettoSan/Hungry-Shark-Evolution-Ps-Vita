@@ -7,9 +7,10 @@ These rules apply to the **entire repository**.
 1. Read [`docs/PORTING_PLAN.md`](docs/PORTING_PLAN.md) **in full** and [`docs/PHASE_GATES.json`](docs/PHASE_GATES.json).
 2. Read [`docs/TECHNICAL_AUDIT.md`](docs/TECHNICAL_AUDIT.md) and [`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md).
 3. Read [`docs/TOOLS.md`](docs/TOOLS.md) and [`docs/HALO2D_PSP2_REFERENCE.md`](docs/HALO2D_PSP2_REFERENCE.md) for the **verified, phase-scoped downloads and compatibility caveats**. Do not auto-download a substitute or new editor just because it is newer. **Unity 5.6.4p3 is the source editor and Unity 2018.2.19f1 (verified in Halo 2D) is the preferred target; current PSP2 must be verified independently.**
-4. For first-run unattended local Codex recovery, follow [docs/CODEX_LOCAL_RECOVERY_TASK.md](docs/CODEX_LOCAL_RECOVERY_TASK.md). It is **phase-aware**: P00 environment checks are allowed, but P01 extraction/export is forbidden until explicit P00 owner approval. No private APK belongs in this repository.
-5. Run `python tools/check_phase_gates.py`. If it fails, **STOP** and correct the ledger (without fabricating approval).
-6. Only perform work allowed by the **single ACTIVE phase**. If the phase is AWAITING_APPROVAL or BLOCKED, focus exclusively on its proof or corrective work. **Never implement a LOCKED phase.**
+4. Before local Windows work, read [docs/TOOL_CODEX_LOCAL_SETUP.md](docs/TOOL_CODEX_LOCAL_SETUP.md), run `tools/check_tool_codex.ps1`, and consult ignored `Tool Codex/_tool_inventory.txt`. Portable executables live inside ignored `Tool Codex/` at the repository root; Unity 5.6 and 2018.2 are separately installed. Use local tools instead of unnecessary new downloads.
+5. For first-run unattended local Codex recovery, follow [docs/CODEX_LOCAL_RECOVERY_TASK.md](docs/CODEX_LOCAL_RECOVERY_TASK.md). It is **phase-aware**: P00 environment checks are allowed, but P01 extraction/export is forbidden until explicit P00 owner approval. No private APK belongs in this repository.
+6. Run `python tools/check_phase_gates.py`. If it fails, **STOP** and correct the ledger (without fabricating approval).
+7. Only perform work allowed by the **single ACTIVE phase**. If the phase is AWAITING_APPROVAL or BLOCKED, focus exclusively on its proof or corrective work. **Never implement a LOCKED phase.**
 
 ## Identity, original APK data and Vita storage
 

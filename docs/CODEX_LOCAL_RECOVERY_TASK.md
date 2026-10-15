@@ -1,5 +1,7 @@
 # Codex local assignment — Hungry Shark Evolution 6.4.2 → Unity 5.6.4p3
 
+**Tooling first:** use ignored `Tool Codex/` folder in the Windows clone, read [download/folder map](TOOL_CODEX_LOCAL_SETUP.md), run `tools/check_tool_codex.ps1`, and read its `Tool Codex/_tool_inventory.txt` report before asking for tools or browsing. The two Unity editors remain outside the repo.
+
 **Purpose:** give Codex a bounded, reproducible task for preparing the user's **own Windows PC** for restoring HSE 6.4.2 in original Unity 5.6.4p3, with minimal model-token waste.
 
 **Identity/data policy:** the app will be named **Hungry Shark Evolution Vita**, Title ID **HGSKE1178** (see [identity JSON](../config/port_identity.json)). Consult [APK-to-Vita data design](DATA_EXTRACTION_AND_LAYOUT.md). An entire Android Unity Data extraction is appropriate for developer research once P01 is approved; it is NOT evidence that raw Android Unity serialized files can be deployed into a PSP2 VPK, and it is NOT the final public extractor.
