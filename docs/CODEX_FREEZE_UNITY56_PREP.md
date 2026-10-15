@@ -6,7 +6,7 @@
 
 Trabaja dentro del clon local de `VegettoSan/Hungry-Shark-Evolution-Ps-Vita` y con los recursos privados en `G:\PsVita\My Ports\HSEVita-Local`. Lee `AGENTS.md`, `docs/PORTING_PLAN.md`, `docs/PHASE_GATES.json`, `docs/RECOVERY_STATUS_2026-10-15.md` y `docs/UNITY56_BASELINE_AND_UNITY2018_HANDOFF.md`. **Objetivo: dejar documentada, respaldada y verificable la base funcional Unity 5.6.4p3 SIN iniciar aún la migración a Unity 2018.**
 
-El propietario confirmó en chat que el gameplay, shaders, gráficos y guardado funcionan; antes ya había confirmado audio y movimiento. Registra esto como **OWNER-CONFIRMED** sin inventar evidencia de persistencia de guardado tras salir, sesiones largas, comparación exhaustiva con Android ni un ejecutable PC. **No hace falta producir un EXE de Windows**: el plan ahora permite matriz completa en Unity Editor Play Mode.
+El propietario confirmó en chat que el gameplay, shaders, gráficos y guardado funcionan; antes ya había confirmado audio y movimiento. Registra esto como **OWNER-CONFIRMED** indicando que el propietario confirmó también **recuperar el guardado tras cerrar y reabrir**. Esa confirmación no equivale a un log de prueba independiente en una copia limpia, sesiones largas, comparación exhaustiva con Android ni un ejecutable PC. **No hace falta producir un EXE de Windows**: el plan ahora permite matriz completa en Unity Editor Play Mode.
 
 1. Comprueba estado Git y fases con `py -3 tools/check_phase_gates.py`; jamás alteres el ledger para simular aprobaciones.
 2. Reutiliza informes y checkpoints existentes; no repitas AssetRipper ni la extracción. Localiza el proyecto Unity 5.6 actual y cierra o coordina con el usuario si el editor está abierto. **Nunca trabajes sobre un proyecto que otro Unity tenga abierto**.

@@ -2,7 +2,7 @@
 
 Community research and development repository for a **native PlayStation Vita port** of *Hungry Shark Evolution*, preserving original gameplay logic and Unity assets wherever technically possible.
 
-> **Status (2026-10-15):** private recovery opens in **Unity 5.6.4p3**; the owner now **confirms gameplay, shaders/graphics, sound and save function work** in tested Editor sessions. Complete reproducible gameplay matrix, save-after-cold-restart, Android comparison and frozen baseline remain pending. A standalone Windows executable is **optional** under the owner's editor-based test decision. **P00 remains ACTIVE; 0 stages approved, no Unity 2018 migration or PS Vita build.** See [status](docs/RECOVERY_STATUS_2026-10-15.md) and [freeze/handoff](docs/UNITY56_BASELINE_AND_UNITY2018_HANDOFF.md).
+> **Status (2026-10-15):** private recovery opens in **Unity 5.6.4p3**; the owner now **confirms gameplay, shaders/graphics, sound and saving/reloading after closing and reopening work** in tested Editor sessions. Complete reproducible gameplay matrix, independent logged cold-reload validation, Android comparison and frozen baseline remain pending. A standalone Windows executable is **optional** under the owner's editor-based test decision. **P00 remains ACTIVE; 0 stages approved, no Unity 2018 migration or PS Vita build.** See [status](docs/RECOVERY_STATUS_2026-10-15.md) and [freeze/handoff](docs/UNITY56_BASELINE_AND_UNITY2018_HANDOFF.md).
 
 ## Reference build
 
