@@ -2,7 +2,7 @@
 
 **Registro formal: P00 ACTIVE; P01–P12 LOCKED; 0/13 fases aprobadas.** [Ledger](PHASE_GATES.json) · [Plan y criterios](PORTING_PLAN.md) · [Experimentos](EXPERIMENTS.md).
 
-**VERIFIED:** existe una recuperación privada que abre en Unity **5.6.4p3**, con compilaciones de código y pruebas de shaders realizadas. El propietario informa que entra en gameplay, mueve el tiburón con teclado y ratón y, después de las últimas correcciones, «parece estar todo bien». También confirma que ve el mosasaurio y los demás modelos. Es evidencia de una prueba breve del propietario; no equivale a completar la matriz de gameplay, disponer de un ejecutable PC probado o aprobar una fase.
+**VERIFIED:** existe una recuperación privada que abre en Unity **5.6.4p3**, con compilaciones de código y pruebas de shaders realizadas. El propietario informa que entra en gameplay, mueve el tiburón con teclado y ratón y, después de las últimas correcciones, «parece estar todo bien». También confirma que ve el mosasaurio y los demás modelos. Tras activar el altavoz de las opciones del propio juego confirma oír sonido; la captura nativa registra señal de audio en menú y gameplay. Es evidencia de pruebas breves; no equivale a completar la matriz de gameplay, disponer de un ejecutable PC probado o aprobar una fase.
 
 Este documento actualiza el estado actual. [OFFLINE_RECOVERY_2026-10-15.md](OFFLINE_RECOVERY_2026-10-15.md) conserva el resultado histórico **anterior** a instalar/probar el editor. Las filas antiguas NOT TESTED siguen describiendo su momento; los experimentos posteriores aportan las comprobaciones nuevas.
 
@@ -15,7 +15,7 @@ Los datos del juego permanecen fuera del repositorio, en el espacio privado del 
 | `Original_Data_Extracted/Data` | Datos originales reconstruidos y ensamblados Mono; fuente de investigación |
 | `HSE642_AssetRipper_RawExport/ExportedProject` | Exportación original intacta; no abrirla para trabajar ni sobrescribirla |
 | `HSE642_Unity56_ReadyToOpen` | Única copia Unity de trabajo |
-| `Checkpoints/01_*.json` a `18_*.json` | Integridad, operaciones terminadas y ubicación de sus evidencias |
+| `Checkpoints/01_*.json` a `19_*.json` | Integridad, operaciones terminadas y ubicación de sus evidencias |
 | `Reports/` | Informes, inventarios, fuentes de referencia, respaldos, diffs y resultados de pruebas privados |
 
 Las rutas absolutas, código recuperado, programas de shaders, assets y logs completos no se incorporan a Git. Los informes de cada operación conservan sus respaldos y diffs. No se ha publicado contenido propietario ni generado un VPK.
@@ -41,6 +41,7 @@ APK de referencia: `com.fgol.HungrySharkEvolution`, **6.4.2 / 228**, SHA-256 `52
 | Agua, frenesí y shaders adicionales | **COMPILA_EN_UNITY:** otros 28 shaders, 78 variantes y 156 etapas D3D aisladas; incluye HSE/Water, la familia SphereMap usada por Gold y los seis NGUI solicitados. 389 materiales enlazan su shader esperado; 419 campos de referencia corregidos. Pruebas de altura del agua y seis efectos NGUI pasan | 17; TURBOGFX-001–005 |
 | Inicialización y cierre | **VERIFIED:** diagnósticos de gizmos y destrucción toleran managers aún no creados o ya destruidos. Diez fuentes afectadas; comparación IL conserva CanSpawn, UpdateBoost, física, estadísticas y lógica de spawning examinadas. Contratos de cierre sin propietarios pasan | 17; TURBOGFX-003–005 |
 | Tiburones y modelos | **VERIFIED:** 20/20 prefabs jugables intactos; 2.957 mallas y sus meta idénticas al raw, coincidentes con el recuento de objetos del juego. 1.167 prefabs presentes; 981 clips, 12 controladores y 37 avatares intactos. Sin referencias ausentes en las dependencias examinadas. Mosasaurus/Mr Snappy tiene modelo de gameplay y selector; el propietario confirma verlo | 18; MODELS-001 |
+| Audio silenciado | **VERIFIED:** 305 clips y meta intactos, todos importados con muestras/frecuencia válidas. El silencio era la opción interna del juego: IsSoundMuted=True, listener pausado y volumen 0, aunque el editor no estaba silenciado. El propietario activó el altavoz original; once muestras posteriores tienen señal, tres en InGame, y confirma oír sonido. No se modificaron código, assets, configuración ni guardados para forzarlo; diagnóstico retirado | 19; AUDIO-001 |
 
 Los recuentos de materiales de distintos checkpoints describen operaciones diferentes y no deben sumarse como un número de materiales únicos. El censo actual de fuentes contiene **46 shaders con nombres internos únicos** recuperados como `.shader`; eso tampoco significa que todos hayan pasado una comparación visual exhaustiva. Los nombres internos se determinaron mediante los datos originales, no normalizando los nombres de archivo solicitados.
 
@@ -73,7 +74,7 @@ Esta tabla organiza la evidencia pendiente; no registra pruebas nuevas realizada
 | Turbo | Contratos de acción Windows pasan; última prueba general positiva del propietario | Mantener Espacio/Ctrl, observar consumo/recarga y efecto original en gameplay; registrar resultado específico |
 | Comida, hambre y muerte | Lógica examinada conservada; sin matriz de ejecución completa | Comer, daño/hambre, muerte, reintento y retorno a menú |
 | Gráficos y modelos | Shaders/materiales probados según los checkpoints; modelos conservados y vistos por el propietario | Comparación de agua, cáusticas, transparencias, escudos, frenesí dorado y animaciones con Android |
-| Sonido e interfaz | Assets exportados; parte de la interfaz vista durante las pruebas | Música, efectos, pausa, menús y cambio de tiburón sin errores |
+| Sonido e interfaz | Altavoz original activado por el propietario; señal nativa de música de menú, ambiente y efectos en gameplay, y confirmación auditiva. Parte de la interfaz vista durante las pruebas | Regresión completa de música/efectos, pausa, menús, cambio de tiburón y persistencia de la opción tras reiniciar |
 | Guardado y carga | No se alteró el formato ni se pretende simular servicios/progreso | Perfil nuevo y continuado, cerrar completamente el proceso y verificar persistencia; preservar el perfil actual |
 | Servicios no disponibles | Contratos aislados evitan JNI/recompensas simuladas | Inicio offline del ejecutable y exclusiones claras de publicidad, compras, enlaces y autenticación |
 | Repetibilidad | Copia raw y checkpoints conservados | Importación/build limpios y repetir la matriz; archivar base Unity 5.6 con recibo y aceptación P04 |
