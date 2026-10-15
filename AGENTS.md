@@ -15,6 +15,7 @@ These rules apply to the **entire repository**.
 
 - User-approved title ID **`HGSKE1178`** and display name **Hungry Shark Evolution Vita**: use [config/port_identity.json](config/port_identity.json) as canonical values for the future Unity 2018 PSP2 settings, extractor and docs. Never reuse Halo 2D title, content IDs or secrets.
 - Read [docs/DATA_EXTRACTION_AND_LAYOUT.md](docs/DATA_EXTRACTION_AND_LAYOUT.md) before packaging or extraction work. Standard app installation is `ux0:app/<TITLEID>/` (runtime `app0:`); saved progress requires its separately verified persistent-data path, not the installed app directory.
+- **xdelta3 is an optional candidate for P12 release data delivery**, based on [Predators / Pocket Mortys research](docs/XDELTA_UNITY_PORTS_RESEARCH.md); it is **NOT** an APK-to-Vita converter or a way to bypass original-engine recovery. Neither the full Vita target ZIP nor a safe-to-publish HSE patch exists yet. Inspect source/target hashes and copyright implications; only pursue this after the PSP2 gameplay and content gates pass.
 - **Developer full extraction and final end-user minimal extraction are different products.** In approved P01 preserve all reconstructed Unity `Data/` and Mono assemblies; do not copy original Android serialized files into the Unity PSP2 runtime and claim success.
 - Exact PSP2 data subtree and final end-user data set are **UNTESTED** pending real device tests (P07–P12). Do not invent paths or a converter; research/documentation in P00 does not unlock implementation.
 

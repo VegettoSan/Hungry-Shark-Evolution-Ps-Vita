@@ -4,6 +4,8 @@
 
 **Identity/data policy:** the app will be named **Hungry Shark Evolution Vita**, Title ID **HGSKE1178** (see [identity JSON](../config/port_identity.json)). Consult [APK-to-Vita data design](DATA_EXTRACTION_AND_LAYOUT.md). An entire Android Unity Data extraction is appropriate for developer research once P01 is approved; it is NOT evidence that raw Android Unity serialized files can be deployed into a PSP2 VPK, and it is NOT the final public extractor.
 
+**xdelta note:** our [Predators / Pocket Mortys reference](XDELTA_UNITY_PORTS_RESEARCH.md) documents optional **P12** user-data patching. Codex must **NOT** waste P00/P01 tokens generating an xdelta to the original Android Unity files or claiming that it solves Unity engine porting; a working target PSP2 data ZIP does not yet exist.
+
 **Run mode:** **LOCAL WINDOWS** using Codex desktop/CLI opened in this cloned repository. **Do not use Codex Cloud** unless the owner has specifically and lawfully provided the private APK and necessary editor/tool access to that isolated environment. An APK attached to a different ChatGPT Project is **not automatically a file on this PC or a Codex cloud worker**.
 
 **Before starting:** user should save their **owned** 6.4.2 APK in a private local folder outside this repository. Provide its actual full path in the first message. Do not attach/share the copyrighted APK to GitHub, tickets or logs. Leave the Windows PC powered and awake while local tasks operate; cloud tasks differ.

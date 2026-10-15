@@ -71,6 +71,12 @@ In [Unity 2018.2 scripting restrictions](https://docs.unity.cn/2018.2/Documentat
 
 **[Official Unity 2018.2.19f1 Built-in Shaders ZIP](https://download.unity3d.com/download_unity/06990f28ba00/builtin_shaders-2018.2.19f1.zip)** is the **exact historical Unity 2018.2.19f1 shader-source reference**. Unity [lists a Shaders archive for that editor](https://unity.com/releases/editor/whats-new/2018.2.19f1). Use it to inspect compatible ShaderLab/Cg include patterns; **do not copy all shaders or assume PSP2 performance**. The binary URL was not downloaded/tested during this research. See [the source-backed research and 30/60 FPS test methodology](SHADERS_PSVITA_REFERENCE.md). Shader review is non-binding; gameplay correctness and gate order remain mandatory.
 
+## xdelta3: optional end-user data patch tool (P12, research allowed in P00)
+
+[**xdelta3 v3.2.2 official release**](https://github.com/jmacd/xdelta/releases/tag/v3.2.2), 2026-10-09 · [**Windows x64 direct ZIP**](https://github.com/jmacd/xdelta/releases/download/v3.2.2/xdelta3-3.2.2-windows-x86_64.zip). Maintained Apache-2.0 version. [**xdelta3 3.1.0 historical Windows x64**](https://github.com/jmacd/xdelta-gpl/releases/download/v3.1.0/xdelta3-3.1.0-x86_64.exe.zip) is a fallback for older port patches if needed; test actual compatibility, don't assume. [Detailed Predators/Pocket Mortys case study](XDELTA_UNITY_PORTS_RESEARCH.md).
+
+xdelta3 creates/applies **binary differences** (`xdelta3 -e -s original target.zip patch.xdelta` / `xdelta3 -d -s original patch.xdelta target.zip`), **not** Unity project recovery or Android→PSP2 conversion. Used only after producing a valid target file by other means. The `-B` parameter is **source cache/window bytes**, not a conversion flag. You may download it now, but **do not generate/share a Hungry Shark asset patch** while P12 remains locked. A delta may itself contain protected bytes; review distribution rights.
+
 ## 6. Media repair and platform optimization (P02–P11, only as needed)
 
 | Tool | Latest verified / download | Purpose |

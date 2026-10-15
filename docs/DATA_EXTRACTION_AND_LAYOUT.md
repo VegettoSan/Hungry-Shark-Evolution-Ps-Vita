@@ -35,6 +35,12 @@ Expected APK SHA-256: `52b7d8754ab8fec75c3b656a0dc5ec8dc849565adc402487a3ac093f6
 
 If a working build requires whole Unity scenes/assets compiled for PSP2, a final public end-user converter may need a genuine platform conversion path. **A proprietary PSP2 editor/module is not an acceptable hidden dependency for a universal public extractor**. Document this as a possible blocker and do not invent a loader.
 
+### xdelta3 in other Unity port distribution workflows
+
+Real releases from [Predators](https://github.com/AJ170/Predators-PSVita-Port) and [Pocket Mortys](https://github.com/celticg/AS-Pocket-Mortys-vita) use **a user-owned Android OBB or APK + precomputed xdelta3 patch → Vita game-data ZIP**, then copy content to the installed `ux0:app/<TITLEID>/`. This demonstrates a user-friendly packaging pattern **without requiring the user to run Unity**. It does **not** demonstrate automatic Android Unity → PSP2 conversion. Mechanistically, producing such a delta requires a prepared target archive; **how exactly each author generated their target archive is not published** in either repository. See [full binary-patch research, size/version evidence, legal caveats and gated experiment plan](XDELTA_UNITY_PORTS_RESEARCH.md).
+
+For Hungry Shark, treat **stub VPK + xdelta** as a **candidate P12 distribution option**, alongside a conversion script. It only becomes viable after the real target PSP2 output has passed gameplay and content tests, and patch redistribution rights have been assessed. Do not assume that the original Android `Data` files can be dropped into the Vita `Media` directory.
+
 ## 3. Chosen location and path probes
 
 | Meaning | Path/API | Confidence |

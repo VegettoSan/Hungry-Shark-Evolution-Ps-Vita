@@ -39,6 +39,7 @@ Agents **MUST NOT** jump ahead. Formal phase approvals are maintained in [`docs/
 - [Halo 2D PSP2 evidence / Unity 2018.2.19f1](docs/HALO2D_PSP2_REFERENCE.md)
 - [PS Vita shader research, visual parity and 30/60 FPS targets](docs/SHADERS_PSVITA_REFERENCE.md)
 - [Developer vs. user APK extraction and Vita app data storage](docs/DATA_EXTRACTION_AND_LAYOUT.md)
+- [xdelta3 research: Predators, Pocket Mortys and future HSE delivery](docs/XDELTA_UNITY_PORTS_RESEARCH.md)
 - [Codex unattended local first-run task (P00 → approved P01)](docs/CODEX_LOCAL_RECOVERY_TASK.md)
 - [Technical audit and reproducible APK identity](docs/TECHNICAL_AUDIT.md)
 - [Experiment history: PASS / FAIL / NOT TESTED](docs/EXPERIMENTS.md)
