@@ -6,7 +6,7 @@ These rules apply to the **entire repository**.
 
 1. Read [`docs/PORTING_PLAN.md`](docs/PORTING_PLAN.md) **in full** and [`docs/PHASE_GATES.json`](docs/PHASE_GATES.json).
 2. Read [`docs/TECHNICAL_AUDIT.md`](docs/TECHNICAL_AUDIT.md) and [`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md).
-3. Read [`docs/TOOLS.md`](docs/TOOLS.md) for the **verified, phase-scoped downloads and compatibility caveats**. Do not auto-download a substitute or new editor just because it is newer. **Unity 5.6.4p3 and the selected Unity 2018.2 patch are pinned; PSP2 must be verified independently.**
+3. Read [`docs/TOOLS.md`](docs/TOOLS.md) and [`docs/HALO2D_PSP2_REFERENCE.md`](docs/HALO2D_PSP2_REFERENCE.md) for the **verified, phase-scoped downloads and compatibility caveats**. Do not auto-download a substitute or new editor just because it is newer. **Unity 5.6.4p3 is the source editor and Unity 2018.2.19f1 (verified in Halo 2D) is the preferred target; current PSP2 must be verified independently.**
 4. Run `python tools/check_phase_gates.py`. If it fails, **STOP** and correct the ledger (without fabricating approval).
 5. Only perform work allowed by the **single ACTIVE phase**. If the phase is AWAITING_APPROVAL or BLOCKED, focus exclusively on its proof or corrective work. **Never implement a LOCKED phase.**
 

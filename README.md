@@ -15,7 +15,7 @@ Community research and development repository for a **native PlayStation Vita po
 | Other assemblies | `Assembly-CSharp-firstpass.dll`, `Assembly-UnityScript.dll`, `Assembly-UnityScript-firstpass.dll` |
 | Serialized scenes | `level0` through `level17` (18 files; not necessarily 18 gameplay levels) |
 | Android architecture | `armeabi-v7a` |
-| Candidate Vita editor | **Unity 2018.2 + an independently verified PSP2 build target** |
+| Candidate Vita editor | **Unity 2018.2.19f1 (from Halo 2D), independently verify PSP2 module** |
 
 The newer 14.5.0 package uses Unity 6 / IL2CPP and is not our initial porting baseline.
 
@@ -32,6 +32,7 @@ Agents **MUST NOT** jump ahead. Formal phase approvals are maintained in [`docs/
 - [Detailed sequential project plan](docs/PORTING_PLAN.md)
 - [Current phase approval ledger](docs/PHASE_GATES.json)
 - [Rules for Codex, AI agents and contributors](AGENTS.md)
+- [Halo 2D PSP2 evidence / Unity 2018.2.19f1](docs/HALO2D_PSP2_REFERENCE.md)
 - [Technical audit and reproducible APK identity](docs/TECHNICAL_AUDIT.md)
 - [Experiment history: PASS / FAIL / NOT TESTED](docs/EXPERIMENTS.md)
 - **[Complete toolchain: current downloads, dependencies and install order](docs/TOOLS.md)**

@@ -44,11 +44,15 @@ The game contains both `Assembly-UnityScript.dll` and `Assembly-UnityScript-firs
 - Unity's official [2018.2 announcement](https://unity.com/blog/engine-platform/2018-2-now-available) declares the **end of UnityScript support**; the historical compiler removal timeline has nuances, so validate actual behavior in the selected editor rather than assume recovered UnityScript assemblies remain functional.
 - If original assemblies resolve but source conversion is impossible, produce an evidence-backed migration plan for equivalent C# behavior and preserve the serialized public API. Owner approval is still required at the current gate.
 
+## Halo 2D reference (verified)
+
+[Halo2D_PsVita](https://github.com/VegettoSan/Halo2D_PsVita) was authored in **Unity 2018.2.19f1**, contains historical PSP2 build cache and has a published VPK. This makes **2018.2.19f1 the preferred target**, replacing the earlier untested 2018.2.21f1 recommendation. The public **[2018.2.19f1 Unity release page](https://unity.com/releases/editor/whats-new/2018.2.19f1)** is the authoritative download location if reinstallation is needed. **Do not transplant cached Unity players, Sony examples, keystones, passwords or private platform files from the Halo project.** See [detailed evidence and limitations](HALO2D_PSP2_REFERENCE.md).
+
 ## 4. Reserve for P05–P06: Unity 2018.2 desktop migration
 
 | Tool | Required version / link | Check |
 | --- | --- | --- |
-| **Unity 2018.2.21f1** | [Official version page](https://unity.com/releases/editor/whats-new/2018.2.21f1) · [Windows x64 installer](https://download.unity3d.com/download_unity/a122f5dc316d/Windows64EditorInstaller/UnitySetup64-2018.2.21f1.exe) | **Proposed exact target editor**, installed **side by side**, not in place of 5.6.4p3. Do not upgrade the only working original project. |
+| **Unity 2018.2.19f1** | [Official version page](https://unity.com/releases/editor/whats-new/2018.2.19f1) | **Evidence-backed target from [Halo 2D](HALO2D_PSP2_REFERENCE.md) (2018.2.19f1)**, installed **side by side**, not in place of 5.6.4p3. Do not upgrade the only working original project. |
 | Built-in Unity compatibility tools | Editor Console, API Updater, UnityYAMLMerge, Profiler, Frame Debugger | Preserve GUID/fileID/MonoBehaviour data; fix C# API changes and scene references with regressions. |
 | PSP2 build-target availability check | Official editor build modules / developer installation, when authorized | **Inspect P00**, but formal **build smoke test P07**. An editor installer may omit PSP2, even if the Unity documentation contains `BuildTarget.PSP2`. |
 
@@ -81,13 +85,13 @@ In [Unity 2018.2 scripting restrictions](https://docs.unity.cn/2018.2/Documentat
 - Unity's publicly archived **2018.2 Windows editor is not proof** that the associated PSP2 build target, compatible Unity runtime, signing, licensed platform tools and deployment path are installed or obtainable in the current environment.
 - Do not download redistributed Sony SDKs, leaked Unity console modules, keys, signatures or other restricted binaries from unofficial sources. Do not ask agents to find such files.
 - Record **YES / NO / UNKNOWN** for: PSP2 option visible; matching module installed; target platform dependencies satisfied; authorized build and deployment access. For P00, just inspect/inventory; if UNKNOWN, note it as a major risk. P07 must produce **a real physical-device proof** or remain BLOCKED.
-- Some homebrew-developed games use a previously acquired PSP2-capable Unity installation; that does **not** by itself prove this exact 2018.2.21f1 editor has a compatible module. A different PSP2-capable 2018.2 patch, if proven necessary, requires documented selection and approval before migrating.
+- Some homebrew-developed games use a previously acquired PSP2-capable Unity installation; that does **not** by itself prove the *currently installed* 2018.2.19f1 editor still has a compatible PSP2 module. A different PSP2-capable 2018.2 patch, if proven necessary, requires documented selection and approval before migrating.
 
 ## 8. Install order for Windows x64 — minimal duplicate downloads
 
 **P00 (now):** install **Unity 5.6.4p3 → Python → Git → 7-Zip**. Use an existing IDE if available. Verify the editor can create and run a **blank Windows PC project**, document original Android observations. Merely downloading tools does not approve a gate.
 
-**Prestage but don't use out of phase:** AssetRipper 2.0.0, ILSpy 11.1, dnSpyEx 6.6.0 and the official Unity 2018.2.21f1 installer; optionally store UABEA v8 as a fallback. These are the only extra downloads worth preparing immediately to avoid repetitive agent searches.
+**Prestage but don't use out of phase:** AssetRipper 2.0.0, ILSpy 11.1, dnSpyEx 6.6.0 and Unity **2018.2.19f1**, already reported installed and evidenced by [Halo 2D](HALO2D_PSP2_REFERENCE.md); no new editor download needed; optionally store UABEA v8 as a fallback. These are the only extra downloads worth preparing immediately to avoid repetitive agent searches.
 
 **Only if tests require them:** UnityScript converter + Unity 2018.1 bridge; JADX/Apktool/JDK; AssetStudio/UABEANext; Ghidra; Blender/FFmpeg; Vita3K. No Cpp2IL for this Mono version.
 
@@ -123,6 +127,6 @@ In both Unity editors, record `Help > About` version, install directory and avai
 
 ### References and versioning policy
 
-Official Unity [5.6.4p3 notes](https://unity.com/releases/editor/whats-new/5.6.4p3) · [2018.2.21f1 notes](https://unity.com/releases/editor/whats-new/2018.2.21f1) · [AssetRipper import caveats](https://github.com/AssetRipper/AssetRipper/blob/master/docs/articles/CommonIssues.md) · [UnityScript converter's actual support window](https://github.com/Unity-Technologies/unityscript2csharp) · [Unity 2018.2 console/AOT scripting restrictions](https://docs.unity.cn/2018.2/Documentation/Manual/ScriptingRestrictions.html).
+Official Unity [5.6.4p3 notes](https://unity.com/releases/editor/whats-new/5.6.4p3) · [2018.2.19f1 notes](https://unity.com/releases/editor/whats-new/2018.2.19f1) · [AssetRipper import caveats](https://github.com/AssetRipper/AssetRipper/blob/master/docs/articles/CommonIssues.md) · [UnityScript converter's actual support window](https://github.com/Unity-Technologies/unityscript2csharp) · [Unity 2018.2 console/AOT scripting restrictions](https://docs.unity.cn/2018.2/Documentation/Manual/ScriptingRestrictions.html).
 
 **Version fields mean "latest stable verified on 2026-10-14", not an eternal latest.** Follow upstream release pages before downloading later; don't silently replace the pinned Unity versions.

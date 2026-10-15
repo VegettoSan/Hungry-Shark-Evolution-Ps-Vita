@@ -8,10 +8,10 @@
 
 1. **Original game 6.4.2** is a **Unity 5.6.4p3 / Mono** Android build. Unity officially released 5.6.4p3 **2017-11-20**, before the 2018 release family.
 2. **First**, rebuild/recover a Unity 5.6.4p3 editor project, repair references, make core **desktop gameplay work**, and freeze a reproducible baseline. Recovery is not equal to having original Unity source.
-3. **Only after approved Unity 5.6.4p3 gameplay**, clone that project and migrate **the clone** into **Unity 2018.2** (candidate editor 2018.2.21f1, subject to verifying PSP2 installation). Prove desktop gameplay parity again.
+3. **Only after approved Unity 5.6.4p3 gameplay**, clone that project and migrate **the clone** into **Unity 2018.2** (candidate editor 2018.2.19f1, subject to verifying PSP2 installation). Prove desktop gameplay parity again.
 4. **Only after approved Unity 2018.2 desktop gameplay**, build with a working **PSP2 Unity player/module** and test on physical PS Vita. Having an old public editor does *not* grant PSP2 build support.
 
-Official Unity references: [5.6.4p3](https://unity.com/releases/editor/whats-new/5.6.4p3), [2018.2.21f1](https://unity.com/releases/editor/whats-new/2018.2.21f1), [2018.2 release](https://unity.com/blog/engine-platform/2018-2-now-available). Unity's PSP2 build target is marked unsupported **starting at 2018.3**; **this does not guarantee PSP2 is installed in 2018.2**. [UnityCsReference evidence](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Runtime/Export/BaseClass.cs).
+Official Unity references: [5.6.4p3](https://unity.com/releases/editor/whats-new/5.6.4p3), [2018.2.19f1](https://unity.com/releases/editor/whats-new/2018.2.19f1), [2018.2 release](https://unity.com/blog/engine-platform/2018-2-now-available). Unity's PSP2 build target is marked unsupported **starting at 2018.3**; **this does not guarantee PSP2 is installed in 2018.2**. [UnityCsReference evidence](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Runtime/Export/BaseClass.cs).
 
 **UnityScript caution:** the APK includes `Assembly-UnityScript*.dll`. Existing compiled assemblies, recovered `.js` sources, conversion tools and Unity 2018.2 compatibility have different constraints. Inventory what each component actually does, preserve serialized identities and migrate only as needed. Do **not** claim automatic UnityScript conversion succeeds.
 
@@ -33,7 +33,7 @@ Record (a) commit SHA + source input hash, (b) editor/AssetRipper/SDK build vers
 
 ### P00 — Reproducible source and original editor setup (ACTIVE)
 
-**Do:** Verify owned source 6.4.2 APK hash against [audit](TECHNICAL_AUDIT.md), ZIP CRC and `5.6.4p3` header. Install **exact Unity 5.6.4p3** from official archive, verify editor starts and a blank desktop project runs. Locally reproduce Android version gameplay for a reference matrix (menu, load, movement, feeding, health/death, save, audio); capture notes/screenshots privately. Record available Unity 2018.2 + PSP2 toolchain inventory **without attempting a migration**, and record the complete [tool installation/inventory checklist](TOOLS.md). Do not infer PSP2 availability from a standard public Unity installer.
+**Do:** Verify owned source 6.4.2 APK hash against [audit](TECHNICAL_AUDIT.md), ZIP CRC and `5.6.4p3` header. Install **exact Unity 5.6.4p3** from official archive, verify editor starts and a blank desktop project runs. Locally reproduce Android version gameplay for a reference matrix (menu, load, movement, feeding, health/death, save, audio); capture notes/screenshots privately. Check current Unity **2018.2.19f1** + PSP2 toolchain against the historical [Halo 2D evidence](HALO2D_PSP2_REFERENCE.md); record this environment inventory **without attempting a migration**, and record the complete [tool installation/inventory checklist](TOOLS.md). Do not infer PSP2 availability from a standard public Unity installer.
 
 **Acceptance:** APK hash and Unity version verified; editor version screen/log and PC blank scene execution demonstrated; baseline gameplay observations documented; environment constraints recorded. **Static APK audit alone does not close the gate.**
 
@@ -63,7 +63,7 @@ Record (a) commit SHA + source input hash, (b) editor/AssetRipper/SDK build vers
 
 ### P05 — Migration clone to Unity 2018.2 (LOCKED)
 
-**Do:** Copy (never upgrade in place) the approved Unity 5.6 project. Pin exact selected 2018.2 editor and identify the functional PSP2 target version available locally. Handle engine API changes, assemblies, serialization and UnityScript migration; keep GUID/fileID mappings intact. The official UnityScript-to-C# converter documents a Unity 2017.3–2018.1.x support window; any temporary 2018.1 bridge is **conditional** and must not bypass the approved original-engine baseline. Compile a representative test scene on PC and audit all warnings/errors.
+**Do:** Copy (never upgrade in place) the approved Unity 5.6 project. Prefer the verified Halo 2D **2018.2.19f1** editor (do not force 2018.2.21f1); pin its exact version and identify the actually working PSP2 target module locally. Handle engine API changes, assemblies, serialization and UnityScript migration; keep GUID/fileID mappings intact. The official UnityScript-to-C# converter documents a Unity 2017.3–2018.1.x support window; any temporary 2018.1 bridge is **conditional** and must not bypass the approved original-engine baseline. Compile a representative test scene on PC and audit all warnings/errors.
 
 **Acceptance:** native Unity 2018.2 project imports and compiles with zero unaccounted errors, scenes/sprite/prefab references verified, differences documented. **Merely opening in 2018.2 is not acceptance.**
 
