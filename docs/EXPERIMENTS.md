@@ -1,5 +1,23 @@
 # Experiment log
 
+## Focused owner-requested Unity 2018 runtime audit — 2026-10-16 UTC
+
+| Date (UTC) | ID | Input / tool / settings | Observed result | Evidence / next action |
+| --- | --- | --- | --- | --- |
+| 2026-10-16 | MIG18-003 | Base commit `ef672d6`; preserved Unity2018 log SHA-256 `7784eb39148b502d39558003cde24ad9be3293f0b4e56645f7a5d64200968bba`; AnimControl input `5233fb8b02fd4fcc71a5e9b231f8928771de7a13c78eea4048c94e79417d16f0`. Python grouped 1035 selected diagnostics / 43 signatures. Native read-only editor probes; Unity 2018.2.19f1, mcs 5.11.0.0 CLI with real session options | **VERIFIED:** imported clip/state names differ from original keys, preceding 937 exceptions. Exact name restoration at initialization; 981 clip sources match 5.6. **FAIL first gameplay:** 44 new adapter exceptions on absent Animation; bounded call corrected and first log retained. **PASS limited second gameplay:** 0 exceptions, 0 missing animation messages; 36 player samples, max 22 initialized controllers, no absent active states. CLI/native main recompile passes; 262 CLI warnings remain | [Sanitized audit](UNITY2018_RUNTIME_AUDIT_2026-10-16.md); private `Reports/RuntimeAudit_20261016/Informe_final.md`, before/after logs, SHA-256 receipt, native tests and full manifests. Eight historical Missing Script + two GI warnings persist. ReflectionProbe not reproduced in second entry/exit. All 19591 original Unity56 files unchanged. No player/device build or gate approval; full regression pending |
+
+## Focused owner-requested enum/platform repair — 2026-10-16 UTC
+
+| Date (UTC) | ID | Input / tool / settings | Observed result | Evidence / next action |
+| --- | --- | --- | --- | --- |
+| 2026-10-16 | MIG18-002 | Independent Unity 2018.2.19f1 copy; SHA-256 inputs: MemDump `379791634dd3ee2831f2d1b4e6d9654887c99bdab528382615ddbdecea43c736`, NGUIMath `55d70b786db02ae07093b8ab20117f2fe12b911c6998927ad76534fb8b5543c3`, UIAnchor `e42e6a2d82b3aad13f7d6f1f81fecbded7b387767f7f2378c8bb4fbafb416f85`, UIPanel `c6bbb284a6d87f47360f069c294acc48df7258e67a683a8e957b3e44acf7ea50`. dnlib enum metadata, 5.6/recovered source comparison; Mono mcs 5.11.0.0 with latest session response file, output redirected | **VERIFIED:** unify only duplicate ETC_RGB4 → 4 after observed ATC migration; remove only four obsolete WebPlayer OR alternatives. **PASS CLI main assembly:** exit 0, 0 errors, 262 warnings. Examined Unity56 source/meta hashes unchanged, exact minimal diff verified | [Sanitized report](UNITY2018_ENUM_PLATFORM_REPAIR.md); private `MigrationDiagnostics/EnumsPlatforms_20261016T044317Z/` backups, SHA-256 receipt, metadata and compile log. Only historical ReflectionProbe occurrences observed; post-editor-reload persistence UNTESTED. No gameplay, build/player or hardware test; no phase approval |
+
+## Focused owner-requested Unity 2018 syntax repair — 2026-10-16 UTC
+
+| Date (UTC) | ID | Input / tool / settings | Observed result | Evidence / next action |
+| --- | --- | --- | --- | --- |
+| 2026-10-16 | MIG18-001 | Existing independent Unity 2018.2.19f1 copy; owner explicitly requests three-source syntax repair without changing Unity 5.6. Input SHA-256: AIParagliderBoat `072b2f620a8bafe3ef1678c978cbcc686ea0fe51f058973597885b75858ca2c6`; MovementControl `a4be6c46be89767dc8b292fe2c8955ddbe4db703154cdf3c4d4b548d8f348428`; Util `274eb7b68e2a20bd403b502221ebe8687a9e03d64c618b6676c34e26f79e6a13`. Mono mcs 5.11.0.0, actual editor response file, C#4 / NET_2_0_SUBSET | **VERIFIED:** backed-up sources reproduce six CS1525; three local Quaternion temporaries eliminate all six. Full main assembly CLI compile **FAIL:** 6 newly exposed CS0619, 165 warnings. Unity56 examined source hashes and migration meta hashes unchanged | [Sanitized report](UNITY2018_FIRST_COMPILER_REPAIR.md); private migration `MigrationDiagnostics/CS1525_20261016T043759Z/receipt.json`, before/after logs. First auxiliary before-probe failed with CS2001 due to quoting; corrected probe reproduces reported errors. Native ReflectionProbe messages observed during pre-repair import, post-success persistence UNTESTED. No gameplay/device test or gate approval |
+
 Use **PASS** only for reproducibly observed success; **FAIL** for an actually attempted failed test; **NOT TESTED** for a plan or untried hypothesis. Date refers to when the evidence was recorded. Static APK inspection is not Vita runtime testing.
 
 | Date (UTC) | ID | Input / configuration | Result | Evidence / next action |
