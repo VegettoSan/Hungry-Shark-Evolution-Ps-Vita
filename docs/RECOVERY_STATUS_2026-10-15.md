@@ -1,5 +1,8 @@
 # Estado de la recuperación Unity 5.6 — 15 de octubre de 2026
 
+**HISTORICAL SNAPSHOT (2026-10-15).** The phase-status statements below describe the repository as of October 15 only. **Current (2026-10-17): P00–P02 APPROVED, P03 ACTIVE; private Unity 2018 PSP2 builds have run real Hungry Shark gameplay with sound on physical Vita.** Later device save persistence is still broken/unverified and the performance and physical controls matrices remain open. Use [phase audit](PHASE_AUDIT_2026-10-17.md) and [ledger](PHASE_GATES.json) for current state; earlier “Vita untested” claims must not be read as the present situation.
+
+
 **Registro formal: P00 ACTIVE; P01–P12 LOCKED; 0/13 fases aprobadas.** [Ledger](PHASE_GATES.json) · [Plan y criterios](PORTING_PLAN.md) · [Experimentos](EXPERIMENTS.md).
 
 **VERIFIED:** existe una recuperación privada que abre en Unity **5.6.4p3**, con compilaciones de código y pruebas de shaders realizadas. El propietario informa que entra en gameplay, mueve el tiburón con teclado y ratón y, después de las últimas correcciones, «parece estar todo bien». También confirma que ve el mosasaurio y los demás modelos. Tras activar el altavoz de las opciones del propio juego confirma oír sonido; la captura nativa registra señal de audio en menú y gameplay. Es evidencia de pruebas breves; no equivale a completar la matriz de gameplay, disponer de un ejecutable PC probado o aprobar una fase.
