@@ -15,7 +15,7 @@ Community research and development repository for a **native PlayStation Vita po
 | Other assemblies | `Assembly-CSharp-firstpass.dll`, `Assembly-UnityScript.dll`, `Assembly-UnityScript-firstpass.dll` |
 | Serialized scenes | `level0` through `level17` (18 files; not necessarily 18 gameplay levels) |
 | Android architecture | `armeabi-v7a` |
-| Candidate Vita editor | **Unity 2018.2.19f1 (from Halo 2D), independently verify PSP2 module** |
+| Candidate Vita editor | **Unity 2018.2.19f1 PSP2 / Mono2x — native HSE VPK builds and owner-reported hardware tests documented** |
 
 The newer 14.5.0 package uses Unity 6 / IL2CPP and is not our initial porting baseline.
 
