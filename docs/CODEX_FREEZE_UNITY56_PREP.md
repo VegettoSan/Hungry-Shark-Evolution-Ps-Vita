@@ -1,5 +1,8 @@
 # Codex task — preserve Unity 5.6 baseline, prepare handoff (NO MIGRATION)
 
+**Historical P00 preparation task.** P00–P02 are now approved (2026-10-17), P03 is ACTIVE. The immutable baseline required for P04 still needs a clean documented full PC gameplay regression and explicit approval. Do not treat this old task as authority for new branches or phase transition. See [current audit](PHASE_AUDIT_2026-10-17.md).
+
+
 **Authorized now:** inventory, create a private **candidate backup**, reproduce owner-confirmed tests where possible, prepare sanitized evidence/checklists. **Not authorized now:** claiming P04 acceptance, transitioning phase states without owner approval, opening Unity 2018, compiling PSP2/VPK, committing game assets.
 
 ## Paste into Codex local
