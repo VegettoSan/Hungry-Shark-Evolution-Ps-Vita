@@ -1,5 +1,8 @@
 # APK technical audit — Hungry Shark Evolution 6.4.2
 
+**Scope notice:** this report is the October 14 static APK audit; its “no Vita runtime test” limitation applies **to this original report only**. Later owner-reported Vita gameplay/audio and save failures are documented in the [October 17 retrospective audit](PHASE_AUDIT_2026-10-17.md) and PSP2 D02–D09 reports.
+
+
 **Original audit date:** 2026-10-14. **Recovery status updated:** 2026-10-15. The APK identity and binary inventory below are static evidence; subsequent Unity 5.6 editor checks are distinguished in [the current recovery report](RECOVERY_STATUS_2026-10-15.md). **No Vita build/runtime test.**
 
 ## Reproducible input
