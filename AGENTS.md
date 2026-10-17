@@ -12,6 +12,13 @@ These rules apply to the **entire repository**.
 6. Run `python tools/check_phase_gates.py`. If it fails, **STOP** and correct the ledger (without fabricating approval).
 7. Only perform work allowed by the **single ACTIVE phase**, except the explicitly owner-authorized **P00 offline static recovery staging** detailed above, which **does not approve or transition any locked phase**. If a phase is AWAITING_APPROVAL or BLOCKED, focus on its proof/corrective work. Never treat preparatory staging as a passed gate.
 
+## Branch creation and authorization — mandatory
+
+- **Only the repository owner, VegettoSan, may explicitly authorize the creation of a new branch, before it is created.** This restriction applies to Codex, all other AI agents, bots, GitHub Actions, tools and human contributors alike, for both local and remote branches.
+- **Never create, publish, duplicate, rename or automatically generate a branch without that prior, task-specific owner authorization.** This includes `codex/*`, `feature/*`, temporary, recovery, PR, and worktree branches. A pull-request workflow, a technical need, permission to edit code, or access to GitHub **is not permission to create a branch**.
+- Work only with the existing branch explicitly designated by the owner for the task. If a new branch seems necessary or no write target has been authorized, **STOP and request permission first**; do not silently choose a branch or use automation that creates one.
+- Explicit authorization for one merge or one task is **not** standing authorization to create branches in later work. Preserve this rule in all subsequent edits and instructions.
+
 ## Identity, original APK data and Vita storage
 
 - User-approved title ID **`HGSKE1178`** and display name **Hungry Shark Evolution Vita**: use [config/port_identity.json](config/port_identity.json) as canonical values for the future Unity 2018 PSP2 settings, extractor and docs. Never reuse Halo 2D title, content IDs or secrets.
@@ -52,7 +59,7 @@ These rules apply to the **entire repository**.
 
 1. Clearly label each statement **VERIFIED** (directly observed), **INFERRED** (reasoned from evidence), or **UNTESTED**. Do not promote inferred results to verified.
 2. Every meaningful experiment adds a row to `docs/EXPERIMENTS.md` with date, input hash, tool/editor version, command or settings, outcome, evidence log, and next step. "Not tested" is different from "failed".
-3. Before a potentially destructive change, save a checkpoint or separate branch. Use small, topical commits with understandable messages.
+3. Before a potentially destructive change, save a local checkpoint or backup. Create a separate branch **only if the owner explicitly authorizes that branch beforehand**, per the mandatory branch rule above. Use small, topical commits with understandable messages.
 4. Run the smallest relevant validation (Python test, import, compile, device runtime) before declaring success. If no physical Vita was used, say so explicitly.
 5. Prefer reproducible scripts and short markdown notes over large generated inventories. Do not check in dumps, decompiled game code, exports, or duplicate reports.
 6. Avoid unattended broad refactors, speculative compatibility hacks, disabling error checks, or deleting missing scripts just to hide build errors.
