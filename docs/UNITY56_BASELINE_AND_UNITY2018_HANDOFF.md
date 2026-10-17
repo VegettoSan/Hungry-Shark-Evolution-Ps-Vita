@@ -1,5 +1,8 @@
 # Unity 5.6 accepted-technical-results register and 2018 handoff
 
+**HISTORICAL 2026-10-15 handoff checklist.** Current formal state on 2026-10-17 is **P00–P02 APPROVED / P03 ACTIVE**; the owner has already asked for private Unity 2018/PSP2 experiments and tested Vita gameplay/audio. That technical work does **not** complete P03/P04 or prove a frozen Unity 5.6 reference. See [current audit](PHASE_AUDIT_2026-10-17.md). The checklist and “do not migrate yet” language below preserve the *original phase criteria*, not a claim that no migration happened.
+
+
 **Date: 2026-10-15.** This is a **preparation and handoff checklist**, not proof of a completed baseline, gate approval or Unity 2018 conversion. The exact engine baseline remains *Hungry Shark Evolution 6.4.2*, Android package `com.fgol.HungrySharkEvolution` v228, Unity **5.6.4p3 / Mono** and source APK SHA-256 `52b7d8754ab8fec75c3b656a0dc5ec8dc849565adc402487a3ac093f6a481f7a`.
 
 ## Explicit owner feedback and evidence precision
