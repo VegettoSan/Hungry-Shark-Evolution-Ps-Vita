@@ -2,7 +2,7 @@
 
 Community research and development repository for a **native PlayStation Vita port** of *Hungry Shark Evolution*, preserving original gameplay logic and Unity assets wherever technically possible.
 
-> **Status (2026-10-15):** private recovery opens in **Unity 5.6.4p3**; the owner now **confirms gameplay, shaders/graphics, sound and saving/reloading after closing and reopening work** in tested Editor sessions. Complete reproducible gameplay matrix, independent logged cold-reload validation, Android comparison and frozen baseline remain pending. A standalone Windows executable is **optional** under the owner's editor-based test decision. **P00 remains ACTIVE; 0 stages approved, no Unity 2018 migration or PS Vita build.** See [status](docs/RECOVERY_STATUS_2026-10-15.md) and [freeze/handoff](docs/UNITY56_BASELINE_AND_UNITY2018_HANDOFF.md).
+> **Status (2026-10-17): P00–P02 APPROVED; P03 ACTIVE; P04–P12 LOCKED** tras [auditoría retrospectiva](docs/PHASE_AUDIT_2026-10-17.md) y [autorización registrada](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/issues/2). Unity 5.6.4p3 funciona en Editor según informes del propietario; la copia Unity 2018.2.19f1 compila y existen **VPK nativos PSP2 probados en una PS Vita real**. D05 llegó a gameplay con sonido (40–58 FPS reportados); D06 experimentó caídas a ~11 FPS. **El guardado persistente en Vita sigue fallando o reportándose corrupto** y no se han completado todas las pruebas de controles, muerte/reintento, paridad, estabilidad o release. Los logros técnicos de P05–P11 no equivalen a aprobar esas fases formalmente.
 
 ## Reference build
 
@@ -21,13 +21,13 @@ The newer 14.5.0 package uses Unity 6 / IL2CPP and is not our initial porting ba
 
 ## Vita identity and game data layout
 
-**Official port name: Hungry Shark Evolution Vita** · **Title ID: `HGSKE1178`**. The intended application directory is `ux0:app/HGSKE1178/`, subject to actual PSP2 packaging tests. The APK's original Unity `Data/` is **developer recovery input**, NOT a verified copy-and-play PSP2 asset pack. Read [APK extraction and Vita data/app/save layout](docs/DATA_EXTRACTION_AND_LAYOUT.md) and [canonical identity](config/port_identity.json). Identity is defined now; Unity 2018 game/PSP2 implementation remains locked until the corresponding phase.
+**Official port name: Hungry Shark Evolution Vita** · **Title ID: `HGSKE1178`**. The intended application directory is `ux0:app/HGSKE1178/`, subject to actual PSP2 packaging tests. The APK's original Unity `Data/` is **developer recovery input**, NOT a verified copy-and-play PSP2 asset pack. Read [APK extraction and Vita data/app/save layout](docs/DATA_EXTRACTION_AND_LAYOUT.md) and [canonical identity](config/port_identity.json). The Vita identity is used by privately tested Unity 2018 PSP2 VPKs; the **formal phase gates for later work are not yet approved**. See the 2026-10-17 retrospective audit.
 
 ## NON-NEGOTIABLE development order
 
 **6.4.2 APK → recover Unity 5.6.4p3 project → get original gameplay working in Unity 5.6.4p3 on PC → explicitly approve the original-engine baseline → migrate a separate copy to Unity 2018.2 → prove gameplay again on PC → verify PSP2 toolchain on actual Vita → port and test actual game on Vita.**
 
-Agents **MUST NOT** jump ahead. Formal phase approvals are maintained in [`docs/PHASE_GATES.json`](docs/PHASE_GATES.json), validated by a [CI checker](tools/check_phase_gates.py). Each phase needs evidence **and an explicit owner approval**; automated validation cannot substitute for hardware testing or human review.
+This is the **formal acceptance order**. Private Unity 2018/PSP2 experiments already happened under direct owner requests; they are documented without inventing retroactive full gate passes. Agents must not perform new phase-skipping work without a fresh, scoped owner authorization and **must not create branches without prior authorization**. Formal phase approvals are maintained in [`docs/PHASE_GATES.json`](docs/PHASE_GATES.json), validated by a [CI checker](tools/check_phase_gates.py). Each phase needs evidence **and an explicit owner approval**; automated validation cannot substitute for hardware testing or human review.
 
 **Read the [full start-to-finish gated plan](docs/PORTING_PLAN.md) before doing any work.**
 
@@ -35,7 +35,8 @@ Agents **MUST NOT** jump ahead. Formal phase approvals are maintained in [`docs/
 
 - [Detailed sequential project plan](docs/PORTING_PLAN.md)
 - [Current phase approval ledger](docs/PHASE_GATES.json)
-- **[Current Unity 5.6 recovery, repairs, evidence and next steps](docs/RECOVERY_STATUS_2026-10-15.md)**
+- **[Retrospective audit of P00–P12 and physical Vita evidence (2026-10-17)](docs/PHASE_AUDIT_2026-10-17.md)**
+- **[Historical Unity 5.6 recovery report from October 15](docs/RECOVERY_STATUS_2026-10-15.md)**
 - **[Unity 5.6 confirmed systems, freeze checklist and Unity 2018 handoff](docs/UNITY56_BASELINE_AND_UNITY2018_HANDOFF.md)**
 - [Codex task: stage private Unity 5.6 baseline and evidence (no migration yet)](docs/CODEX_FREEZE_UNITY56_PREP.md)
 - [Codex future P05/P06 migration instructions (locked until P04 approval)](docs/CODEX_UNITY2018_MIGRATION_PREP.md)
