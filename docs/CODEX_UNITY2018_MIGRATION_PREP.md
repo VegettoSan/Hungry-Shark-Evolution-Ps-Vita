@@ -1,5 +1,8 @@
 # Codex P05/P06 — native Unity 2018.2.19f1 migration (LOCKED UNTIL P04 APPROVED)
 
+**Historical planning task.** A private Unity 2018.2.19f1 project and PSP2 VPKs already exist from owner-requested work. **P05/P06 are still formally LOCKED** because P03 gameplay matrix and P04 immutable Unity 5.6 acceptance remain incomplete; do not rerun this old task as a new migration authorization. See [current phase audit](PHASE_AUDIT_2026-10-17.md) and [ledger](PHASE_GATES.json). No new branches without explicit owner authorization.
+
+
 **Do not execute this task yet.** The complete P00→P04 approval chain is required, including the owner's explicit P04 acceptance `Unity 5.6.4p3 native baseline accepted`. Read `docs/PHASE_GATES.json` and run `python tools/check_phase_gates.py` first. If P05 is not `ACTIVE`, **STOP after reporting what is missing**. A user saying "prepare the migration" or confirming that save works does not approve P04.
 
 ## Instructions to use AFTER unlock
