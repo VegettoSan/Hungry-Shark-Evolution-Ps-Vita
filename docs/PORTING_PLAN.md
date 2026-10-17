@@ -2,9 +2,9 @@
 
 **Authoritative phase ledger:** [`PHASE_GATES.json`](PHASE_GATES.json) · **Validation:** `python tools/check_phase_gates.py`
 
-**Status:** `P00 ACTIVE`; **all subsequent phases LOCKED**. Prior APK static research is evidence, **not** user approval of P00.
+**Status after retrospective owner-authorized audit (2026-10-17):** **P00, P01 and P02 APPROVED; P03 ACTIVE; P04–P12 LOCKED**. See [the audit](PHASE_AUDIT_2026-10-17.md), [formal ledger](PHASE_GATES.json) and [owner-authorization record](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/issues/2). Private Unity 2018/PSP2 milestones have been observed **ahead of their formal approvals**; their execution is documented but does not automatically close gates.
 
-**Recovery update (2026-10-15):** the owner now confirms gameplay, shaders/graphics and save work in Unity 5.6.4p3 editor (sound confirmed previously); see [handoff/acceptance checklist](UNITY56_BASELINE_AND_UNITY2018_HANDOFF.md) and [recovery evidence](RECOVERY_STATUS_2026-10-15.md). **The owner expressly chose editor-based PC validation instead of a standalone Windows EXE as the P03/P04 and P06 delivery format; the full scenario matrix, reproducibility and explicit phase approvals are unchanged.** P00 remains ACTIVE and no phase has been approved. No Unity 2018/Vita execution is implied.
+**Historical recovery update (2026-10-15):** the owner confirmed gameplay, graphics, sound and save/reload in the Unity 5.6.4p3 editor. An EXE Windows standalone is optional, but the full P03/P04/P06 acceptance matrices remain required. **Subsequent evidence (2026-10-16/17):** Unity 2018.2.19f1 PSP2 builds and owner-reported Vita gameplay/audio are documented, as are corrupt/lost Vita saves and severe FPS drops. Read the [dated retrospective audit](PHASE_AUDIT_2026-10-17.md) rather than interpreting the original October 15 notes as current status.
 
 **Declared PS Vita identity:** `HGSKE1178` / **Hungry Shark Evolution Vita** ([single-source JSON](../config/port_identity.json)); see [APK user-data and filesystem study](DATA_EXTRACTION_AND_LAYOUT.md). This declaration does not approve later Unity/PSP2 phase work.
 
@@ -18,6 +18,12 @@
 Official Unity references: [5.6.4p3](https://unity.com/releases/editor/whats-new/5.6.4p3), [2018.2.19f1](https://unity.com/releases/editor/whats-new/2018.2.19f1), [2018.2 release](https://unity.com/blog/engine-platform/2018-2-now-available). Unity's PSP2 build target is marked unsupported **starting at 2018.3**; **this does not guarantee PSP2 is installed in 2018.2**. [UnityCsReference evidence](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Runtime/Export/BaseClass.cs).
 
 **UnityScript caution:** the APK includes `Assembly-UnityScript*.dll`. Existing compiled assemblies, recovered `.js` sources, conversion tools and Unity 2018.2 compatibility have different constraints. Inventory what each component actually does, preserve serialized identities and migrate only as needed. Do **not** claim automatic UnityScript conversion succeeds.
+
+## Retrospective acceptance details (2026-10-17)
+
+The owner authorized this phase audit and approval of sufficiently demonstrated work. **P00:** successful Play Mode execution of the recovered real game in Unity 5.6 was accepted as a *stronger equivalent* to the older blank-project smoke check; no claim is made that a blank-scene test actually occurred. The detailed Android gameplay reference matrix is still owed at **P03**. **P01:** extraction/export inventory and known unresolved objects are documented rather than silently called restored. **P02:** main menu/gameplay compile and essential components are demonstrated while 55 uGUI references, eight null scripts in six prefabs and a layout mismatch remain to be triaged, never described as a globally clean project. Owner-authorization record: [issue #2](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/issues/2); evidence: [phase audit](PHASE_AUDIT_2026-10-17.md).
+
+These limited acceptances do not waive any remaining acceptance conditions of P03–P12. Earlier Unity 2018/PSP2 tests were **owner-requested experiments executed before chronological phase closure**; retain that historical truth. New deviations need fresh owner authorization and must be logged.
 
 ## Hard stop / gate approval protocol
 
@@ -36,7 +42,7 @@ Record (a) commit SHA + source input hash, (b) editor/AssetRipper/SDK build vers
 
 ## Milestones, exact order
 
-### P00 — Reproducible source and original editor setup (ACTIVE)
+### P00 — Reproducible source and original editor setup (APPROVED retrospectively)
 
 **Do:** Verify owned source 6.4.2 APK hash against [audit](TECHNICAL_AUDIT.md), ZIP CRC and `5.6.4p3` header. Install **exact Unity 5.6.4p3** from official archive, verify editor starts and a blank desktop project runs. Locally reproduce Android version gameplay for a reference matrix (menu, load, movement, feeding, health/death, save, audio); capture notes/screenshots privately. Check current Unity **2018.2.19f1** + PSP2 toolchain against the historical [Halo 2D evidence](HALO2D_PSP2_REFERENCE.md); record this environment inventory **without attempting a migration**, and record the complete [tool installation/inventory checklist](TOOLS.md). Do not infer PSP2 availability from a standard public Unity installer.
 
@@ -54,19 +60,19 @@ After installing Unity 5.6.4p3, the owner expressly requested repairs for compil
 
 The [recovery status](RECOVERY_STATUS_2026-10-15.md) and [experiments](EXPERIMENTS.md) record what was actually observed, including failed or incomplete probes. The original offline checkpoint remains historical. Existing preparatory results may be reviewed when their phase opens; they do not replace its acceptance tests or explicit owner approval.
 
-### P01 — Extract everything needed for recovery (LOCKED)
+### P01 — Extract everything needed for recovery (APPROVED retrospectively)
 
 **Do:** Run our `tools/Preparar_Hungry_Shark_Evolution_6.4.2.py` locally, verify reconstructed 15 `.splitN` groups, preserve original `Data/Managed` assemblies. Import Unity serialized files **with managed assemblies** into AssetRipper as a single source set. Export into disposable Unity 5.6 project. Use ILSpy on recovered game scripts and note types, field names, scene `MonoBehaviour` links, GUID/fileID mapping, 18 serialized `levelN` files, textures, animation, shaders, audio, prefabs and dependencies.
 
 **Acceptance:** complete inventory, AssetRipper log including Mono backend detection, export result, count/list of unresolved script references and damaged assets, and a reproducible import recipe. Do not claim complete project recovery merely because export succeeded.
 
-### P02 — Restore buildable Unity 5.6.4p3 editor project (LOCKED)
+### P02 — Restore buildable Unity 5.6.4p3 editor project (APPROVED retrospectively, open references tracked)
 
 **Do:** Open **only** recovered baseline in exact Unity 5.6.4p3. Reconstruct necessary C# and UnityScript-dependent code without changing game mechanics. Resolve serialized script references by verified type/assembly/GUID; repair scenes/prefabs, scene index, materials and dependencies. Wrap Android-specific APIs minimally; avoid accidental game logic removal. Keep original recovery snapshot read-only; maintain changes as a separate working project.
 
 **Acceptance:** editor imports, an agreed minimal scene loads, **zero unaccounted compile errors**, and essential scene components have verified references rather than `Missing Script`. Noncritical unresolved items must be explicitly inventoried, never silently discarded.
 
-### P03 — Restore actual Unity 5.6.4p3 PC gameplay (LOCKED)
+### P03 — Restore actual Unity 5.6.4p3 PC gameplay (ACTIVE)
 
 **Do:** Verify start → menu → start game → player shark moves → prey/food interaction → hunger/health progression → death/retry → UI → audio → save/load; test a fresh profile and a continued profile. Compare movement, timing and behavior with original Android baseline; only platform-specific services may be adapted. Desktop validation may run entirely in **Unity 5.6.4p3 editor Play Mode**, without producing a standalone Windows executable, per the owner's documented decision. **A screenshot by itself is not sufficient**: record the complete scenario matrix, editor settings, sanitized console/video or structured test transcript, save persisted across a restart, and Android comparison.
 
