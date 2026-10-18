@@ -1,0 +1,97 @@
+{
+  "base_commit": "ff92e69",
+  "branch": "main",
+  "editor": "2018.2.19f1",
+  "manifest_before_sha256": "4A5504E66BDA76F19DC6175486F7484381BA74DC259982CE41FC00DBA0E3875D",
+  "existing_count": 19644,
+  "changed": [
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/GameInput.cs",
+      "before": "CAEE8A1F17A8DA06A762DF51F859E96441A3BDFBD159DCF237B41874A0DA5B26",
+      "after": "4E7818B469454407A95FFFD0C4F3742E16590E4B23C44553721846C46A67E6B8"
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/GUIManager.cs",
+      "before": "C3223AD1D7EF52AA40CCEDE04F9B6C90113310F32E5D66F3E9A45D5D6386DA21",
+      "after": "888E3EC73EF7F3AA4F9A23FC22D42CF1EBEEF195FC0E04E3001CD106A60E95D9"
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/HSEVitaNavigation.cs",
+      "before": "870ABC271A71EBA04C4897224723D540B2D7DA561BDA1E5E50A3346197D26689",
+      "after": "ABC02B7CD2CA9FC6912D135AF596747297DACDBA5B6947E23CDFF3D8040E39D7"
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/LabCrane.cs",
+      "before": "895A88A9294E480EE9C41FAF11D0157FAC32EA6F0DB087372E92EE8452C98689",
+      "after": "525A134E5D6C9799500AC237E54B6CFCDB4290A6D94F253006EA982BC02916D8"
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/MainMenuSheet.cs",
+      "before": "E28B51F006CDC2E4EB00A9AFE323FEC8B4AAEF68DE4F18AF323F36071BC0FFE9",
+      "after": "B37E286CF10950FA807F9D0F6135B3C56B2C5931EEDAF412C7C984399C16DC1D"
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/RocksExplosion.cs",
+      "before": "70259A6E8594B2523C9B295FA60D06F4DF920A5218E90B6C5E14AA86D1E4DB12",
+      "after": "A3A4438ACED22D932C2E114605BE87FC79336DE4C4D5EC9F460738FB247670E6"
+    }
+  ],
+  "added": [
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/HSEVitaMenuResources.cs",
+      "sha256": "3BF5F8CC3BC358AE2D18270D8B81A5DCD8F757151F7C710BC3E85B9B6D38EF70"
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/HSEVitaMenuResources.cs.meta",
+      "sha256": "7C74BAA5CB2A9CD19A829B9483449AD37F1FE0EAC537BCB4E900697724B616AC"
+    }
+  ],
+  "all_project_settings_unchanged": true,
+  "missing": [],
+  "note": "Private recovered source stays outside Git; no VPK/player build.",
+  "compile": {
+    "exit_code": 0,
+    "errors": 0,
+    "warnings": 271,
+    "note": "Source compatibility only. No player or VPK built. References from actual Unity editor compilation."
+  },
+  "warning_delta": {
+    "baseline_exit": 0,
+    "baseline_errors": 0,
+    "baseline_warnings": 271,
+    "new_warning_signatures": [],
+    "removed_warning_signatures": []
+  },
+  "frame_captures": {
+    "baseline_game": {
+      "frames": 360,
+      "average_ms": 33.40167805555556,
+      "fps_from_average_ms": 29.9386156089746,
+      "p95_ms": 34.1259,
+      "max_ms": 93.7973,
+      "gc_collections": 0,
+      "mean_gc_alloc_samples": 498.90555555555557,
+      "mean_batches": 89.2388888888889,
+      "mean_draw_calls": 89.2388888888889,
+      "managed_start": 51736576,
+      "managed_end": 92962816
+    },
+    "after_game": {
+      "frames": 359,
+      "average_ms": 33.47291364902507,
+      "fps_from_average_ms": 29.874901554293768,
+      "p95_ms": 33.8616,
+      "max_ms": 119.1935,
+      "gc_collections": 0,
+      "mean_gc_alloc_samples": 498.92200557103064,
+      "mean_batches": 110.93593314763231,
+      "mean_draw_calls": 110.93593314763231,
+      "managed_start": 38555648,
+      "managed_end": 77623296
+    },
+    "limitations": "Editor capped near 30 FPS. Different draw counts/spawn state: not a controlled FPS A/B; no Vita performance claim. GC samples are allocation event counts/timing, not bytes per frame. Probe has its own allocations."
+  },
+  "save_files_restored": 5,
+  "physical_vita_tested": false,
+  "source_project_committed": false
+}

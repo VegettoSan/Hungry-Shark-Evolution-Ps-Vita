@@ -1,5 +1,22 @@
 # Experiment log
 
+## Owner-requested Unity 2018 Editor navigation/performance corrections — 2026-10-18 UTC
+
+Local date 2026-10-17. The owner's current task explicitly authorizes focused investigation,
+private project corrections and Unity 2018 Editor tests for special-shark touch/controller
+navigation, Evolution, pause and gameplay performance on existing `main`. This is a fresh,
+task-specific exception to phase scope, **not approval of P04–P12**. No VPK/build, new
+branch, graphic-quality reduction or export-setting change is authorized for this task.
+Formal ledger remains P03 ACTIVE / 3 of 13 APPROVED; validator passes. Existing untracked
+tools are preserved. Full sanitized result: [Editor navigation/performance report](EDITOR_NAV_PERFORMANCE_2026-10-18.md).
+
+| Date (UTC) | ID | Input / tool / settings | Observed result | Evidence / next action |
+| --- | --- | --- | --- | --- |
+| 2026-10-18 | EDNAV-001 | Base `ff92e69`; private 19,644-file manifest SHA-256 `4a5504e66bda76f19dc6175486f7484381ba74dc259982ce41fc00dba0e3875d`; Unity 2018.2.19f1, existing editor, controller preview; `b18`–`b24` press/held/released injection | **VERIFIED:** retained release repeatedly slides the lab; controller dummy rejected and Android-TV-only branch bypasses Vita. Evolution load 98.39 ms; original pause opening 33.45 ms. Duplicate task-launched editor closed; original instance used | Private `Reports/EditorRegression_20261018`: Before/ManifestBefore, baseline receipts and preserved log. Fresh owner scope exception; gates unchanged |
+| 2026-10-18 | EDNAV-002 | Same inputs; backed-up `LabCrane` / `HSEVitaNavigation`; FGOL logical D-Pad/stick/X/Circle and original touch reader; final `d05`/`d11`/`e04` completed-tween contracts | **PASS tested Editor routes:** one consumed gesture, no retained-release loop; controlled held input/dead zone; valid carousel bounds over 60 forced completion steps; 9 → 0 → 9 model ownership, original scales retained. **PARTIAL mouse:** real drag did not select; accepted short swipes use reader injection. Diagnostic API/dispatch failures preserved and corrected | [Report and remaining matrix](EDITOR_NAV_PERFORMANCE_2026-10-18.md). Private source diffs, receipts, inventories and scale contracts. Real Vita inputs/multitouch untested |
+| 2026-10-18 | EDOPT-001 | Original first Evolution click 167.67 ms; prepare one source UI prefab at existing loading stage; pause source prepared with HUD; 5×10,000 touch queries; 3×400 synthetic mesh vertices | **VERIFIED Editor:** first Evolution 64.44–66.08 ms; first pause 18.61 ms. Cost shifted to loading, not erased. Touch query managed delta ~709 KB → 0; mesh copies 3,276,800 → 8,192 bytes with identical transformed vertices. Reopened Evolution still measured 337.70 ms; no unsupported pooling/GC removal | Private timings, benchmarks and frame summaries; [authored helper](../tools/unity/HSEVitaMenuResources.cs). Remaining model/UI construction needs focused profiling |
+| 2026-10-18 | EDOPT-002 | Unity 2018 Profiler, ~12 s stationary gameplay captures; actual Mono/mcs options, C#4, PSP2 symbols without Editor; same-option prechange compile | **PASS source compile:** 0 errors / 271 warnings before and after, no new warning signature; no player/VPK. Gameplay ~29.94 → 29.87 Editor FPS under cap, different draw counts: **NO FPS gain/regression attribution**. Pause/movement/return/second game exercised. Six sources + helper/meta changed, all ProjectSettings/other original assets unchanged; five persistent files restored; diagnostics removed | [Sanitized results/limits](EDITOR_NAV_PERFORMANCE_2026-10-18.md), [hash receipt](evidence/EDITOR_NAV_PERF_2026-10-18.json); private raw profiles, CompileResult, WarningDelta, IntegrityAfter, SaveRestore. Vita measurement, full gameplay matrix and short manual mouse swipe remain untested |
+
 ## Owner-requested BetterWinds LiveArea integration — 2026-10-18 UTC
 
 Local date 2026-10-17. Explicit LiveArea-only exception on existing `main`; P03 ACTIVE, 3/13 approvals, ledger unchanged. Artwork credit: [BetterWinds](https://github.com/BetterWinds). No physical Vita access or release.
