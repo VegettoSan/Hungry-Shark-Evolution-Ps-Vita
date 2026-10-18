@@ -18,6 +18,7 @@ These rules apply to the **entire repository**.
 - **Never create, publish, duplicate, rename or automatically generate a branch without that prior, task-specific owner authorization.** This includes `codex/*`, `feature/*`, temporary, recovery, PR, and worktree branches. A pull-request workflow, a technical need, permission to edit code, or access to GitHub **is not permission to create a branch**.
 - Work only with the existing branch explicitly designated by the owner for the task. If a new branch seems necessary or no write target has been authorized, **STOP and request permission first**; do not silently choose a branch or use automation that creates one.
 - Explicit authorization for one merge or one task is **not** standing authorization to create branches in later work. Preserve this rule in all subsequent edits and instructions.
+- All AI agents, Codex and automated contributors must work on the existing principal branch (`main`) unless the owner explicitly directs otherwise; this does not authorize creating any local or remote branch.
 
 ## Identity, original APK data and Vita storage
 
