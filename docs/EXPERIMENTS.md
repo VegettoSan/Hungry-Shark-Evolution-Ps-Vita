@@ -1,5 +1,20 @@
 # Experiment log
 
+## Owner-requested clean-screen private test VPK — 2026-10-18
+
+The owner reports improvement while using overclock, without new measured FPS,
+and requests a VPK without on-screen logs for testing with friends. This authorizes
+one private clean-screen build on existing `main`, not phase approval or a public
+release. Remove diagnostic displays only; preserve save checks, controls, previous
+performance changes, original clock settings and prior packages. Distribution rights
+for the proprietary player/game resources remain unverified; no upload or sending
+to third parties is performed. P03 remains ACTIVE / 3 of 13 APPROVED.
+
+| Date (UTC) | ID | Input / tools / settings | Observed result | Evidence / next action |
+| --- | --- | --- | --- | --- |
+| 2026-10-18 | CLEAN-VPK-001 | Base `5d35783`; private checkpoint hashes in receipt; Unity 2018.2.19f1 PSP2/Mono2x, BuildOptions.None, original 18 scenes, 2:12.712 | **VERIFIED:** D10 display fields/Update/OnGUI and visual object creation gated by an opt-in symbol; original save startup observer retained. Input diagnostic excluded from ordinary player; original controller manager/navigation retained. Native clean-screen/performance/quality/save/navigation audits PASS. Negative control correctly rejects the previous player's compiled D10 overlay. 0 errors / 296 warnings; no new C# warning signatures or shader errors. No Play Mode rerun or physical display observation in this task | [Receipt](evidence/CLEAN_TEST_VPK_2026-10-18.json); private CleanTestVPK_20261018 Before/Changes/Build.log/Native audits. **UNTESTED hardware:** clean display, movement/feeding at stock clocks, cold save/reload and controls |
+| 2026-10-18 | CLEAN-VPK-002 | VPK SHA-256 `1db2db647599058184a00fbb62a6595bb9d88eade0b2a324767c022451b9791f`; Python ZIP CRC/member equality, canonical identity/artwork audit, 19651-file checkpoint | **VERIFIED:** 135085219 bytes / 213 entries; CRC and native runtime-member equality PASS; HGSKE1178 and artwork retained. Only three authored display helper sources changed; all other source/assets/settings hashes match checkpoint. Thirteen prior VPKs unchanged; temporary driver archived. Original clock settings retained; no new FPS result claimed | Private PackageReceipt/IntegrityAfter and `Reports/CleanTestVPK_20261018/Build/HSE_Clean_Test_HGSKE1178.vpk`; no upload/publication/sending performed. Distribution rights remain unverified; no phase approval |
+
 ## Owner-requested completion of optimized private VPK — 2026-10-18
 
 The owner explicitly requested completing the VPK for physical testing after the

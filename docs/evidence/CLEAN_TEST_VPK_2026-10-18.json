@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-18",
+  "base_commit": "5d35783",
+  "editor": "2018.2.19f1",
+  "target": "PSP2",
+  "backend": "Mono2x",
+  "options": "None; original 18 scenes; no diagnostic overlay defines",
+  "scope": "Explicit owner request for private clean-screen test package; no phase approval, upload or sending performed",
+  "package": {
+    "sha256": "1db2db647599058184a00fbb62a6595bb9d88eade0b2a324767c022451b9791f",
+    "bytes": 135085219,
+    "entries": 213,
+    "images": {
+      "sce_sys/livearea/contents/bg0.png": "452a71826ec9613c29773a4f29bebdc88c3dfe9299313048939d6a2b1152f77c",
+      "sce_sys/icon0.png": "28bafa4298a4aa7e00ce30df69d082710e1553d201bcdeacb81fb5c5cf9fb775",
+      "sce_sys/livearea/contents/startup.png": "293fff5b6e8abc7923ed2d9f3b1bb92b233843c7d6416fa5b657b8b2730a4f4d"
+    },
+    "title_id": "HGSKE1178",
+    "title": "Hungry Shark Evolution Vita",
+    "template_format": "01.03",
+    "icon_conversion": "Unity native RGBA to indexed PNG",
+    "hardware": "NOT TESTED",
+    "runtime_member_equality": true,
+    "build_result": "result=Succeeded errors=0 warnings=296 time=00:02:12.7124866 scenes=18",
+    "canonical_identity": true
+  },
+  "clean_screen": {
+    "result": "PASS",
+    "D10OverlayCompiled": false,
+    "D10VisualObjectCreated": false,
+    "inputOverlayCompiled": false,
+    "startupSaveChecksRetained": true,
+    "controllerBootstrapRetained": true,
+    "otherPortDiagnosticOverlays": 0,
+    "physicalDisplay": "UNTESTED"
+  },
+  "performance": {
+    "result": "PASS",
+    "bufferedFrustum": true,
+    "rockMeshCloning": false,
+    "waterMainCameraQueries": 1,
+    "temporaryPlayerDiagnostics": false,
+    "comparedMethods": 0,
+    "changedMethodBodies": [],
+    "hardware": "UNTESTED"
+  },
+  "quality": {
+    "result": "PASS",
+    "NativeClassification": "medium",
+    "ClassifierIL": "IL_0000: ldc.i4.1; IL_0001: ret",
+    "OriginalQualitySelection": true,
+    "OriginalFrameLimitCalls": true,
+    "Hardware": "UNTESTED"
+  },
+  "save": {
+    "result": "PASS",
+    "originalHeaderMD5AESCLZF2": true,
+    "scopedInvariantCulture": true,
+    "finallyRestore": true,
+    "exactRead": true,
+    "realTempCommitReopenChecks": 4,
+    "D09CopyRetained": true,
+    "D09SyntheticControlOnBoot": false,
+    "Hardware": "UNTESTED",
+    "D10ObserverTypePresent": true
+  },
+  "navigation": {
+    "result": "PASS",
+    "indexedTouchReader": true,
+    "singleGestureConsumption": true,
+    "carouselWrapOrder": true,
+    "existingControllerRouting": true,
+    "evolutionPauseResourcePreparation": true,
+    "singleMeshVerticesReader": true,
+    "editorToolsExcluded": true,
+    "hardware": "UNTESTED"
+  },
+  "integrity": {
+    "authored_files_checked": 19651,
+    "only_three_display_helpers_changed": true,
+    "source_changes": [
+      {
+        "path": "Assets/Scripts/Assembly-CSharp/HSEVitaD10Status.cs",
+        "before": "455a3666f1bf391d4beb5eb44a613d02f714467ac00ab092c8feeea53f05a3d3",
+        "after": "e0b2ecc147c336d8143ba3f0d3c157ccaf950530f09f35a78d72d3cd9c064a9e"
+      },
+      {
+        "path": "Assets/Scripts/Assembly-CSharp/HSEVitaInput.cs",
+        "before": "fcfa6443f033eeff03a3df115ea34bfdd022f2cfda38c109836f64e48f678f7f",
+        "after": "51a6d9ac53445e12fb3df6eb32ca6903139dcd0b50a846937da15de57290dcb4"
+      },
+      {
+        "path": "Assets/Scripts/Assembly-CSharp/HSEVitaInputDiagnostic.cs",
+        "before": "dbbaaa0b777456090d6db3c6a26e1bd6944d7be458f040af143519a4516c9a25",
+        "after": "5c0f6cfe6269b3b79603d5d15bf7993e2daf807f79b15b84a07bb09342d9f6ca"
+      }
+    ],
+    "observed_material_drift": [],
+    "all_other_hashes_match_checkpoint": true,
+    "prior_VPKs_preserved": 13,
+    "new_CSharp_warning_signatures": [],
+    "temporary_driver_archived": true,
+    "ProjectSettings_unchanged": true
+  },
+  "private_artifact": "Reports/CleanTestVPK_20261018/Build/HSE_Clean_Test_HGSKE1178.vpk",
+  "physical_Vita": "UNTESTED in this task; test clean display, movement/feeding, cold save/reload and controls",
+  "owner_performance_report": "Improvement with overclock reported; no new FPS measurement or stock-clock benefit established",
+  "distribution_rights": "Included proprietary player/game resource redistribution rights remain unverified",
+  "phase_state": "P03 ACTIVE / 3 of 13 APPROVED; unchanged"
+}
