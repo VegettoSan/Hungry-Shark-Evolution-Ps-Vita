@@ -71,3 +71,9 @@ This prepares split Unity `Data/` files, including `Data/Managed/`, **not** a co
 *Hungry Shark Evolution* and original game code/assets belong to their rights holders. **Do not distribute** APK/XAPK/OBB, decompiled code, extracted game assets, Sony/Unity restricted SDKs, credentials or unauthorized VPKs. Work from individually obtained lawful inputs; the repository contains only public tools, technical reports, rules and scripts. Not affiliated with Ubisoft or the game's developers.
 
 Individual source/editor test results are documented with their limits. Full runtime, parity and performance claims require the corresponding platform tests and gate evidence; a successful editor probe does not establish standalone PC or Vita gameplay.
+
+## LiveArea artwork credits
+
+The PS Vita LiveArea graphics and bubble icon for this port were contributed by **[BetterWinds](https://github.com/BetterWinds)**. Thank you for the artwork. This acknowledgement covers the LiveArea contribution, not ownership of *Hungry Shark Evolution* or its underlying characters, logos and artwork, which remain with their respective rights holders.
+
+See the [LiveArea asset manifest](assets/livearea/BetterWinds/README.md) and [Codex integration instructions](docs/CODEX_BETTERWINDS_LIVEAREA.md). The owner-provided binary source package is handled separately from the public documentation and is not included in this commit.

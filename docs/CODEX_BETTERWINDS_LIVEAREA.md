@@ -1,0 +1,35 @@
+# Codex task — integrate BetterWinds LiveArea artwork in Unity 2018 PSP2
+
+**Explicit, limited owner authorization:** integrate the three BetterWinds LiveArea images into the current Hungry Shark Evolution Vita build and verify their appearance in the VPK. This does **not** approve locked phase gates, engine rewrites, saving/input/performance changes, or a public release.
+
+## Context
+
+- Repository: `VegettoSan/Hungry-Shark-Evolution-Ps-Vita`, existing branch `main` **only**. **Never create a branch** (local, remote, worktree, PR or `codex/*`) without specific prior permission.
+- Current private target: Unity **2018.2.19f1 / PSP2**, canonical Title ID **`HGSKE1178`**, display name **Hungry Shark Evolution Vita**.
+- Keep all existing work (including uncommitted Unity changes). Read `AGENTS.md`, `config/port_identity.json`, current PSP2 build scripts and relevant project rules. Do not modify the Unity 5.6 recovered baseline.
+- BetterWinds, https://github.com/BetterWinds, authored the contributed **LiveArea asset work**. Preserve credit in repo documentation; underlying *Hungry Shark Evolution* trademarks/art remain those of their owners.
+- Original ZIP supplied by owner: `SharkEVOassets.zip` with **exactly** `bg0.png` (840×500), `icon0.png` (128×128), `startup.png` (280×158). Checksums and reference XML: `assets/livearea/BetterWinds/README.md` and `template.xml`.
+
+## Work to perform — minimal, verifiable and end-to-end
+
+1. Establish baseline: inspect repository status, existing PSP2/Unity 2018 project location, current build scripts, any VPK post-packaging step, Unity player icon settings, LiveArea PSP2 settings and actual `sce_sys` paths. Make a backup or reversible checkpoint **without creating a new branch**. Do not overwrite user changes; do not force-push/rebase/reset.
+2. Locate the original owner-supplied `SharkEVOassets.zip` on the local computer (or use the three original PNGs already installed and SHA-verified). If missing, stop and request the ZIP instead of downloading arbitrary substitute artwork. Run `python tools/install_betterwinds_livearea.py <path-to-zip>`; ensure all SHA-256 checks pass. These three images must remain byte-identical in the source staging directory. Do not silently resize/recompress the originals.
+3. Determine the **actual** Unity PSP2 packaging mechanism in this installed version: `PlayerSettings.PSVita.liveAreaPath`, `liveAreaBackroundPath` (Unity's intentional spelling), `liveAreaGatePath`, the PSP2 icon target, PSP2 build output, and any current post-build VPK repackaging. Prefer Unity's built-in player configuration and existing project build system. If `liveAreaPath` is set, understand that Unity may override independent background/gate settings; do not configure competing input paths blindly. Inspect generated output rather than assuming a setting took effect.
+4. Configure the source files for **PS Vita system UI**, not runtime Unity scenes:
+   - `icon0.png` → `sce_sys/icon0.png` (PS Vita bubble).
+   - `bg0.png` → `sce_sys/livearea/contents/bg0.png` (LiveArea background).
+   - `startup.png` → `sce_sys/livearea/contents/startup.png` (LiveArea launch gate, **not** the in-game splash screen).
+   - `template.xml` → `sce_sys/livearea/contents/template.xml` when using the custom LiveArea folder. The checked-in minimal reference uses `style="a1"`, references the two PNG names and must be validated against the actual current template; preserve any required existing LiveArea functionality.
+   - ZIP has **no** `pic0.png` (960×544 loading/background image). Keep an existing valid one and do not invent one credited to BetterWinds.
+5. Implement the smallest sustainable change in the current Unity PSP2 build pipeline so that **future VPK builds also contain these assets**. If the Unity PSP2 build system already packages them, do not add a second conflicting postprocessor. If custom repack is necessary, preserve the original eboot, game data, `param.sfo`, signed/restricted inputs, saves and existing packaging behavior; do not edit Title ID or full content ID. No unrelated runtime code changes.
+6. Check PNG format compatibility as well as dimensions. In the supplied ZIP, `bg0.png` and `startup.png` are palette-indexed (`P`) PNGs, while `icon0.png` is RGBA. If the actual SDK packager rejects indexed PNG, create a **derived build-stage copy only** in a supported PNG format, log the conversion and verify appearance. Keep the three source originals unchanged and separately credited.
+7. Produce an isolated, fresh PSP2 build **only if the local authorized Unity/PSP2 toolchain is available** and avoid disturbing current private builds. Open the resulting VPK as a ZIP and assert all required paths, image dimensions, `template.xml` image references and canonical title identity. Compare the packaged PNG SHA-256 to the source (unless a documented required derived conversion happened). Check actual packaged contents **after** any VPK post-processing and detect unexpected duplicate/stale artwork.
+8. If a PS Vita is available, install/test on **the existing HGSKE1178 application** without deleting/overwriting existing save data. Check bubble icon, opened LiveArea layout/gate, then launch/resume the game; capture evidence. If device access is unavailable, mark on-device verification as **NOT TESTED**. Merely seeing files in a VPK does not prove LiveArea visually works.
+9. Write a short reproducible report: files modified, Unity PSP2 configuration used, SHA/paths before vs. after, build/VPK evidence, any limitations and how to roll back. Preserve the acknowledgement to **BetterWinds** in README; keep user-provided original art and proprietary materials out of the public repository unless redistribution rights have been established. Update `docs/EXPERIMENTS.md` only for actual experiments, without claiming a phase pass; do not touch `docs/PHASE_GATES.json`.
+10. Run `python tools/check_phase_gates.py` and any locally available small tests; review `git diff --check` and `git status`. Keep commits small and topical, work on **existing `main` only**, and only push when the work is verified and the local/remote histories are safely aligned. Never discard newer user/remote changes.
+
+## Definition of done
+
+The existing build path reliably includes correct LiveArea system files while the Unity gameplay project, saves, controller adaptations, shaders and original resources remain unchanged. Repo credits name **BetterWinds**. Report separately what was VERIFIED in packaging, VERIFIED on PS Vita, or NOT TESTED. If any material/input is unavailable, stop at a documented blocker rather than pretending successful integration.
+
+Reference: Unity `PlayerSettings.PSVita.liveAreaPath` documentation, https://docs.unity.cn/540/Documentation/ScriptReference/PlayerSettings.PSVita-liveAreaPath.html ; Vita `sce_sys` layout examples, https://github.com/Hammerill/livearea-specs .
