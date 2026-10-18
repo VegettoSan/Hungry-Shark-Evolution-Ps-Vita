@@ -1,0 +1,218 @@
+{
+  "date": "2026-10-18",
+  "base_commit": "92f1f8414f7adee544e3190ab336d968c676ba7e",
+  "branch": "main",
+  "source_apk_sha256": "52b7d8754ab8fec75c3b656a0dc5ec8dc849565adc402487a3ac093f6a481f7a",
+  "unity": "2018.2.19f1",
+  "scope": "Owner-authorized performance exception; P03 ACTIVE, 3/13 approved; gates unchanged",
+  "manifest_before_sha256": "048747e286eb37d6e82d6f2402fe106805ca155485236f57504ad38bdbddab97",
+  "changed": [
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/GameCamera.cs",
+      "before": "4d981bb2bc5ec84d7cbc5e20f9de986b0c4345ebb9c215d6d7367d7be6176ac3",
+      "after": "46f1bd7cb198fa24672ef5b6839e69d0aaddff2d0e38ed07cb83e61a79081e50"
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/RocksExplosion.cs",
+      "before": "a3a4438aced22d932c2e114605be87fc79336de4c4d5ec9f460738fb247670e6",
+      "after": "0d0897ed33452f88dd4311594159c9aff606314c45abc48b0a66b8768055b4d4"
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/FGOL/Water.cs",
+      "before": "239d22d47f89be324b11ce120065d4c2eb6c6cff7cbdc1b5dbbfa6341afa39b8",
+      "after": "5cadbd66a716397d5b15b8337c4c13461b6a1f859360c2a759e0c64f275ff1f0"
+    }
+  ],
+  "compile": {
+    "BeforePSP2": {
+      "exit": 0,
+      "errors": 0,
+      "warnings": 271
+    },
+    "AfterPSP2": {
+      "exit": 0,
+      "errors": 0,
+      "warnings": 271
+    },
+    "AfterEditor": {
+      "exit": 0,
+      "errors": 0,
+      "warnings": 269
+    },
+    "newWarningSignatures": []
+  },
+  "method_audit": {
+    "result": "PASS",
+    "bufferedFrustum": true,
+    "rockMeshCloning": false,
+    "waterMainCameraQueries": 1,
+    "temporaryPlayerDiagnostics": false,
+    "comparedMethods": 31726,
+    "changedMethodBodies": [
+      "FGOL.Water::Update",
+      "GameCamera::.ctor",
+      "GameCamera::UpdateFOV",
+      "GameCamera::ApplyUpdate",
+      "RocksExplosion::Start"
+    ],
+    "hardware": "UNTESTED"
+  },
+  "integrity": {
+    "original_authored_files": 19648,
+    "changed_original_files": [
+      "Assets/Scripts/Assembly-CSharp/GameCamera.cs",
+      "Assets/Scripts/Assembly-CSharp/RocksExplosion.cs",
+      "Assets/Scripts/Assembly-CSharp/FGOL/Water.cs"
+    ],
+    "added_original_files": [],
+    "removed_original_files": [],
+    "all_ProjectSettings_unchanged": true,
+    "prior_VPKs_preserved": 12,
+    "save_original_hashes_restored": true,
+    "temporary_diagnostics_archived": true
+  },
+  "textures": {
+    "importer_count": 680,
+    "native_imported_count": 679,
+    "imported_formats": {
+      "RGB24": 2,
+      "RGBA32": 7,
+      "DXT5": 291,
+      "DXT1": 379
+    },
+    "readable_importers": 2,
+    "source_above_2048": 0,
+    "source_byte_duplicate_groups": 0
+  },
+  "rock_read_audit": {
+    "components_before": 103,
+    "components_after": 103,
+    "mesh_filters_before": 414,
+    "mesh_filters_after": 414,
+    "cloned_mesh_filters_before": 162,
+    "cloned_mesh_filters_after": 0,
+    "before_unique_clone_bytes_editor": 3399800
+  },
+  "routes": {
+    "baseline_move": {
+      "all_gameplay_after_3s": {
+        "frames": 752,
+        "mean_ms": 33.27830146276596,
+        "p50_ms": 33.2332,
+        "p95_ms": 33.935,
+        "p99_ms": 34.1089,
+        "max_ms": 66.1142,
+        "frames_over_33_33ms": 234,
+        "frames_over_50ms": 1
+      },
+      "eating_frames": {
+        "frames": 5,
+        "mean_ms": 33.09356,
+        "p50_ms": 33.0565,
+        "p95_ms": 33.2185,
+        "p99_ms": 33.2185,
+        "max_ms": 33.2317,
+        "frames_over_33_33ms": 0,
+        "frames_over_50ms": 0
+      },
+      "start_eats": 0.0,
+      "end_eats": 7.0,
+      "sampled_GC_after_3s": 1.0,
+      "mean_batches": 103.4813829787234,
+      "mean_triangles": 16608.82978723404,
+      "positions": {
+        "start": [
+          0.6000061,
+          26.8
+        ],
+        "end": [
+          -1640.958,
+          -5.133601
+        ]
+      }
+    },
+    "baseline_route": {
+      "all_gameplay_after_3s": {
+        "frames": 4355,
+        "mean_ms": 5.743313294833524,
+        "p50_ms": 5.1971,
+        "p95_ms": 8.076099,
+        "p99_ms": 8.8,
+        "max_ms": 20.4976,
+        "frames_over_33_33ms": 0,
+        "frames_over_50ms": 0
+      },
+      "eating_frames": {
+        "frames": 5,
+        "mean_ms": 6.522959999999999,
+        "p50_ms": 7.2383,
+        "p95_ms": 7.3302,
+        "p99_ms": 7.3302,
+        "max_ms": 7.5874,
+        "frames_over_33_33ms": 0,
+        "frames_over_50ms": 0
+      },
+      "start_eats": 0.0,
+      "end_eats": 10.0,
+      "sampled_GC_after_3s": 5.0,
+      "mean_batches": 65.25373134328358,
+      "mean_triangles": 8504.327898966705,
+      "positions": {
+        "start": [
+          0.6000061,
+          26.8
+        ],
+        "end": [
+          35.16857,
+          -0.1506012
+        ]
+      }
+    },
+    "after_route": {
+      "all_gameplay_after_3s": {
+        "frames": 4665,
+        "mean_ms": 5.360495587352626,
+        "p50_ms": 4.9021,
+        "p95_ms": 7.8757,
+        "p99_ms": 8.652901,
+        "max_ms": 20.2621,
+        "frames_over_33_33ms": 0,
+        "frames_over_50ms": 0
+      },
+      "eating_frames": {
+        "frames": 12,
+        "mean_ms": 5.897941666666667,
+        "p50_ms": 6.0569,
+        "p95_ms": 7.4708,
+        "p99_ms": 7.4708,
+        "max_ms": 7.9153,
+        "frames_over_33_33ms": 0,
+        "frames_over_50ms": 0
+      },
+      "start_eats": 0.0,
+      "end_eats": 14.0,
+      "sampled_GC_after_3s": 6.0,
+      "mean_batches": 111.2315112540193,
+      "mean_triangles": 14593.528617363345,
+      "positions": {
+        "start": [
+          0.3775355,
+          -7.309822
+        ],
+        "end": [
+          36.47016,
+          -7.010369
+        ]
+      }
+    },
+    "limitations": "Editor DX11, small Game view, default high desktop content rather than Vita medium, nonidentical startup/spawn/health/focus states. No matched FPS A/B or Vita FPS inference. Eating-frame correlation is not proof of cause; frame timers include Editor scheduling. Earliest mixed loading capture retained separately. First 3 seconds omitted from route summaries."
+  },
+  "build": {
+    "status": "BLOCKED_PRECHECK",
+    "player_build_started": false,
+    "VPK_created": false,
+    "reason": "Native LiveArea API returns empty path; saved ProjectSettings has PSP2System/BetterWinds/contents. Settings preserved; prior packages retained."
+  },
+  "hardware": "UNTESTED by Codex; 23–40 FPS is the owner hardware report, not an Editor result",
+  "private_evidence": "Reports/PerformanceIntegral_20261018"
+}

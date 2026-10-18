@@ -1,5 +1,23 @@
 # Experiment log
 
+## Owner-requested integral performance audit — 2026-10-18
+
+The owner's current chat explicitly authorizes investigation, small justified optimizations
+in the existing private Unity 2018.2 PSP2 project and local Unity validation, including
+movement and eating prey. This is a fresh task-specific phase exception on existing
+`main`, not approval of P04–P12. P03 remains ACTIVE / 3 of 13 APPROVED; initial gate
+validation passes. The owner's 23–40 FPS baseline refers to physical Vita without
+overclock; Editor measurements must remain separately classified. Existing untracked
+tools, prior packages and prior private changes are preserved. Results will be recorded
+below after validation; no release or hardware success is implied.
+
+| Date | ID | Input / tools / settings | Observed result | Evidence / next action |
+| --- | --- | --- | --- | --- |
+| 2026-10-18 | INTPERF-001 | Base `92f1f84`, manifest SHA-256 in receipt; exact Unity 2018.2.19f1 PSP2-target Editor, existing main; local tool inventory and phase validator | **VERIFIED:** 103 rock components / 414 filters include 162 cloned mesh filters, 3,399,800 bytes in Editor; camera allocating frustum overload; repeated water main-camera lookup. Static texture importers: 680, two readable, zero byte-identical sources, no PNG above 2048. Native Texture2D census 679, 670 DXT1/DXT5 and nine RGB24/RGBA32, no BC7 | [Audit and caveats](PERFORMANCE_INTEGRAL_2026-10-18.md), private Before/ManifestBefore, baseline profiles and StaticTextureAudit. P03 ACTIVE, no gate transitions |
+| 2026-10-18 | INTPERF-002 | Three localized private source changes; original transforms/rules; 1,000-camera culling contract, real RocksExplosion.Start fixture, five-round microbenchmarks | **PASS Editor:** exact planes/culling and explosion points, no source mesh mutation. Scene has same 103 rock components/414 filters and zero cloned filters. Frustum 10k calls: ~1.56 MB to zero managed delta. Water 30k repeated lookups vs 10k local lookups preserve results. **UNTESTED:** Vita RAM/VRAM and frame benefit | Private Changes/diffs/contracts, [sanitized hashes](evidence/PERFORMANCE_INTEGRAL_2026-10-18.json). No visual downgrade or gameplay/pool/spawn/shader/settings change |
+| 2026-10-18 | INTPERF-003 | Original logical input 0.8, 28s directional routes including feeding; Unity Profiler/Recorder and buffered frametimes; initial mixed-load/capped route retained separately | **PARTIAL comparison:** route counters 10 before / 14 after; later session reaches 18, health reaches zero naturally; pause/resume, results, Evolution/store and second game tested. No new production C# exception captured; known IAP/cleanup remain. Differing spawn/position/batches, 300x205 DX11/high Editor and scheduling prevent matched FPS attribution; physical 23–40 FPS drops not reproduced | [Route metrics/limits](PERFORMANCE_INTEGRAL_2026-10-18.md#c-pruebas-y-mediciones), private RouteSummary/captures/receipts. Measure moving/feeding and zoom on Vita at stock clocks before further changes |
+| 2026-10-18 | INTPERF-004 | Installed Unity Mono/mcs C#4, full PSP2-symbol builds before/after, native Editor reload; dnlib CIL comparison and negative control; current codec fixture | **PASS source compile:** 0 errors/271 warnings before and after, no new signature; Editor 0/269. Only five bodies differ among 31,726 methods. Eight profile files restored; three sources change among 19,648 original files, other assets/settings/metas intact; 12 VPK preserved. Codec PSP2 fixture passes four cultures/copy/rejection; Editor preserves prior behavior. **BUILD BLOCKED before player invocation:** native LiveArea getter empty despite saved path; no VPK created, no settings workaround | Private CompileResults/MethodAudit/MetadataNegativeControl/SaveFixtures/IntegrityAfter/BuildPrecheckFailure/LiveAreaRuntime. [Read-only auditor](../tools/audit_hse_integral_performance.ps1). All own diagnostics archived; MainMenu outside Play, preview off. No physical Vita, cold hardware save or phase approval |
+
 ## Owner-requested navigation/performance test VPK — 2026-10-18 UTC
 
 Local date 2026-10-17. After the Editor corrections the owner explicitly requested:
