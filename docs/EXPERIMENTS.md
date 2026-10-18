@@ -1,5 +1,14 @@
 # Experiment log
 
+## Owner-requested BetterWinds LiveArea integration — 2026-10-18 UTC
+
+Local date 2026-10-17. Explicit LiveArea-only exception on existing `main`; P03 ACTIVE, 3/13 approvals, ledger unchanged. Artwork credit: [BetterWinds](https://github.com/BetterWinds). No physical Vita access or release.
+
+| Date (UTC) | ID | Input / tool / settings | Observed result | Evidence / next action |
+| --- | --- | --- | --- | --- |
+| 2026-10-18 | LIVEAREA-001 | Base `61ed38c`; supplied wrapper ZIP SHA-256 `ea3425f6738a61e972e36681395b2797de548350c0a1e83aafa7baa9f525a82a`; installer validates three original PNG hashes. Unity 2018.2.19f1 native PSP2 custom liveAreaPath and 128px icon slot, existing template a1/01.03 | **VERIFIED:** source originals unchanged; native paths saved, no competing background/gate paths. Only ProjectSettings.asset changed among 19,639 preexisting authored files, limited to icon/path; all nine earlier VPK hashes preserved. Preparation collector's directory-as-VPK failure and competing editor refusal retained; existing editor used | [Integration/configuration/rollback](BETTERWINDS_LIVEAREA_2026-10-18.md); private Reports/BetterWinds_20261018 before-manifest/settings, Input and Configuration receipts |
+| 2026-10-18 | LIVEAREA-002 | Native PSP2/Mono2x original scenes/options: 0 errors / 296 warnings, 2:12.318. Final VPK SHA-256 `a6e40f075f1c08a72942382708e6df3b9bab9d3481fc618dd4e0e8d093ac78fb` | **PASS package:** 135085568 bytes, 213 entries, CRC/runtime equality, canonical title, prior D10 full identity/ATTRIBUTE2/pic0 retained; background/gate source hashes exact. Native icon palette conversion caught by strict initial assertion, visually inspected and explicitly recorded; original RGBA unchanged. Native D10 save audit PASS; five malformed-package controls rejected. **UNTESTED:** physical bubble, opened LiveArea, launch/resume | Private BuildResult/Build.log, PackageReceipt/Integrity and source/icon comparison; [verifier](../tools/verify_betterwinds_vpk.py). No manual PNG conversion, artwork VPK postprocessor, gameplay/input/save/performance edits or phase approval |
+
 ## Owner-requested D10 save MD5/codec diagnosis — 2026-10-18 UTC
 
 Local date 2026-10-17. Explicit bounded save/instrumentation/build request; existing branch retained, no phase transitions or device access. P00 ACTIVE, 0/13 approvals.

@@ -31,6 +31,9 @@ level[0-9]*
 # Portable local developer tools: do not publish binaries or installers.
 /Tool Codex/
 
+# Owner-supplied LiveArea artwork remains local pending redistribution rights.
+/assets/livearea/BetterWinds/*.png
+
 # Unity generated files
 [Ll]ibrary/
 [Tt]emp/
