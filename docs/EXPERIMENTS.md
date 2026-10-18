@@ -1,5 +1,17 @@
 # Experiment log
 
+## Owner-requested resource-optimized private test VPK — 2026-10-18
+
+The owner explicitly requests a VPK for testing after RESOPT-001–003. This permits
+private packaging of the already verified PSP2 native player on existing `main`,
+without rebuilding or changing sources/settings, publishing, installing or approving
+phases. Verify source/player hashes, canonical identity, artwork, ZIP CRC and exact
+runtime-member equality; preserve prior packages and exclude savedata.
+
+| Date (UTC) | ID | Input / tools / settings | Observed result | Evidence / next action |
+| --- | --- | --- | --- | --- |
+| 2026-10-18 | RESOPT-VPK-001 | RESOPT native PSP2/Mono2x player, four final source hashes and compiled assembly hash verified against receipt; existing canonical identity/artwork, Python ZIP packaging | **PASS:** native resource/services audit; VPK 135084726 bytes / 213 entries, SHA-256 `3a848ce2ef4425c13d737ef9848682310779623510909eaf6edf99afb08a5c0c`. CRC, exact runtime-member equality, HGSKE1178/title and BetterWinds artwork verified. No savedata, source/settings edits, rebuild, overwrite of previous package, upload or installation | [Package receipt](evidence/RESOURCE_TEST_VPK_2026-10-18.json); private `Reports/ResourcePerformance_20261018/Build/HSE_Resource_Optimized_HGSKE1178.vpk`. **UNTESTED hardware:** stock-clock gameplay/frame spikes, transitions, cold saves and stability. P03 ACTIVE, gates unchanged |
+
 ## Owner-requested resource/runtime optimization — 2026-10-18
 
 The current owner request authorizes auditing and focused, evidence-backed private

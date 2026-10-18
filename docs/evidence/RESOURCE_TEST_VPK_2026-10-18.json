@@ -1,0 +1,20 @@
+{
+  "sha256": "3a848ce2ef4425c13d737ef9848682310779623510909eaf6edf99afb08a5c0c",
+  "bytes": 135084726,
+  "entries": 213,
+  "images": {
+    "sce_sys/livearea/contents/bg0.png": "452a71826ec9613c29773a4f29bebdc88c3dfe9299313048939d6a2b1152f77c",
+    "sce_sys/icon0.png": "28bafa4298a4aa7e00ce30df69d082710e1553d201bcdeacb81fb5c5cf9fb775",
+    "sce_sys/livearea/contents/startup.png": "293fff5b6e8abc7923ed2d9f3b1bb92b233843c7d6416fa5b657b8b2730a4f4d"
+  },
+  "title_id": "HGSKE1178",
+  "title": "Hungry Shark Evolution Vita",
+  "template_format": "01.03",
+  "icon_conversion": "Unity native RGBA to indexed PNG",
+  "hardware": "NOT TESTED",
+  "runtime_member_equality": true,
+  "build_result": "result=Succeeded errors=0 warnings=296 time=00:02:26.6708921 scenes=18",
+  "canonical_identity": true,
+  "authorization": "Owner explicitly requested private test VPK after resource optimization; no phase approval or publication",
+  "artifact": "Reports/ResourcePerformance_20261018/Build/HSE_Resource_Optimized_HGSKE1178.vpk"
+}
