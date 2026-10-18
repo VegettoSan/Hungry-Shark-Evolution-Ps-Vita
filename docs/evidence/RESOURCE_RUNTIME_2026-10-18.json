@@ -1,0 +1,184 @@
+{
+  "date_utc": "2026-10-18",
+  "editor": "2018.2.19f1",
+  "target": "PSP2",
+  "backend": "Mono2x",
+  "branch": "main",
+  "base_commit_observed": "7b3b318",
+  "authorization": "Current owner chat: scoped private runtime/resource optimizations, Editor regression and local PSP2 compilation. No phase approval.",
+  "phase": "P03 ACTIVE / 3 of 13 APPROVED",
+  "original_apk_sha256": "52b7d8754ab8fec75c3b656a0dc5ec8dc849565adc402487a3ac093f6a481f7a",
+  "private_evidence": "Reports/ResourcePerformance_20261018/",
+  "checkpoint_manifest_sha256": "4e86f3d015d33a31ca819ac7462bbe7bff90e9271293f9d1cf9e8c42ce305635",
+  "source_hashes": {
+    "AnalyticsFPSHeatmapRunner.cs": {
+      "before": "b223f0262804ec720e798798da7a1f3ecb98b6ca0d7913952ea336f106a913eb",
+      "after": "85061d0f400f765c7ce4c020e52103087694532e9c592d644fa147715b80d4c5"
+    },
+    "ParticleManager.cs": {
+      "before": "109842d7023fda19b818c00bc892ad1ff7c727505d0820942cf2caa45484a182",
+      "after": "879344c66f3160798408357bf35808064a773e5a3b91469b6b1d8cba47d3d365"
+    },
+    "GUITextureLoader.cs": {
+      "before": "3d49c89e16a55487916259aed54cd9402d5c17fc52bfa098d26a677bb2cc7da0",
+      "after": "3f442fcaeabfd5fc582530ae4d17b15274f7f2758abf04cc1077f64d3c23eb24"
+    },
+    "HSEAdManager.cs": {
+      "before": "0c81569757babaca9bbd28894b91e8efecbb0cae6089743d5fb0d954f602f90f",
+      "after": "aa1c076555ff4f1255bd19c9576a1565fc94adc61a61ade7b6c12e328074d455"
+    }
+  },
+  "compile": {
+    "before": {
+      "PSP2": {
+        "exit": 0,
+        "errors": 0,
+        "warnings": 271
+      },
+      "Editor": {
+        "exit": 0,
+        "errors": 0,
+        "warnings": 269
+      }
+    },
+    "final": {
+      "PSP2": {
+        "exit": 0,
+        "errors": 0,
+        "warnings": 271
+      },
+      "Editor": {
+        "exit": 0,
+        "errors": 0,
+        "warnings": 269
+      }
+    },
+    "new_warning_signatures": []
+  },
+  "native_build": "result=Succeeded errors=0 warnings=296 time=00:02:26.6708921 scenes=18",
+  "native_assembly_sha256": "883f082d83acf312ae99c9940442eceee3747ed61d221021a76f1699e456c2e1",
+  "native_resource_audit": {
+    "result": "PASS",
+    "telemetrySampling": false,
+    "particleNameConversions": false,
+    "adConfigResourceLoad": false,
+    "iconMaterialReuse": true,
+    "mobileSendersCreated": false,
+    "facebookUnavailable": true,
+    "iapUnavailable": true,
+    "dnaNativeInit": false,
+    "hardware": "UNTESTED"
+  },
+  "negative_control": "Prechange assembly rejected: telemetry allocation remains",
+  "other_platform_token_checks": 24,
+  "non_psp2_compile_control": "Both baseline and final fail on preexisting inaccessible Facebook.Unity.LoginResult; not changed to force success.",
+  "methods_compared": 31720,
+  "changed_method_count": 10,
+  "added_methods": 0,
+  "removed_methods": 0,
+  "objective_editor_results": {
+    "repeated_icon_load_calls": 16,
+    "before_materials": 16,
+    "after_materials": 1,
+    "particle_equivalence_cases": 156,
+    "predicate_calls": 10000,
+    "original_predicate_managed_delta_bytes_range": [
+      1671168,
+      1830912
+    ],
+    "direct_predicate_managed_delta_bytes": 0,
+    "before_telemetry_updates": 253,
+    "after_telemetry_updates": 0,
+    "after_game_logic_updates": 299,
+    "special_models_after_close": 0
+  },
+  "functional_results": [
+    "Startup and existing profile load",
+    "Evolution enter/return",
+    "Mako/reef selector",
+    "Original laboratory constructor; 20 carousel completions",
+    "Two feeding events; natural death",
+    "Pause/resume preserves position and health",
+    "Three audio sources playing when enabled; initial mute restored",
+    "Store/customization and second gameplay entry",
+    "Original unavailable ad callbacks once; no reward",
+    "Current save codec fixtures; physical cold load remains untested"
+  ],
+  "save_fixtures": {
+    "PSP2": {
+      "exit": 0,
+      "summary": [
+        "ï»¿PASS original valid header bytes, reproduced short read; wrapper parity and EOF",
+        "PASS en-US state=OK culture restored",
+        "PASS es-ES state=OK culture restored",
+        "PASS es-CO state=OK culture restored",
+        "PASS fr-FR state=OK culture restored",
+        "PASS embedded checksum rejection, truncation, version gate, copied reload, old valid save, no format changes"
+      ]
+    },
+    "Editor": {
+      "exit": 0,
+      "summary": [
+        "ï»¿PASS original valid header bytes, reproduced short read; wrapper parity and EOF",
+        "PASS en-US state=OK culture restored",
+        "PASS es-ES state=Corrupted culture restored",
+        "PASS es-CO state=Corrupted culture restored",
+        "PASS fr-FR state=Corrupted culture restored"
+      ]
+    }
+  },
+  "save_restore": {
+    "restored_files": 8,
+    "all_original_bytes_match": true,
+    "test_outputs_preserved": true
+  },
+  "integrity": {
+    "original_files": 19648,
+    "changed": [
+      "Assets/Scripts/Assembly-CSharp/AnalyticsFPSHeatmapRunner.cs",
+      "Assets/Scripts/Assembly-CSharp/GUITextureLoader.cs",
+      "Assets/Scripts/Assembly-CSharp/HSEAdManager.cs",
+      "Assets/Scripts/Assembly-CSharp/ParticleManager.cs"
+    ],
+    "missing": [],
+    "added": [],
+    "excluded_task_diagnostic_paths": [
+      "Assets/Editor/HSEResourceAudit.cs"
+    ],
+    "settings_unchanged": true
+  },
+  "material_drift": {
+    "only_field": "Underwater.mat _MainTex.m_Offset.x",
+    "checkpoint_sha256": "d5f6242ec6202549a83bab10b503140a8d434ff8c68f577483b68e6ef1496d78",
+    "restored_sha256": "d5f6242ec6202549a83bab10b503140a8d434ff8c68f577483b68e6ef1496d78",
+    "observed_variant_sha256": "64483105637c296dc0fb3b328bd5375ee0492c9e93cb550a5bf69adc3a5d1b6f",
+    "restored_from_exact_hash_matching_prior_private_backup": true
+  },
+  "temporary_diagnostics": "Archived outside Assets; no diagnostics in native game assembly. Editor MainMenu outside Play, controller preview off.",
+  "frame_capture_limits": {
+    "before_game": {
+      "frames": 281,
+      "median_ms": 33.2336,
+      "p95_ms": 34.2257,
+      "max_ms": 1373.299,
+      "gc_collections": 5,
+      "batches_mean": 47.79715302491103
+    },
+    "after_game": {
+      "frames": 362,
+      "median_ms": 33.2331,
+      "p95_ms": 33.9274,
+      "max_ms": 34.5308,
+      "gc_collections": 2,
+      "batches_mean": 68.9696132596685
+    },
+    "limitation": "Not matched: baseline includes scene loading, different position/spawn/health. No FPS gain or regression can be attributed. Editor resolution/quality are not Vita target performance."
+  },
+  "pending": [
+    "Physical Vita FPS/frametimes/CPU/GPU and peak RAM/VRAM at stock clocks",
+    "Evolution 329–380 ms and laboratory 2.46 s construction remain",
+    "Full shark/effects/input/cold-save/lifecycle matrix and long session",
+    "No controlled global FPS improvement established"
+  ],
+  "public_distribution": "Documentation and read-only metadata auditor only; recovered sources, diffs and native player stay private."
+}

@@ -1,5 +1,20 @@
 # Experiment log
 
+## Owner-requested resource/runtime optimization — 2026-10-18
+
+The current owner request authorizes auditing and focused, evidence-backed private
+Unity 2018.2 PSP2 optimizations, Editor regression tests and a local PSP2 compilation
+on existing `main`. This is a fresh task-specific exception, not P11 approval.
+P03 remains ACTIVE / 3 of 13 APPROVED; initial phase validation passes. Preserve
+existing sources, tools, packages and saves. Hardware validation is deferred to the
+owner; the reported 23–40 FPS is not an agent measurement. Results follow below.
+
+| Date (UTC) | ID | Input / tools / settings | Observed result | Evidence / next action |
+| --- | --- | --- | --- | --- |
+| 2026-10-18 | RESOPT-001 | Existing `main`; APK `52b7d875...`; 19,648-file private checkpoint; Unity 2018.2.19f1 PSP2-target Editor, original initialization/menu/gameplay paths | **VERIFIED:** unused telemetry still receives 253 Update calls despite zero analytics senders; repeated icon load creates 16 materials / 16 calls; particle filter converts enum names; ad engine already excluded but still loads local configuration. Four focused PSP2 source corrections; no blanket service deletion, resource cache, rendering or gameplay changes | [Diagnosis and limits](RESOURCE_RUNTIME_OPTIMIZATION_2026-10-18.md); [hash receipt](evidence/RESOURCE_RUNTIME_2026-10-18.json); private Before/Changes/profiles/contracts. No gate approval |
+| 2026-10-18 | RESOPT-002 | Same Editor; 16-load icon fixture, 156 particle cases, 10k predicates; actual input movement/feeding, menus, pause, death and second game; Mono/mcs C#4 and source-branch checks | **PASS:** one icon material; route change/cleanup/reload; telemetry disabled without map/average/coroutine, zero calls in capture with 299 GameLogic.Update; predicate managed delta ~1.6–1.8 MiB → zero in fixture. Tested menu/lab/store/gameplay routes pass, initial mute restored. PSP2 before/final 0 errors/271 warnings, Editor 0/269; 24 non-PSP2 token comparisons; only ten method bodies change among 31,720. Extra non-PSP2 compile fails both versions on existing Facebook visibility; known IAP/cleanup and diagnostic errors retained | Private b*/a*/c*/d* receipts, MethodAudit/BranchParity/SaveFixtures. Global captures differ in loading/position/spawn: no FPS/P95 attribution. Evolution 329–380 ms, lab 2.46 s remain. No physical validation |
+| 2026-10-18 | RESOPT-003 | Native Unity 2018.2.19f1 PSP2/Mono2x, 18 original enabled scenes / BuildOptions.None, 2:26.671; read-only dnlib audits and negative control | **PASS build:** 0 errors/296 warnings, no new C# warning signature or shader error. Native resources/services, previous optimizations, quality, save and clean-screen audits pass. Only four source files differ after diagnostic removal; all other authored assets/settings/metas match. Incidental Underwater offset drift preserved and restored from an exact hash-matching prior backup; eight profile files restored byte for byte. First integrity failure retained. No release VPK or hardware test | Private ResourcePerformance_20261018 Build/NativePlayer, Build.log, NativeResourceAudit, BeforeNegativeControl, IntegrityAttempt1/IntegrityAfter, ObservedBuildDrift/SaveRestore. [Receipt](evidence/RESOURCE_RUNTIME_2026-10-18.json). Next: real Vita stock-clock timing/memory, cold saves and long-session matrix |
+
 ## Owner-requested clean-screen private test VPK — 2026-10-18
 
 The owner reports improvement while using overclock, without new measured FPS,
