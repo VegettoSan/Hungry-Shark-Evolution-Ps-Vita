@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-18",
+  "base_commit": "d730d35",
+  "editor": "2018.2.19f1",
+  "target": "PSP2",
+  "backend": "Mono2x",
+  "options": "None; original 18 enabled scenes",
+  "scope": "Explicit owner request to finish a private performance test VPK; no phase approval or publication",
+  "livearea_resolution": "Editor memory had empty path, while disk contained reviewed path. Restored that existing value through native setter; original Verify then passed; on-disk ProjectSettings hash unchanged. Memory expansion=3, power mode=0 retained.",
+  "package": {
+    "sha256": "44f93a771810f2a62d5e305af9ba9c621c70581a01e2813cc7b49deab23b0fbb",
+    "bytes": 135088469,
+    "entries": 213,
+    "images": {
+      "sce_sys/livearea/contents/bg0.png": "452a71826ec9613c29773a4f29bebdc88c3dfe9299313048939d6a2b1152f77c",
+      "sce_sys/icon0.png": "28bafa4298a4aa7e00ce30df69d082710e1553d201bcdeacb81fb5c5cf9fb775",
+      "sce_sys/livearea/contents/startup.png": "293fff5b6e8abc7923ed2d9f3b1bb92b233843c7d6416fa5b657b8b2730a4f4d"
+    },
+    "title_id": "HGSKE1178",
+    "title": "Hungry Shark Evolution Vita",
+    "template_format": "01.03",
+    "icon_conversion": "Unity native RGBA to indexed PNG",
+    "hardware": "NOT TESTED",
+    "runtime_member_equality": true,
+    "build_result": "result=Succeeded errors=0 warnings=296 time=00:02:08.9558943 scenes=18",
+    "canonical_identity": true
+  },
+  "performance": {
+    "result": "PASS",
+    "bufferedFrustum": true,
+    "rockMeshCloning": false,
+    "waterMainCameraQueries": 1,
+    "temporaryPlayerDiagnostics": false,
+    "comparedMethods": 0,
+    "changedMethodBodies": [],
+    "hardware": "UNTESTED"
+  },
+  "quality": {
+    "result": "PASS",
+    "NativeClassification": "medium",
+    "ClassifierIL": "IL_0000: ldc.i4.1; IL_0001: ret",
+    "OriginalQualitySelection": true,
+    "OriginalFrameLimitCalls": true,
+    "Hardware": "UNTESTED"
+  },
+  "save": {
+    "result": "PASS",
+    "originalHeaderMD5AESCLZF2": true,
+    "scopedInvariantCulture": true,
+    "finallyRestore": true,
+    "exactRead": true,
+    "realTempCommitReopenChecks": 4,
+    "D09CopyRetained": true,
+    "D10HUD": true,
+    "D09SyntheticControlOnBoot": false,
+    "Hardware": "UNTESTED"
+  },
+  "navigation": {
+    "result": "PASS",
+    "indexedTouchReader": true,
+    "singleGestureConsumption": true,
+    "carouselWrapOrder": true,
+    "existingControllerRouting": true,
+    "evolutionPauseResourcePreparation": true,
+    "singleMeshVerticesReader": true,
+    "editorToolsExcluded": true,
+    "hardware": "UNTESTED"
+  },
+  "integrity": {
+    "authored_files_checked": 19651,
+    "all_authored_hashes_unchanged": false,
+    "observed_material_drift": [
+      {
+        "path": "Assets/Material/Underwater.mat",
+        "before": "2a13c635e4e1015e2692ff8d3b952c5916586c1cdfde6ed4c8c47449dced271e",
+        "after": "d5f6242ec6202549a83bab10b503140a8d434ff8c68f577483b68e6ef1496d78",
+        "classification": "VERIFIED hash drift observed after build; INFERRED Editor/build material serialization. Original checkpoint has hashes, not material bytes; retained and copied rather than overwritten with an unverified reconstruction."
+      }
+    ],
+    "all_code_and_ProjectSettings_hashes_unchanged": true,
+    "prior_VPKs_preserved": 12,
+    "new_CSharp_warning_signatures": [],
+    "temporary_driver_archived": true,
+    "source_optimizations_retained": true
+  },
+  "private_artifact": "Reports/PerformanceVPK_20261018/Build/HSE_Performance_Optimized_HGSKE1178.vpk",
+  "physical_Vita": "UNTESTED in this task; owner to test moving/feeding at stock clocks",
+  "phase_state": "P03 ACTIVE / 3 of 13 approved; unchanged"
+}

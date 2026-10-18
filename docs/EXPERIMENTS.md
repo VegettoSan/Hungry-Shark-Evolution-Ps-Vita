@@ -1,5 +1,19 @@
 # Experiment log
 
+## Owner-requested completion of optimized private VPK — 2026-10-18
+
+The owner explicitly requested completing the VPK for physical testing after the
+integral performance audit. This authorizes correcting its build preparation and
+one private PSP2 package on existing `main`; no branch, release or phase approval.
+The three optimized sources are checked against the audit's final hashes before
+building. Earlier blocked preparation and prior VPKs are retained. Results follow
+after package verification; P03 remains ACTIVE / 3 of 13 APPROVED.
+
+| Date (UTC) | ID | Input / tools / settings | Observed result | Evidence / next action |
+| --- | --- | --- | --- | --- |
+| 2026-10-18 | INTPERF-VPK-001 | Base `d730d35`; three sources match INTPERF final hashes; installed Unity 2018.2.19f1 PSP2/Mono2x. Native inspection contrasts API/SerializedObject against saved settings | **VERIFIED:** only LiveArea path stale in Editor memory; memory expansion 3, power mode 0 and icon retained. Restoring the already saved path via native setter makes original Verify pass. ProjectSettings file hash stays identical. No validation removed or graphic setting changed | Private PerformanceVPK_20261018 NativeSettingsBeforeSync/NativeSettings/LiveAreaSync and checkpoint. Earlier blocked attempt preserved; new explicit owner build authorization |
+| 2026-10-18 | INTPERF-VPK-002 | Original 18 scenes / BuildOptions.None, 2:08.956; final VPK SHA-256 `44f93a771810f2a62d5e305af9ba9c621c70581a01e2813cc7b49deab23b0fbb` | **PASS native build:** 0 errors / 296 warnings, no new C# warning signatures or shader errors. Native performance/quality/save/navigation audits pass. **PASS package:** 135088469 bytes, 213 entries, CRC/runtime-member equality, canonical HGSKE1178 and prior identity/memory/pic0, BetterWinds hashes retained. Code and ProjectSettings hashes unchanged; 12 prior VPKs intact. One observed Underwater.mat hash drift retained/copied; exact original delta unavailable, Editor/build serialization inferred. Driver archived | [Receipt and limits](evidence/PERFORMANCE_VPK_2026-10-18.json), private BuildResult/Build.log/Native audits/PackageReceipt/IntegrityAfter/ObservedBuildDrift. Final private artifact: `Reports/PerformanceVPK_20261018/Build/HSE_Performance_Optimized_HGSKE1178.vpk`. **UNTESTED hardware:** moving/feeding FPS, water/culling/rocks, cold save and stability; no phase approval or publication |
+
 ## Owner-requested integral performance audit — 2026-10-18
 
 The owner's current chat explicitly authorizes investigation, small justified optimizations

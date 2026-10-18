@@ -111,3 +111,27 @@ Unity queda en MainMenu, fuera de Play y con preview desactivado.
 Objetivo sigue siendo aproximadamente **30 FPS sostenidos sin overclock**. No se
 modifica el límite original para afirmar estabilidad ni se certifica rendimiento de
 consola a partir de este Editor.
+
+## Seguimiento: VPK terminada por petición del propietario
+
+**2026-10-18 — VERIFIED:** el bloqueo anterior queda resuelto. La ruta LiveArea
+estaba vacía en memoria del Editor, mientras memoria/potencia/icono estaban correctos.
+Se restableció mediante el setter nativo el mismo valor ya guardado; la verificación
+original pasó y el archivo de ProjectSettings conservó su hash.
+
+Build PSP2/Mono2x de 18 escenas: **0 errores / 296 advertencias**, 2:08,956, sin
+nuevas firmas C# ni errores de shader. Auditorías nativas de las tres optimizaciones,
+medium, save y navegación **PASS**. VPK privada de **135.088.469 bytes**, 213 entradas,
+CRC y equivalencia con los archivos del player verificados; identidad HGSKE1178,
+memoria y BetterWinds conservados. [Recibo](evidence/PERFORMANCE_VPK_2026-10-18.json).
+
+Archivo privado: `Reports/PerformanceVPK_20261018/Build/HSE_Performance_Optimized_HGSKE1178.vpk`.
+SHA-256: `44f93a771810f2a62d5e305af9ba9c621c70581a01e2813cc7b49deab23b0fbb`.
+
+Código y ProjectSettings intactos respecto al checkpoint de este build; 12 VPK
+anteriores conservadas. Se observó además un cambio de hash de `Underwater.mat`
+después de compilar, conservado y copiado en `ObservedBuildDrift`. La reserialización
+por Editor/build es **INFERRED**; el checkpoint tenía hashes, sin los bytes anteriores
+del material, por lo que no se inventó una restauración. Revisar el agua al probar.
+Driver retirado de Assets. **UNTESTED en Vita:** FPS, guardado frío y regresión física;
+los resultados del Editor no se convierten en una afirmación de rendimiento real.
