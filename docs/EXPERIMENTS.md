@@ -1,5 +1,14 @@
 # Experiment log
 
+## Owner-requested navigation/performance test VPK — 2026-10-18 UTC
+
+Local date 2026-10-17. After the Editor corrections the owner explicitly requested:
+“excelente, genera el vpk para probarlo”. This new task-specific authorization permits
+one private PSP2 test build with the current corrections and existing export settings,
+superseding the previous task's no-VPK limit for this build. Existing `main`, all previous
+packages and the P03 ACTIVE / 3-of-13 approval ledger are preserved. This is not release
+authorization or approval of a locked phase. Build/package results follow below.
+
 ## Owner-requested Unity 2018 Editor navigation/performance corrections — 2026-10-18 UTC
 
 Local date 2026-10-17. The owner's current task explicitly authorizes focused investigation,
