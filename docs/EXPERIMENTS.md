@@ -1,5 +1,19 @@
 # Experiment log
 
+## Owner-requested Evolution/Play transition and moving gameplay — 2026-10-19
+
+The owner's current chat expressly authorizes full-flow transition diagnosis,
+focused private Unity 2018 PSP2 fixes and realistic movement/feeding profiling on
+existing `main`, with manual capture preparation where coverage is incomplete.
+This is a fresh task-specific phase exception, not P11 approval. P03 stays ACTIVE /
+3 of 13 APPROVED; ledger passes unchanged. Prior sources, saves and VPK preserved.
+
+| Date (UTC) | ID | Input / tools / settings | Observed result | Evidence / next action |
+| --- | --- | --- | --- | --- |
+| 2026-10-19 | TRANS-001 | Audited 6.4.2 APK identity; 19,650-file checkpoint; Unity 2018.2.19f1, bounded scopes and short Profiler raws; three A/B menu cycles | **VERIFIED:** Evolution Jugar opens equipment Store, without gameplay scene loading. Forty prefab lookups for descriptions take 447.4 ms in a 535.6 ms row build. UI-only metadata removes those dependency loads: 115 entries / 134469 bytes, no asset references, original remote/text/trail/case contracts. Median synchronous action 591.2→134.8 ms; tween-complete display 1123.2→665.6 ms. Return 87.5→81.8 ms synchronous / 426.7→422.2 ms complete: **no conclusive return improvement** | [Diagnosis, comparisons and limitations](TRANSITIONS_GAMEPLAY_2026-10-19.md); [hash receipt](evidence/TRANSITIONS_GAMEPLAY_2026-10-19.json). Private Transitions_20261019 Summary/trace/raw/UI/description contracts. Physical ~10-second cause remains **INFERRED**, Vita timing **UNTESTED** |
+| 2026-10-19 | TRANS-002 | Existing temporary logical input reader; active directional route; Unity binary Profiler plus bounded CSV, C#4/Mono controls | **VERIFIED partial gameplay:** final capture 589 frames/~32.9 s, eats 1→11, horizontal/vertical displacement, pause/resume. SpawnerManager leads measured script totals in a short earlier profile; render/bounds/physics/particles/AI reviewed. No gameplay code change or matched FPS claim: load/route/resolution differ; render marker includes waits and Main Recorder has no completed samples. 49-row UI parity across six cycles and 115 description comparisons PASS. F8/F9 manual capture installed/tested | Same report; private captures/GameplaySummary. Invalid entry, fallback/case/trail, unsupported Profiler API and history-limit attempts retained/excluded. Manual broad areas/species/dense scenes and three comparable owner routes remain required |
+| 2026-10-19 | TRANS-003 | Unity 2018.2.19f1 PSP2/Mono2x, 18 scenes, BuildOptions.None; final native assembly hash in receipt; dnlib read-only audits | **PASS:** before/final C# PSP2 0 errors/271 warnings, Editor 0/269; native build 0 errors/296 warnings, 2:13.079. Metadata/prior menu/resources/integral/quality/clean/save audits PASS; original negative control rejected. Only StoreMenuSheet changes among 19,650 originals; existing method comparison changes only RefreshGameItemSlots. Settings/prior patches/VPK intact; eight profile files and animated Underwater material restored exactly. Temporary timing/build drivers archived; manual capture retained Editor-only. Incorrect audit-argument attempt invalidated/repeated correctly | Private Build.log/Native audits/MethodAudit/IntegrityAfter/SaveRestore. No new VPK or physical test. **UNTESTED:** stock-clock FPS, complete physical transitions/input/audio/save and long-run matrix; no gate approval |
+
 ## Owner-requested menu stutter follow-up — 2026-10-18
 
 The owner reports a small gameplay improvement with overclock after testing the

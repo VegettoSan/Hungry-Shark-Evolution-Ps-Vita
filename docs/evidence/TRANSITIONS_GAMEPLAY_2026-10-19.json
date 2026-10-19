@@ -1,0 +1,484 @@
+{
+  "date_utc": "2026-10-19T05:16:24.084288+00:00",
+  "base_commit": "02a50688f512fcb9a6871616ba6aadf7ee182188",
+  "branch": "main",
+  "phase": "P03 ACTIVE / 3 of 13 APPROVED; ledger unchanged",
+  "authorization": "Owner chat: investigate full Evolution/Play transition and realistic movement/feeding, apply justified private Unity 2018 PSP2 optimizations, preserve prior work, prepare manual profiling. Task-specific exception; no gate approval or branch creation.",
+  "original_apk_sha256": "52b7d8754ab8fec75c3b656a0dc5ec8dc849565adc402487a3ac093f6a481f7a",
+  "editor": "2018.2.19f1",
+  "target": "PSP2",
+  "backend": "Mono2x",
+  "private_evidence": "Reports/Transitions_20261019/",
+  "checkpoint_manifest_sha256": "9874cad297aba38d171ca7af815706f7cc9e7b14cd166e8873e91b1363d97c7e",
+  "final_manifest_sha256": "bb87ddd056fd4b985ce80b652f1330dbefc013b16e523e07169ed2e72199a32c",
+  "source_hashes": {
+    "StoreMenuSheet.cs": {
+      "before": "86c345d8cfed8b9476fb3d720c1df28509c6d1c9bcab123def37db167cb4821d",
+      "after": "66dc0a019340cc2c573b3bb2d565519a1de2c4be2133180ad1fe32065c2984c5"
+    },
+    "HSEVitaStoreDescriptions.cs": {
+      "after": "93646d6ea0f9ca5e4b3e8a1cef301e7980f2a6ea073aa3931014347a2ccfeaaf"
+    }
+  },
+  "ui_catalog": {
+    "entries": 115,
+    "bytes": 134469,
+    "asset_references": false,
+    "trail_presence_retained": true,
+    "case_insensitive_resources": true,
+    "maximum_entries": 512,
+    "maximum_json_bytes": 524288,
+    "private_catalog_sha256": "d76ce9033291fec8daa19d878441f4befe8c75e57293f6c7dd758b2f40bfffea"
+  },
+  "native_build": "result=Succeeded errors=0 warnings=296 time=00:02:13.0793114 scenes=18",
+  "native_assembly_sha256": "975c62638f4c180379f1e816182f9faa7f0d057280a1b9494092be4975030c0c",
+  "native_audits": {
+    "store_descriptions": {
+      "result": "PASS",
+      "uiOnly": true,
+      "boundedCatalog": true,
+      "remoteOverrides": true,
+      "originalFallback": true,
+      "sourceTextReleased": true,
+      "diagnosticsInPlayer": false,
+      "hardware": "UNTESTED"
+    },
+    "menu_models": {
+      "result": "PASS",
+      "anchorMetadataOnly": true,
+      "originalPoseInitialization": true,
+      "specialsOnDemand": true,
+      "retainedModelLimit": 5,
+      "temporaryDiagnostics": false,
+      "hardware": "UNTESTED"
+    },
+    "resource_runtime": {
+      "result": "PASS",
+      "telemetrySampling": false,
+      "particleNameConversions": false,
+      "adConfigResourceLoad": false,
+      "iconMaterialReuse": true,
+      "mobileSendersCreated": false,
+      "facebookUnavailable": true,
+      "iapUnavailable": true,
+      "dnaNativeInit": false,
+      "hardware": "UNTESTED"
+    },
+    "integral_performance": {
+      "result": "PASS",
+      "bufferedFrustum": true,
+      "rockMeshCloning": false,
+      "waterMainCameraQueries": 1,
+      "temporaryPlayerDiagnostics": false,
+      "comparedMethods": 0,
+      "changedMethodBodies": [],
+      "hardware": "UNTESTED"
+    },
+    "clean_screen": {
+      "result": "PASS",
+      "D10OverlayCompiled": false,
+      "D10VisualObjectCreated": false,
+      "inputOverlayCompiled": false,
+      "startupSaveChecksRetained": true,
+      "controllerBootstrapRetained": true,
+      "otherPortDiagnosticOverlays": 0,
+      "physicalDisplay": "UNTESTED"
+    },
+    "vita_medium": {
+      "result": "PASS",
+      "NativeClassification": "medium",
+      "ClassifierIL": "IL_0000: ldc.i4.1; IL_0001: ret",
+      "OriginalQualitySelection": true,
+      "OriginalFrameLimitCalls": true,
+      "Hardware": "UNTESTED"
+    },
+    "vita_save_cpu": {
+      "result": "PASS",
+      "localIdentityRecovery": true,
+      "originalSaveCodecCall": true,
+      "prefsFlush": true,
+      "recoveryWritesExistingFile": false,
+      "cachedSpawnerLookup": true,
+      "indexedTraversal": true,
+      "oldCameraAB": false,
+      "Hardware": "UNTESTED"
+    },
+    "vita_save_io": {
+      "result": "PASS",
+      "finalSaveStreamCopy": true,
+      "backupRestoreStreamCopy": true,
+      "previousAndPendingPreserved": true,
+      "originalHeader": true,
+      "copyAdapterUsesNativeCopy": false,
+      "readbackVerification": true,
+      "Hardware": "UNTESTED"
+    },
+    "SaveMD5": {
+      "result": "PASS",
+      "originalHeaderMD5AESCLZF2": true,
+      "scopedInvariantCulture": true,
+      "finallyRestore": true,
+      "exactRead": true,
+      "realTempCommitReopenChecks": 4,
+      "D09CopyRetained": true,
+      "D10HUD": true,
+      "D09SyntheticControlOnBoot": false,
+      "Hardware": "UNTESTED"
+    }
+  },
+  "compile": {
+    "BeforePSP2": {
+      "exit": 0,
+      "errors": 0,
+      "warnings": 271
+    },
+    "BeforeEditor": {
+      "exit": 0,
+      "errors": 0,
+      "warnings": 269
+    },
+    "FinalPSP2": {
+      "exit": 0,
+      "errors": 0,
+      "warnings": 271
+    },
+    "FinalEditor": {
+      "exit": 0,
+      "errors": 0,
+      "warnings": 269
+    }
+  },
+  "new_warning_signatures": [],
+  "method_audit": {
+    "compared": 31731,
+    "changed": [
+      "System.Void StoreMenuSheet::RefreshGameItemSlots(System.Boolean)"
+    ],
+    "added": [],
+    "removed": []
+  },
+  "ui_parity": {
+    "cycles": 6,
+    "rows": 49,
+    "same_ids_text_prices_icons_positions": true
+  },
+  "description_parity": "PASS all 115 eligible shop effects: complete serialized scalar/list parity, original localized text, IsAllZero, no prefab mutation.\nentries=115 bytes=134469 no asset references",
+  "timings": {
+    "baseline_store": [
+      {
+        "total_ms": 1209.1733,
+        "handler_ms": 671.0787,
+        "peak_frame_ms": 684.56,
+        "frames": 72.0,
+        "gc": 2.0,
+        "mono_delta": -40751104.0,
+        "native_delta": 2561824.0
+      },
+      {
+        "total_ms": 1052.552,
+        "handler_ms": 529.7872,
+        "peak_frame_ms": 542.0574,
+        "frames": 84.0,
+        "gc": 1.0,
+        "mono_delta": -33030144.0,
+        "native_delta": 1900656.0
+      },
+      {
+        "total_ms": 1123.2328,
+        "handler_ms": 591.1668,
+        "peak_frame_ms": 605.3589,
+        "frames": 73.0,
+        "gc": 1.0,
+        "mono_delta": -31944704.0,
+        "native_delta": 1927088.0
+      }
+    ],
+    "optimized_store": [
+      {
+        "total_ms": 672.4267,
+        "handler_ms": 141.4849,
+        "peak_frame_ms": 153.6246,
+        "frames": 72.0,
+        "gc": 1.0,
+        "mono_delta": -27402240.0,
+        "native_delta": 1687272.0
+      },
+      {
+        "total_ms": 664.1796,
+        "handler_ms": 134.8023,
+        "peak_frame_ms": 147.1349,
+        "frames": 71.0,
+        "gc": 1.0,
+        "mono_delta": -28565504.0,
+        "native_delta": 1902136.0
+      },
+      {
+        "total_ms": 665.6111,
+        "handler_ms": 128.1047,
+        "peak_frame_ms": 139.6969,
+        "frames": 73.0,
+        "gc": 1.0,
+        "mono_delta": -31711232.0,
+        "native_delta": 1894408.0
+      }
+    ],
+    "baseline_return": [
+      {
+        "total_ms": 422.395,
+        "handler_ms": 87.484,
+        "peak_frame_ms": 99.0648,
+        "frames": 39.0,
+        "gc": 1.0,
+        "mono_delta": -11628544.0,
+        "native_delta": 5438272.0
+      },
+      {
+        "total_ms": 436.5897,
+        "handler_ms": 91.208,
+        "peak_frame_ms": 104.3508,
+        "frames": 38.0,
+        "gc": 1.0,
+        "mono_delta": -16064512.0,
+        "native_delta": 5390384.0
+      },
+      {
+        "total_ms": 426.7232,
+        "handler_ms": 81.9255,
+        "peak_frame_ms": 92.7356,
+        "frames": 35.0,
+        "gc": 1.0,
+        "mono_delta": -12664832.0,
+        "native_delta": 5430312.0
+      }
+    ],
+    "optimized_return": [
+      {
+        "total_ms": 422.2291,
+        "handler_ms": 81.7523,
+        "peak_frame_ms": 92.1861,
+        "frames": 42.0,
+        "gc": 1.0,
+        "mono_delta": -17526784.0,
+        "native_delta": 5412568.0
+      },
+      {
+        "total_ms": 417.0104,
+        "handler_ms": 77.3735,
+        "peak_frame_ms": 142.3194,
+        "frames": 44.0,
+        "gc": 1.0,
+        "mono_delta": -16482304.0,
+        "native_delta": 5402752.0
+      },
+      {
+        "total_ms": 427.0237,
+        "handler_ms": 87.3327,
+        "peak_frame_ms": 98.3524,
+        "frames": 38.0,
+        "gc": 1.0,
+        "mono_delta": -19853312.0,
+        "native_delta": 5413784.0
+      }
+    ],
+    "baseline_rows": [
+      {
+        "ms": 597.4623,
+        "mono": 27836416.0,
+        "unity": 369506240.0
+      },
+      {
+        "ms": 467.8853,
+        "mono": 81309696.0,
+        "unity": 369229672.0
+      },
+      {
+        "ms": 528.8145,
+        "mono": 77549568.0,
+        "unity": 369195920.0
+      }
+    ],
+    "optimized_rows": [
+      {
+        "ms": 79.188,
+        "mono": 79335424.0,
+        "unity": 360284832.0
+      },
+      {
+        "ms": 70.5527,
+        "mono": 80527360.0,
+        "unity": 360037528.0
+      },
+      {
+        "ms": 64.4592,
+        "mono": 83320832.0,
+        "unity": 360070160.0
+      }
+    ],
+    "baseline_store_median": {
+      "handler_ms": 591.1668,
+      "total_ms": 1123.2328,
+      "peak_frame_ms": 605.3589
+    },
+    "optimized_store_median": {
+      "handler_ms": 134.8023,
+      "total_ms": 665.6111,
+      "peak_frame_ms": 147.1349
+    },
+    "baseline_return_median": {
+      "handler_ms": 87.484,
+      "total_ms": 426.7232,
+      "peak_frame_ms": 99.0648
+    },
+    "optimized_return_median": {
+      "handler_ms": 81.7523,
+      "total_ms": 422.2291,
+      "peak_frame_ms": 98.3524
+    }
+  },
+  "timing_limits": "Three comparable cycles per condition in one Editor session. Root tween completed and rendered frames observed. Cold metadata use is not OS/device cold boot. Synchronous scopes and raw inclusive profiler samples must not be added together. No physical transition timing.",
+  "gameplay_observation": {
+    "classification": "Editor observation; not Vita FPS or a matched performance comparison",
+    "samples": 589,
+    "mean_ms": 55.91172592529711,
+    "p50_ms": 53.1549,
+    "p95_ms": 69.71758,
+    "p99_ms": 79.61604,
+    "max_ms": 183.0664,
+    "frames_above_33_333_ms": 589,
+    "eats_first": 1.0,
+    "eats_last": 11.0,
+    "gc_collections": 26.0,
+    "capture_seconds": 32.867537649999996,
+    "x_range": [
+      0.1348385,
+      48.76728
+    ],
+    "y_range": [
+      -23.04483,
+      -4.782244
+    ],
+    "mono_bytes_range": [
+      26447872.0,
+      99401728.0
+    ],
+    "allocated_bytes_range": [
+      542997664.0,
+      548229136.0
+    ],
+    "reserved_bytes_range": [
+      1179024504.0,
+      1179090040.0
+    ],
+    "main_ms": {
+      "available_samples": 0,
+      "mean": null,
+      "p95": null
+    },
+    "render_ms": {
+      "available_samples": 587,
+      "mean": 55.866876660988076,
+      "p95": 69.96722999999999
+    },
+    "physics_ms": {
+      "available_samples": 588,
+      "mean": 0.47428350340136055,
+      "p95": 0.770855
+    },
+    "feeding_frames": [
+      {
+        "frame": 9483.0,
+        "frame_ms": 62.5648,
+        "eats": 2.0
+      },
+      {
+        "frame": 9490.0,
+        "frame_ms": 52.6961,
+        "eats": 3.0
+      },
+      {
+        "frame": 9520.0,
+        "frame_ms": 70.4112,
+        "eats": 4.0
+      },
+      {
+        "frame": 9527.0,
+        "frame_ms": 74.7506,
+        "eats": 5.0
+      },
+      {
+        "frame": 9680.0,
+        "frame_ms": 62.662,
+        "eats": 6.0
+      },
+      {
+        "frame": 9706.0,
+        "frame_ms": 51.504,
+        "eats": 7.0
+      },
+      {
+        "frame": 9713.0,
+        "frame_ms": 61.1832,
+        "eats": 9.0
+      },
+      {
+        "frame": 9790.0,
+        "frame_ms": 64.0074,
+        "eats": 10.0
+      },
+      {
+        "frame": 9996.0,
+        "frame_ms": 48.0789,
+        "eats": 11.0
+      }
+    ]
+  },
+  "gameplay_limits": "Movement/feeding verified; not full area/species/long-run coverage. Original capture had different load/position/resolution and analysis interference. No valid before/after gameplay FPS attribution. Render marker includes waits; PlayerLoop Recorder had no completed samples; raw call trees retained.",
+  "integrity": {
+    "original_files": 19650,
+    "changed": [
+      "Assets/Scripts/Assembly-CSharp/StoreMenuSheet.cs"
+    ],
+    "missing": [],
+    "added": [
+      "Assets/Editor/HSEGameplayCapture.cs",
+      "Assets/Editor/HSEGameplayCapture.cs.meta",
+      "Assets/Editor/HSEVitaStoreDescriptionBuilder.cs",
+      "Assets/Editor/HSEVitaStoreDescriptionBuilder.cs.meta",
+      "Assets/Resources/HSEVitaStoreDescriptionData.json",
+      "Assets/Resources/HSEVitaStoreDescriptionData.json.meta",
+      "Assets/Scripts/Assembly-CSharp/HSEVitaStoreDescriptions.cs",
+      "Assets/Scripts/Assembly-CSharp/HSEVitaStoreDescriptions.cs.meta"
+    ],
+    "settings_unchanged": true
+  },
+  "save_restore": {
+    "files": 8,
+    "all_original_bytes_match": true,
+    "test_outputs_preserved": true
+  },
+  "material_drift": {
+    "observed": true,
+    "before_sha256": "d5f6242ec6202549a83bab10b503140a8d434ff8c68f577483b68e6ef1496d78",
+    "observed_sha256": "f2f67d8f91f4d9d56536c7654b86ad62f447753c9f8f6178135f8faa03b33001"
+  },
+  "previous_vpk_sha256_unchanged": "6a81d4404aebaea29055c58305f598673f033fbc1710be691e9d4d98ac33a5ad",
+  "negative_control": "Original Store Refresh rejected by metadata audit",
+  "invalid_attempts": [
+    "Initial harness entered gameplay instead of Evolution",
+    "Unoptimized/fallback path comparisons excluded",
+    "Case-sensitive catalog lookup and trail predicate mismatch corrected before parity PASS",
+    "Unavailable Profiler area APIs corrected before final Editor capture",
+    "Wrong audit argument batch invalidated and rerun with Player parameter",
+    "Long raw load kept only 300 history frames; short transition profiles used instead"
+  ],
+  "manual_capture": "Editor-only F8/F9, bounded 20000-frame CSV plus native Unity binary raw; installed and exercised. Profiler open, no capture left running. Diagnostics archived outside Assets.",
+  "pending": [
+    "Physical stock-clock Vita transition timing and RAM/VRAM peaks",
+    "Return hitch optimization/physical attribution",
+    "Matched broad movement/feeding/dense-area runs",
+    "Cold saves, all sharks/unlocks, complete audio and physical inputs",
+    "Long-session reliability"
+  ],
+  "distribution": "No new VPK, upload, publication or proprietary content committed. Native player and generated data private.",
+  "classification": "Editor UI work reduction VERIFIED; full physical cause, return hitch elimination and Vita FPS benefit UNTESTED."
+}
