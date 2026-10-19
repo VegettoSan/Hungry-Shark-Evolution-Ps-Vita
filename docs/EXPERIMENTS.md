@@ -1,5 +1,15 @@
 # Experiment log
 
+## Owner-requested transition test VPK — 2026-10-19
+
+Owner explicitly requests the VPK for private physical Vita testing after TRANS-001–003.
+This authorizes packaging the existing validated native player on `main`, without a
+new build, source/settings changes, installation, publication or phase approval.
+
+| Date (UTC) | ID | Input / tools / settings | Observed result | Evidence / next action |
+| --- | --- | --- | --- | --- |
+| 2026-10-19 | TRANS-VPK-001 | TRANS native assembly/source/catalog hashes verified against receipt; Python ZIP packager and independent artwork/identity verifier | **PASS:** 135096867 bytes, 213 entries, SHA-256 `4ac7df928ec49b8c25ce59a558ece534b2ca25789f0c601c6676eceb6b48dc81`; CRC, exact runtime-member equality, canonical HGSKE1178/title/artwork PASS; no savedata. Prior menu VPK hash unchanged. A final helper assertion referenced a variable overwritten by its reused packaging module; independent checks confirmed both packages. Incorrect verifier option corrected without repackaging | [Receipt](evidence/TRANSITIONS_TEST_VPK_2026-10-19.json); private `Reports/Transitions_20261019/Build/HSE_Transitions_Optimized_HGSKE1178.vpk`. **UNTESTED:** stock-clock physical transition times, FPS and persistence. P03 ACTIVE / 3 approvals unchanged |
+
 ## Owner-requested Evolution/Play transition and moving gameplay — 2026-10-19
 
 The owner's current chat expressly authorizes full-flow transition diagnosis,
