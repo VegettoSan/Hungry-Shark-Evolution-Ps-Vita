@@ -1,5 +1,20 @@
 # Experiment log
 
+## Owner-requested menu stutter follow-up — 2026-10-18
+
+The owner reports a small gameplay improvement with overclock after testing the
+RESOPT VPK, while Evolution, cosmetics, special sharks and return transitions still
+stutter. This is an owner report, not a new benchmark. The current request explicitly
+authorizes focused private menu investigation, reversible fixes and local regression
+on existing `main`; a new task-specific phase exception, not P11 approval. P03 stays
+ACTIVE / 3 of 13 APPROVED. Preserve the tested VPK, previous changes and saves.
+
+| Date (UTC) | ID | Input / tools / settings | Observed result | Evidence / next action |
+| --- | --- | --- | --- | --- |
+| 2026-10-18/19 | MENU-001 | Base `ca9f4e8`; 19,648-file private checkpoint; Unity 2018.2.19f1 PSP2-target Editor; original menus with bounded constructor timing | **VERIFIED:** repeated full-player clones for attach points; nine eager special models. PSP2 now caches bounded immutable pose metadata and prepares special models on demand, at most five retained. Evolution→store 803.8→526.5 ms, store→Evolution 370.0→80.2 ms, specials entry 2333.6→1009.2 ms and return 331.4→38.9 ms in local action timing; repeat optimized session consistent. No physical timing/FPS claim | [Diagnosis, timings and limits](MENU_MODEL_OPTIMIZATION_2026-10-18.md); private Before/Changes/TimingSummary. Store UI still ~440 ms; first unseen special still loads. Original GC and asset-unload behavior retained; first stale-assembly comparison excluded |
+| 2026-10-19 | MENU-002 | Exact original/optimized pose dumps, two 20-step carousel runs; menu/store icons/dialog, gameplay input/feeding/pause; C#4/Mono controls | **PASS:** 198 matching poses in each of Evolution/store, original visible scales/bounds, three initial special models/five after navigation/zero after close. Eighteen other-platform token checks; only five existing method bodies changed and five added among 31,725 compared; purchase/gameplay/save unchanged. C# PSP2 0 errors/271 warnings and Editor 0/269 before/final. Confirmed purchase NOT executed: automatic review rejected changing currency/inventory without specific authorization; no bypass | [Hash/test receipt](evidence/MENU_MODEL_2026-10-18.json); private PoseContracts/BranchParity/MethodAudit/c*/p*/g*. First diagnostic manager lookup failed and was corrected, no production change. Twenty forced lazy first visits together cost ~0.9 s versus ~5 ms for eager-prebuilt models; not individual button latency. Test first/repeated selections on Vita |
+| 2026-10-19 | MENU-003 | Unity PSP2/Mono2x, original 18 scenes / BuildOptions.None, 2:01.203; native dnlib audits; private VPK packaging | **PASS:** native build 0 errors/296 warnings, no new C# warning signatures; menu/resources/prior performance/quality/save/clean-screen audits. Eight original profile files restored; only two original sources changed plus helper/meta added, settings unchanged. Incidental Underwater offset preserved/restored from exact backup. VPK 135086465 bytes/213 entries, SHA-256 `6a81d4404aebaea29055c58305f598673f033fbc1710be691e9d4d98ac33a5ad`; CRC/runtime equality/identity/artwork PASS. Previous VPK unchanged; no public release or installation | Private `Reports/MenuStutter_20261018/Build/HSE_Menu_Optimized_HGSKE1178.vpk`, Build.log/PackageReceipt/IntegrityAfter/SaveRestore. [Receipt](evidence/MENU_MODEL_2026-10-18.json). **UNTESTED:** Vita transitions, first-selection spikes, peak RAM/VRAM, purchase/cold save/full audio/input matrix and long runs. P03 ACTIVE, gates unchanged |
+
 ## Owner-requested resource-optimized private test VPK — 2026-10-18
 
 The owner explicitly requests a VPK for testing after RESOPT-001–003. This permits

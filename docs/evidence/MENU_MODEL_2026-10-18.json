@@ -1,0 +1,289 @@
+{
+  "date_utc": "2026-10-19",
+  "task_date_local_bogota": "2026-10-18",
+  "editor": "2018.2.19f1",
+  "target": "PSP2",
+  "backend": "Mono2x",
+  "branch": "main",
+  "base_commit_observed": "ca9f4e8",
+  "authorization": "Owner chat: investigate and improve menu stutters after testing previous VPK; scoped private corrections, local tests/build and private comparison artifact. No publication or phase approval.",
+  "phase": "P03 ACTIVE / 3 of 13 APPROVED",
+  "original_apk_sha256": "52b7d8754ab8fec75c3b656a0dc5ec8dc849565adc402487a3ac093f6a481f7a",
+  "private_evidence": "Reports/MenuStutter_20261018/",
+  "checkpoint_manifest_sha256": "3dd7bb69d912c8b2c0249f49f9f9793aaa9058045b0c3685ead5a51687ba1670",
+  "final_manifest_sha256": "9874cad297aba38d171ca7af815706f7cc9e7b14cd166e8873e91b1363d97c7e",
+  "source_hashes": {
+    "GUIShark.cs": {
+      "before": "1001e4422a4ee4e24e5540e9ebdc6c440caa3aed7c3523e4a2c973923a35bb3c",
+      "after": "a484c27f3ca7137933bf7f34355e7e1e8457c69e9ca902dbff0e84d5ee89626e"
+    },
+    "LabCrane.cs": {
+      "before": "525a134e5d6c9799500ac237e54b6cfcdb4290a6d94f253006ea982bc02916d8",
+      "after": "70e2aa4fe9eee286ae01ad3ac7c865410d069c5232fe8266d396d98a644b8203"
+    },
+    "HSEVitaMenuAnchors.cs": {
+      "after": "4bd926d272e3e32df0dd5a55f3b226b5707b5823f6ab06159869e2c541cd0a25"
+    }
+  },
+  "compile": {
+    "before": {
+      "PSP2": {
+        "exit": 0,
+        "errors": 0,
+        "warnings": 271
+      },
+      "Editor": {
+        "exit": 0,
+        "errors": 0,
+        "warnings": 269
+      }
+    },
+    "final": {
+      "PSP2": {
+        "exit": 0,
+        "errors": 0,
+        "warnings": 271
+      },
+      "Editor": {
+        "exit": 0,
+        "errors": 0,
+        "warnings": 269
+      }
+    },
+    "new_warning_signatures": []
+  },
+  "other_platform_token_checks": 18,
+  "method_audit": {
+    "compared": 31725,
+    "changed": [
+      "System.Void GUIShark::CreateAttachPoints()",
+      "System.Void LabCrane::ReplaceShark(SharkType)",
+      "System.Void LabCrane::Initialise(SecretMenuSheet)",
+      "System.Void LabCrane::OnDestroy()",
+      "System.Void LabCrane::.cctor()"
+    ],
+    "added": [
+      "UnityEngine.GameObject LabCrane::PrepareShark(System.Int32)",
+      "System.Void LabCrane::ReleasePreparedMaterials()",
+      "HSEVitaMenuAnchors/Pose[] HSEVitaMenuAnchors::Get(SharkStats/Stats,System.Int32,System.String)",
+      "System.Void HSEVitaMenuAnchors::.cctor()",
+      "System.Void HSEVitaMenuAnchors/Entry::.ctor()"
+    ],
+    "removed": []
+  },
+  "native_build": "result=Succeeded errors=0 warnings=296 time=00:02:01.2033675 scenes=18",
+  "native_assembly_sha256": "ede08e2e7ae82d8f71c4e58da30d8f20d3c668996cbce3527b36865fb615ad8c",
+  "native_menu_audit": {
+    "result": "PASS",
+    "anchorMetadataOnly": true,
+    "originalPoseInitialization": true,
+    "specialsOnDemand": true,
+    "retainedModelLimit": 5,
+    "temporaryDiagnostics": false,
+    "hardware": "UNTESTED"
+  },
+  "other_native_audits": {
+    "Resource": {
+      "result": "PASS",
+      "telemetrySampling": false,
+      "particleNameConversions": false,
+      "adConfigResourceLoad": false,
+      "iconMaterialReuse": true,
+      "mobileSendersCreated": false,
+      "facebookUnavailable": true,
+      "iapUnavailable": true,
+      "dnaNativeInit": false,
+      "hardware": "UNTESTED"
+    },
+    "Integral": {
+      "result": "PASS",
+      "bufferedFrustum": true,
+      "rockMeshCloning": false,
+      "waterMainCameraQueries": 1,
+      "temporaryPlayerDiagnostics": false,
+      "comparedMethods": 0,
+      "changedMethodBodies": [],
+      "hardware": "UNTESTED"
+    },
+    "Medium": {
+      "result": "PASS",
+      "NativeClassification": "medium",
+      "ClassifierIL": "IL_0000: ldc.i4.1; IL_0001: ret",
+      "OriginalQualitySelection": true,
+      "OriginalFrameLimitCalls": true,
+      "Hardware": "UNTESTED"
+    },
+    "Clean": {
+      "result": "PASS",
+      "D10OverlayCompiled": false,
+      "D10VisualObjectCreated": false,
+      "inputOverlayCompiled": false,
+      "startupSaveChecksRetained": true,
+      "controllerBootstrapRetained": true,
+      "otherPortDiagnosticOverlays": 0,
+      "physicalDisplay": "UNTESTED"
+    },
+    "Save": {
+      "result": "PASS",
+      "originalHeaderMD5AESCLZF2": true,
+      "scopedInvariantCulture": true,
+      "finallyRestore": true,
+      "exactRead": true,
+      "realTempCommitReopenChecks": 4,
+      "D09CopyRetained": true,
+      "D10HUD": true,
+      "D09SyntheticControlOnBoot": false,
+      "Hardware": "UNTESTED"
+    }
+  },
+  "negative_control": "BeforePSP2.dll rejected: Anchor metadata path missing",
+  "editor_transition_action_timings": [
+    {
+      "route": "Main to Evolution",
+      "before_ms": 67.5083,
+      "after_ms": 54.7985,
+      "repeat_after_ms": 55.1442,
+      "receipts": [
+        "b03",
+        "c04",
+        "p02"
+      ]
+    },
+    {
+      "route": "Evolution to store",
+      "before_ms": 803.8246,
+      "after_ms": 526.5441,
+      "repeat_after_ms": 511.297,
+      "receipts": [
+        "b05",
+        "c06",
+        "p03"
+      ]
+    },
+    {
+      "route": "Store to Evolution",
+      "before_ms": 370.0046,
+      "after_ms": 80.2469,
+      "repeat_after_ms": 77.0972,
+      "receipts": [
+        "b08",
+        "c10",
+        "p07"
+      ]
+    },
+    {
+      "route": "Evolution to specials",
+      "before_ms": 2333.558,
+      "after_ms": 1009.1643,
+      "repeat_after_ms": 1082.0058,
+      "receipts": [
+        "b09",
+        "c11",
+        "p08"
+      ]
+    },
+    {
+      "route": "Specials to Evolution",
+      "before_ms": 331.3754,
+      "after_ms": 38.9236,
+      "repeat_after_ms": 39.312,
+      "receipts": [
+        "b11",
+        "c15",
+        "p13"
+      ]
+    }
+  ],
+  "timing_limits": "Synchronous command/constructor measurements, not total animated transition or physical Vita timings. First postchange a* run was stale Editor assembly and excluded; Ctrl+R and helper type verification preceded c*/p* measurements.",
+  "pose_contracts": [
+    {
+      "before": "b04",
+      "after": "c05",
+      "exact_byte_equality": true,
+      "poses": 198,
+      "sha256": "8b0d481c95274308ec1d5137e055ca4a8a6e9a7efb1ca4402ec6ba984b957fb5"
+    },
+    {
+      "before": "b06",
+      "after": "c07",
+      "exact_byte_equality": true,
+      "poses": 198,
+      "sha256": "cd0c564bba9f67ee23670a68a1c0c7806c3faa5ee099385b557b3bc7242469cb"
+    }
+  ],
+  "special_models": {
+    "initial_total": 3,
+    "initial_active": 3,
+    "after_navigation_total": 5,
+    "after_navigation_active": 3,
+    "after_close_total": 0,
+    "carousel_tests": "Two runs of 20 completed-tween steps, both directions, bounds, valid types and original world scales PASS"
+  },
+  "special_selection_tradeoff": "Lazy first visits still instantiate. 20 forced steps in one diagnostic action took ~0.9 s versus ~5 ms for nine eagerly prebuilt models; not individual button latency. Must check first/repeated selections and frame-end Destroy on Vita.",
+  "remaining_store_ui_ms_approx": 440,
+  "icon_hypothesis": "50 early empty-path initializations total ~0.08 ms. No new icon initialization change; six visible icons and six after scrolling verified loaded.",
+  "functional_results": [
+    "Main/Evolution/store/special menus and return routes",
+    "Cosmetic dialog open/cancel; visible icons and scrolling",
+    "Special carousel bounds and world scale parity",
+    "Gameplay movement and feeding after repeated menus",
+    "Pause/resume preserve position/health",
+    "No new production exceptions in tested paths; known IAP unavailable/cleanup warnings retained"
+  ],
+  "confirmed_purchase": "NOT EXECUTED: auto-review rejected currency/inventory modification without specific authorization. No bypass attempted; prices, purchase/equip/save method bodies unchanged.",
+  "save_restore": {
+    "restored_files": 8,
+    "all_original_bytes_match": true,
+    "test_outputs_preserved": true
+  },
+  "integrity": {
+    "original_files": 19648,
+    "changed": [
+      "Assets/Scripts/Assembly-CSharp/GUIShark.cs",
+      "Assets/Scripts/Assembly-CSharp/LabCrane.cs"
+    ],
+    "missing": [],
+    "added": [
+      "Assets/Scripts/Assembly-CSharp/HSEVitaMenuAnchors.cs",
+      "Assets/Scripts/Assembly-CSharp/HSEVitaMenuAnchors.cs.meta"
+    ],
+    "settings_unchanged": true
+  },
+  "material_drift": {
+    "observed": true,
+    "checkpoint_sha256": "d5f6242ec6202549a83bab10b503140a8d434ff8c68f577483b68e6ef1496d78",
+    "observed_sha256": "44d40dbf259fb4d47f14dd94b21df58f0d803222abc40b3e2a0280699b1af350",
+    "restored_sha256": "d5f6242ec6202549a83bab10b503140a8d434ff8c68f577483b68e6ef1496d78"
+  },
+  "previous_four_resource_optimizations": "All four final source hashes still match previous receipt; native resource audit PASS.",
+  "temporary_diagnostics": "Timing helper and all three Editor drivers archived outside Assets; no temporary diagnostics in native assembly. Editor restored to MainMenu outside Play, original preview disabled.",
+  "package": {
+    "sha256": "6a81d4404aebaea29055c58305f598673f033fbc1710be691e9d4d98ac33a5ad",
+    "bytes": 135086465,
+    "entries": 213,
+    "images": {
+      "sce_sys/livearea/contents/bg0.png": "452a71826ec9613c29773a4f29bebdc88c3dfe9299313048939d6a2b1152f77c",
+      "sce_sys/icon0.png": "28bafa4298a4aa7e00ce30df69d082710e1553d201bcdeacb81fb5c5cf9fb775",
+      "sce_sys/livearea/contents/startup.png": "293fff5b6e8abc7923ed2d9f3b1bb92b233843c7d6416fa5b657b8b2730a4f4d"
+    },
+    "title_id": "HGSKE1178",
+    "title": "Hungry Shark Evolution Vita",
+    "template_format": "01.03",
+    "icon_conversion": "Unity native RGBA to indexed PNG",
+    "hardware": "NOT TESTED",
+    "runtime_member_equality": true,
+    "build_result": "result=Succeeded errors=0 warnings=296 time=00:02:01.2033675 scenes=18",
+    "canonical_identity": true
+  },
+  "private_vpk": "Reports/MenuStutter_20261018/Build/HSE_Menu_Optimized_HGSKE1178.vpk",
+  "previous_vpk_sha256_unchanged": "3a848ce2ef4425c13d737ef9848682310779623510909eaf6edf99afb08a5c0c",
+  "pending": [
+    "Physical Vita stock-clock and overclock transition/frame-time comparisons",
+    "First and repeated selection of every special; peak RAM/VRAM and repeated full laps",
+    "Store UI construction (~440 ms Editor), original forced GC and complete async asset-unload cost",
+    "Cosmetic purchase/equip and cold saves on Vita",
+    "Full audio/effects/input/pause/lifecycle and long-session matrix"
+  ],
+  "classification": "Objective work reduction and Editor functional/timing evidence VERIFIED; Vita frame-time/FPS/RAM improvement UNTESTED.",
+  "distribution": "Only sanitized documentation and read-only auditor in repository. Game sources/assets/native build/VPK private; no upload or public release."
+}
