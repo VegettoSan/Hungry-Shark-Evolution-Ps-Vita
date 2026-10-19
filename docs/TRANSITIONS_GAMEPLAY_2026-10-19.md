@@ -156,3 +156,16 @@ sobre un proyecto suministrado por el propietario: comprueba por defecto, y con
 HSE del Editor; no se incluye contenido del juego en el commit.
 Herramientas y adaptación reproducible: commit `2a52d28`; este informe y su recibo
 se registran en el commit documental siguiente. No se realizó push.
+
+## Seguimiento físico del propietario
+
+**2026-10-19 — VERIFIED por reporte explícito del propietario:** después de recibir
+la VPK de transiciones, informa que los menús mejoraron y ya no tardan tanto,
+aunque persisten pequeñas esperas. Es confirmación cualitativa en Vita, no una
+medición independiente de Codex. Referencia entregada: SHA-256
+`4ac7df928ec49b8c25ce59a558ece534b2ca25789f0c601c6676eceb6b48dc81`.
+
+No se proporcionaron hash instalado, frecuencias, tiempos por transición ni FPS
+de gameplay. La magnitud física, el regreso específico y los 30 FPS a frecuencias
+stock siguen pendientes. Se conserva esta compilación como referencia para las
+esperas residuales; sin nuevo código, build, paquete ni aprobación de fase.

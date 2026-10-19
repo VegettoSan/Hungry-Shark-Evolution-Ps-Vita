@@ -1,5 +1,11 @@
 # Experiment log
 
+## Owner-reported physical menu improvement — 2026-10-19
+
+| Date (UTC) | ID | Input / test | Observed result | Evidence / next action |
+| --- | --- | --- | --- | --- |
+| 2026-10-19 | TRANS-VPK-002 | Owner follow-up after delivery of transition VPK, delivery SHA-256 `4ac7df928ec49b8c25ce59a558ece534b2ca25789f0c601c6676eceb6b48dc81`; physical PS Vita menu use | **VERIFIED by explicit owner report / qualitative improvement:** menus no longer take as long; small waits remain. Codex did not observe or time the device session. Installed-device hash, clock settings, individual transition timings, repetition count and gameplay FPS were not supplied. This does not demonstrate elimination of the return hitch or stable 30 FPS | Owner message in this chat; [physical follow-up](TRANSITIONS_GAMEPLAY_2026-10-19.md#seguimiento-físico-del-propietario). Preserve this build as the comparison reference; residual transition timing and stock-clock gameplay remain pending. No source/build/package or phase changes |
+
 ## Owner-requested transition test VPK — 2026-10-19
 
 Owner explicitly requests the VPK for private physical Vita testing after TRANS-001–003.
