@@ -335,6 +335,15 @@ del player, distinguiendo CPU/render/GPU y primeras cargas de repeticiones. Qued
 RAM/VRAM/picos, tiempos de carga y la matriz completa de tiburones/audio/input/save.
 No se afirma que estas dos mejoras pequeñas resuelvan las caídas de 20–30 FPS.
 
+## Commits de la tanda
+
+- `7a1f34a` — capturas interactivas acotadas y exportación compatible con Unity 2018.
+- `789510e` — nombres de marcadores TSV entrecomillados y orden determinista.
+- `c935d9c` — preparación reproducible de tinte/comparador, contratos, informe y recibo.
+
+El commit posterior de documentación sólo incorpora este registro. No se creó ni
+publicó ninguna rama; los paquetes/capturas y el proyecto privado quedan fuera de Git.
+
 ## Restauración al acabar la investigación
 
 Parar F9/Play y usar `HSE > Profiling > Restore session preview`: recupera calidad,
