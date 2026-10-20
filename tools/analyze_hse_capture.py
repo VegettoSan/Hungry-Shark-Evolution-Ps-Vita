@@ -33,6 +33,25 @@ def summarize(path):
         "gc_collections": sum(row["gc"] for row in rows),
         "capture_seconds": rows[-1]["seconds"] - rows[0]["seconds"],
     }
+    clean = [row["frame_ms"] for row in rows if row.get("capture_boundary", 0) == 0]
+    result["timing_without_capture_boundaries"] = {
+        "samples": len(clean), "excluded_samples": len(times) - len(clean),
+        "mean_ms": mean(clean) if clean else None,
+        "p50_ms": percentile(clean, .5) if clean else None,
+        "p95_ms": percentile(clean, .95) if clean else None,
+        "p99_ms": percentile(clean, .99) if clean else None,
+        "max_ms": max(clean) if clean else None,
+    }
+    for name in ("batches", "draws", "triangles", "instantiate_samples", "destroy_samples", "gc_alloc_samples"):
+        valid = [row[name] for row in rows if name in row and row[name] >= 0]
+        result[name] = {"available_samples": len(valid), "mean": mean(valid) if valid else None,
+                        "max": max(valid) if valid else None}
+    result["sampling_notes"] = [
+        "CSV samples in LateUpdate; Recorder scopes may describe the previous completed frame.",
+        "GC allocation samples are event counts, not bytes. Native profiler statistics/call trees provide allocation bytes.",
+        "Native wall frame duration is common to all threads; it is not thread busy time.",
+        "Raw rotation and the following frame are marked; compare both complete and boundary-excluded distributions.",
+    ]
     for name in ("x", "y", "mono_bytes", "allocated_bytes", "reserved_bytes"):
         valid = [row[name] for row in rows if math.isfinite(row[name])]
         result[name + "_range"] = [min(valid), max(valid)] if valid else None
