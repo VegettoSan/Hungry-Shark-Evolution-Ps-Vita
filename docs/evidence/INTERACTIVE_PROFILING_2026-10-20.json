@@ -1,0 +1,92 @@
+{
+  "utc_date": "2026-10-20",
+  "classification": "VERIFIED Editor profiling and native build; physical Vita frame rate UNTESTED",
+  "unity": "2018.2.19f1",
+  "formal_phase": "P03 ACTIVE; 3/13 APPROVED, unchanged",
+  "captures": [
+    {
+      "name": "Baseline_Gameplay_20261020T031703760Z",
+      "csv_sha256": "8d30d0dd2f434eea730ba653a48ccdaea5952d6a0a6b4fa07f3dcad5e9395c6e",
+      "csv_frames": 9091,
+      "raw_segments": 38,
+      "raw_bytes": 1310559317,
+      "native_frames_including_boundaries": 9129
+    },
+    {
+      "name": "Baseline_Gameplay_20261020T034343741Z",
+      "csv_sha256": "2eeccdf48a4207c1b6cdf68ca280bddc6745014eb2f2117fab09daeb88d9e113",
+      "csv_frames": 12409,
+      "raw_segments": 52,
+      "raw_bytes": 1485172049,
+      "native_frames_including_boundaries": 12459
+    },
+    {
+      "name": "Optimized_Gameplay_20261020T035846645Z",
+      "csv_sha256": "b1d5187a0fe36c7f8fe3b60f6e69183a5cc50eff0884de8e34fe6902b0178d7a",
+      "csv_frames": 14700,
+      "raw_segments": 62,
+      "raw_bytes": 1753278252,
+      "native_frames_including_boundaries": 14762
+    }
+  ],
+  "production_sources": {
+    "Assets/Scripts/Assembly-CSharp/FGOL/Player.cs": "d3d8259ab31101f11a5e1d2b0ec0dc57d07afd7e3b0852fb217a5ad064305b96",
+    "Assets/Scripts/Assembly-CSharp/GameLogic.cs": "373239663d9003d1d5071e9c98a8fdb5bac797bd6a74af71f70eda9beaac3384",
+    "Assets/Scripts/Assembly-CSharp/HSEVitaAreaComparer.cs": "903d08fd80f6cf8d465d0659703fc8511bbc7835b74769d8b9d7b623a7fb83e7"
+  },
+  "native_assembly_sha256": "f59d15c7502a77bc082cf33cd88f521e051960aa605ea3bf46e87e9d11dc65a1",
+  "native_build": "result=Succeeded errors=0 warnings=296 time=00:02:01.8007712 scenes=18",
+  "integrity": {
+    "original_files": 19658,
+    "changed": [
+      "Assets/Scripts/Assembly-CSharp/GameLogic.cs",
+      "Assets/Scripts/Assembly-CSharp/FGOL/Player.cs"
+    ],
+    "missing": [],
+    "added": [
+      "Assets/Scripts/Assembly-CSharp/HSEVitaAreaComparer.cs",
+      "Assets/Scripts/Assembly-CSharp/HSEVitaAreaComparer.cs.meta"
+    ],
+    "settings_unchanged": true
+  },
+  "method_audit": {
+    "compared": 31733,
+    "changed": [
+      "System.Void FGOL.Player::UpdateTint()",
+      "System.Void GameLogic::Start()",
+      "System.Void GameLogic::Update()"
+    ],
+    "added": [
+      "System.Void HSEVitaAreaComparer::.ctor()",
+      "System.Boolean HSEVitaAreaComparer::Equals(AreaTransitionManager/Area,AreaTransitionManager/Area)",
+      "System.Int32 HSEVitaAreaComparer::GetHashCode(AreaTransitionManager/Area)"
+    ],
+    "removed": []
+  },
+  "owner_progress_preserved_files": 8,
+  "area_gc_before_bytes_per_frame": 180,
+  "area_gc_after_sampled_frames": 720,
+  "area_gc_after_sampled_bytes": 0,
+  "hardware_validation": "UNTESTED; stock-clock CPU/GPU, memory budgets and stable 30 FPS still pending",
+  "private_test_vpk": {
+    "sha256": "c8f934129afd03034f538060c477b865107cba4fb24cb0c63a394369d1f8af02",
+    "bytes": 135097531,
+    "entries": 213,
+    "images": {
+      "sce_sys/livearea/contents/bg0.png": "452a71826ec9613c29773a4f29bebdc88c3dfe9299313048939d6a2b1152f77c",
+      "sce_sys/icon0.png": "28bafa4298a4aa7e00ce30df69d082710e1553d201bcdeacb81fb5c5cf9fb775",
+      "sce_sys/livearea/contents/startup.png": "293fff5b6e8abc7923ed2d9f3b1bb92b233843c7d6416fa5b657b8b2730a4f4d"
+    },
+    "title_id": "HGSKE1178",
+    "title": "Hungry Shark Evolution Vita",
+    "template_format": "01.03",
+    "icon_conversion": "Unity native RGBA to indexed PNG",
+    "hardware": "NOT TESTED",
+    "filename": "HSE_Gameplay_Profiled_HGSKE1178.vpk",
+    "runtime_member_equality": true,
+    "canonical_identity": true,
+    "savedata_included": false,
+    "previous_transition_vpk_unchanged": true,
+    "first_postcheck_variable_collision_rechecked_independently": true
+  }
+}
