@@ -69,7 +69,8 @@ public static class HSEProfileExport
             if (!s.StartsWith("Selected") && !selected.Contains(s))
             { selected.Add(s); ids.Add((int)driver.GetMethod("GetStatisticsIdentifier", Flags).Invoke(null, new object[] { s })); }
         var coverage = new StringBuilder("segment,native_frames,threads,max_main_frame_ms\n");
-        foreach (string raw in Directory.GetFiles(root, "segment_*.raw"))
+        string[] rawFiles = Directory.GetFiles(root, "segment_*.raw"); Array.Sort(rawFiles, StringComparer.Ordinal);
+        foreach (string raw in rawFiles)
         {
             bool ok = (bool)driver.GetMethod("LoadProfile", Flags).Invoke(null, new object[] { raw, false });
             if (!ok) throw new Exception("Cannot read " + Path.GetFileName(raw));
@@ -108,7 +109,7 @@ public static class HSEProfileExport
             File.WriteAllText(stem + "_threads.csv", frames.ToString()); File.WriteAllText(stem + "_statistics.csv", stats.ToString());
             var names = new List<string>(totals.Keys); names.Sort((a,b) => totals[b][0].CompareTo(totals[a][0]));
             var aggregate = new StringBuilder("thread\tmarker\ttotal_inclusive_ms\tcount\tmax_ms\n");
-            foreach (string label in names) { var t = totals[label]; aggregate.Append(label).Append('\t').Append(t[0].ToString("R", System.Globalization.CultureInfo.InvariantCulture)).Append('\t').Append(t[1]).Append('\t').Append(t[2].ToString("R", System.Globalization.CultureInfo.InvariantCulture)).AppendLine(); }
+            foreach (string label in names) { var t = totals[label]; int split = label.IndexOf('\t'); aggregate.Append(Quote(label.Substring(0, split))).Append('\t').Append(Quote(label.Substring(split + 1))).Append('\t').Append(t[0].ToString("R", System.Globalization.CultureInfo.InvariantCulture)).Append('\t').Append(t[1]).Append('\t').Append(t[2].ToString("R", System.Globalization.CultureInfo.InvariantCulture)).AppendLine(); }
             File.WriteAllText(stem + "_markers.tsv", aggregate.ToString());
             coverage.Append(Path.GetFileName(raw)).Append(',').Append(end-first+1).Append(',').Append(maxThreads).Append(',').Append(maxMain.ToString("R", System.Globalization.CultureInfo.InvariantCulture)).AppendLine();
         }
