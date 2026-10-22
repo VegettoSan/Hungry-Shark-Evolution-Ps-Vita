@@ -77,3 +77,5 @@ Individual source/editor test results are documented with their limits. Full run
 The PS Vita LiveArea graphics and bubble icon for this port were contributed by **[BetterWinds](https://github.com/BetterWinds)**. Thank you for the artwork. This acknowledgement covers the LiveArea contribution, not ownership of *Hungry Shark Evolution* or its underlying characters, logos and artwork, which remain with their respective rights holders.
 
 See the [LiveArea asset manifest](assets/livearea/BetterWinds/README.md) and [Codex integration instructions](docs/CODEX_BETTERWINDS_LIVEAREA.md). The owner-provided binary source package is handled separately from the public documentation and is not included in this commit.
+
+**Nueva entrega (2026-10-21):** [inventario y plan de integración de BetterWinds LiveArea v2](docs/BETTERWINDS_LIVEAREA_V2_2026-10-21.md), con nuevos `pic0.png` y `Manual/001.png`. Los recursos binarios permanecen privados. **Aún no se ha integrado ni comprobado esta versión en el VPK/PS Vita.**
