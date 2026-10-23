@@ -34,6 +34,7 @@ level[0-9]*
 # Owner-supplied LiveArea artwork remains local pending redistribution rights.
 /assets/livearea/BetterWinds/*.png
 /assets/livearea/BetterWinds/**/*.png
+/assets/livearea/BetterWinds/v2/
 
 # Unity generated files
 [Ll]ibrary/

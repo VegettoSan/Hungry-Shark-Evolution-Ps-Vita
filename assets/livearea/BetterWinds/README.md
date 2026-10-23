@@ -2,6 +2,8 @@
 
 **LiveArea artwork contributed by [BetterWinds](https://github.com/BetterWinds).** Thanks for the PS Vita artwork and icon design. This credit refers to the LiveArea asset contribution; *Hungry Shark Evolution*, related characters, logos and original game art remain property of their respective rights holders.
 
+## Historical v1
+
 **Source archive:** `SharkEVOassets.zip` provided by the project's owner (not committed here). The three original assets were inspected unchanged:
 
 | Source file | PNG dimensions | SHA-256 | VPK destination |
@@ -59,3 +61,28 @@ indexed PNG (128×128), SHA-256
 The verifier accepts this explicitly reviewed native result as well as the exact
 original. Background/gate retain their source hashes. No manual PNG conversion,
 VPK artwork replacement or modification of the source originals was performed.
+
+## v2 (separate, explicitly selected profile)
+
+See the [v2 input manifest](../../../docs/BETTERWINDS_LIVEAREA_V2_2026-10-21.md).
+Install privately with `python tools/install_betterwinds_livearea.py supplied.zip --version v2`.
+Accepted inputs are the six-file original `SharkEVO.zip` or the exact reviewed
+prepared ZIP. Originals go into ignored `v2/`, preserving v1 and refusing conflicting
+overwrites. Embedded documents/scripts are never executed. The supplied original
+XML remains unchanged there. The installer separately emits `v2/native-template.xml`:
+copy it as `template.xml` in the private native contents folder. The installed PSP2
+validator rejects `psmobile`; this reviewed derivative uses `a1`/CRLF and `bg0.png`.
+See the [integration evidence](../../../docs/BETTERWINDS_LIVEAREA_V2_INTEGRATION_2026-10-23.md)
+before choosing a template; do not silently change supplied artwork or XML.
+
+The Unity helper has a separate **Configure BetterWinds LiveArea v2** menu:
+original background/startup in `PSP2System/BetterWinds/contents`, manual page at
+`PSP2System/BetterWinds/manual/001.png`, PIC0 at
+`Assets/Editor/BetterWinds/pic0.png`. It uses native `manualPath` and the native
+PSP2 publishing UI's serialized `psp2Splashimage`, retaining the existing icon/path.
+Keep source PNGs and metadata private. Back up settings and former artwork first.
+
+Use `python tools/verify_betterwinds_vpk.py final.vpk --version v2 --previous-vpk previous.vpk`
+to require the new PIC0/manual, reviewed v2 hashes/XML and exact preservation of
+all previous package members except the four intentional presentation changes.
+Default `--version v1` retains the historical acceptance conditions.

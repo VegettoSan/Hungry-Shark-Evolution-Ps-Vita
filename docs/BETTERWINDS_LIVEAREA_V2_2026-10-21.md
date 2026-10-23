@@ -47,3 +47,7 @@ The separate owner-delivered `SharkEVO_LiveArea_v2_PS_Vita_preparado.zip` contai
 7. Preserve BetterWinds credit in public docs; do not publish the owner-supplied binary art without permission. Report **VERIFIED** versus **NOT TESTED**, with hashes, changed files, rollback steps and a small commit to existing `main` when the local/remote histories safely agree. No unrelated runtime/performance/save work and no phase approval.
 
 **Current verification:** ZIP content parsed, five PNGs decoded at expected dimensions, original hashes recorded, and corrected XML structure verified. Unity import/build/VPK packaging and hardware visual behavior: **NOT TESTED**.
+
+## Seguimiento de integración — 2026-10-23 UTC
+
+La revisión/staging anterior es histórica. Véase el [informe de integración y sus límites](BETTERWINDS_LIVEAREA_V2_INTEGRATION_2026-10-23.md) para la configuración nativa, el rechazo PSP2 de psmobile y el paquete privado de prueba. Las fases y los derechos de distribución no cambian.
