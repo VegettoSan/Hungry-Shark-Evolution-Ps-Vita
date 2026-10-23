@@ -129,6 +129,12 @@ The tool will not overwrite an existing output file. For additional details, see
 
 Boost uses the game's energy system. The map and mission functions are available when supported by the current game state.
 
+## ⚡ Performance Recommendation
+
+For **smoother gameplay and more consistent frame rates**, **overclocking your PS Vita is recommended**, especially in more demanding areas of the game.
+
+A PS Vita clock-control plugin, such as **PSVshell**, can be used to adjust performance settings. Results may vary depending on the scene and your console. Higher clock speeds can increase battery consumption and heat, so use stable settings appropriate for your device.
+
 ## 🛠️ Troubleshooting
 
 | Problem | Solution |
