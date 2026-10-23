@@ -2,7 +2,84 @@
 
 Community research and development repository for a **native PlayStation Vita port** of *Hungry Shark Evolution*, preserving original gameplay logic and Unity assets wherever technically possible.
 
-> **Status (2026-10-17): P00–P02 APPROVED; P03 ACTIVE; P04–P12 LOCKED** tras [auditoría retrospectiva](docs/PHASE_AUDIT_2026-10-17.md) y [autorización registrada](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/issues/2). Unity 5.6.4p3 funciona en Editor según informes del propietario; la copia Unity 2018.2.19f1 compila y existen **VPK nativos PSP2 probados en una PS Vita real**. D05 llegó a gameplay con sonido (40–58 FPS reportados); D06 experimentó caídas a ~11 FPS. **El guardado persistente en Vita sigue fallando o reportándose corrupto** y no se han completado todas las pruebas de controles, muerte/reintento, paridad, estabilidad o release. Los logros técnicos de P05–P11 no equivalen a aprobar esas fases formalmente.
+> **Estado (2026-10-23):** **OWNER-REPORTED PASS:** el propietario validó el VPK reconstruido en PS Vita, incluyendo gameplay, audio, menús, evolución, tiburones especiales, pausa, guardado/carga, reinicio en frío, actualización y reinstalación. **VERIFIED:** el extractor Windows reconstruye los 214 archivos internos idénticos byte por byte al VPK de referencia. El paquete v1.0 está preparado localmente; aún no se ha publicado una Release en GitHub. Véanse [preparación y límites](docs/RELEASE_V1_0_PREPARATION_2026-10-23.md) y [recibo del paquete](docs/evidence/RELEASE_PACKAGE_2026-10-23.json). Las aprobaciones formales siguen **P00–P02 APPROVED; P03 ACTIVE; P04–P12 LOCKED**; la validación del paquete no modifica el [ledger](docs/PHASE_GATES.json).
+
+## Uso del paquete v1.0 / Getting started
+
+**Necesitas:** Windows de 64 bits con .NET Framework 4.8, al menos **2 GB libres**
+y tu propio APK de **Hungry Shark Evolution 6.4.2, build 228**. No necesitas
+instalar Python, Unity ni un SDK para reconstruir el VPK.
+
+El APK exacto tiene **104296014 bytes** y SHA-256:
+
+```text
+52b7d8754ab8fec75c3b656a0dc5ec8dc849565adc402487a3ac093f6a481f7a
+```
+
+1. Usa `HSEVita_v1.0_Windows*.zip` proporcionado por el propietario. Cuando se
+   publique, estará en [Releases](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases).
+   Extrae **todo el ZIP** a una carpeta local escribible.
+2. Mantén juntos `HSERebuild.exe`, `xdelta3decode.exe`, `HSEVita_Stub.vpk`,
+   `HSEVita_Data.xdelta` y `HSEVita_Release.json`.
+3. Arrastra tu APK sobre `HSERebuild.exe`, o abre el EXE y selecciona el APK.
+   Espera al mensaje **PASS**. El VPK se genera junto al APK con el nombre
+   `HungrySharkEvolutionVita_1.0.vpk`.
+4. Respalda tu progreso antes de actualizar. Transfiere **el VPK completo
+   reconstruido** a la Vita e instálalo con VitaShell. Title ID: **`HGSKE1178`**;
+   ubicación estándar de la app: `ux0:app/HGSKE1178/`.
+
+**No instales `HSEVita_Stub.vpk`: es una base incompleta.** El paquete no incluye
+el APK ni el VPK completo; el extractor necesita el APK exacto del usuario.
+No copies los datos Android por encima del runtime PSP2.
+
+Para elegir otra ubicación de salida, abre PowerShell en la carpeta del paquete:
+
+```powershell
+.\HSERebuild.exe "C:\MisJuegos\HSE_6.4.2.apk" --out "C:\Salida\HSEVita_1.0.vpk"
+```
+
+El extractor comprueba los hashes y **no sobrescribe archivos existentes**. Si
+el destino existe, elige otro nombre con `--out`. El VPK generado por el EXE
+incluido tiene SHA-256:
+
+```text
+03f752c91d936765c20d9b7494deae319486763f4bf4f4005dbff45353fe2f9b
+```
+
+Si el APK es rechazado, comprueba su tamaño y SHA-256. Si faltan componentes o
+falla un checksum, vuelve a extraer el ZIP completo. Para comprobar un archivo:
+`Get-FileHash -Algorithm SHA256`, comparando con `SHA256SUMS.txt` del paquete.
+Consulta la [guía completa en español e inglés](docs/RELEASE_V1_0_README_ES_EN.md)
+para instalación, uso, cancelación y solución de problemas.
+
+**English:** extract the complete package, launch `HSERebuild.exe` or drop your
+exact 6.4.2 (228) APK onto it, and wait for **PASS**. Install only the complete
+reconstructed VPK with VitaShell. Never install the incomplete stub by itself.
+See the [English instructions](docs/RELEASE_V1_0_README_ES_EN.md#english).
+
+## Controles de PS Vita / PS Vita controls
+
+| Control | Español | English |
+| --- | --- | --- |
+| Stick izquierdo / Left stick | Mover el tiburón; navegar por menús | Move the shark; navigate menus |
+| Cruceta / D-pad | Movimiento alternativo; navegar y cambiar selección | Alternative movement; navigate and change selection |
+| R, mantenido / Hold R | Turbo durante la partida | Boost during gameplay |
+| START | Pausar/reanudar | Pause/resume |
+| ✕ / Cross | Confirmar o activar la opción seleccionada | Confirm or activate the selected option |
+| ○ / Circle | Volver/cancelar | Back/cancel |
+| □ / Square | Abrir/cerrar misiones durante la partida | Toggle missions during gameplay |
+| △ / Triangle | Abrir/cerrar mapa durante la partida | Toggle map during gameplay |
+| Pantalla táctil / Touchscreen | Controles táctiles originales y botones en pantalla | Original touch controls and on-screen buttons |
+
+Misiones y mapa están sujetos a su disponibilidad en el estado actual del juego.
+El turbo consume la energía original: suelta R para dejar de solicitarlo. La
+pantalla táctil conserva prioridad mientras hay un toque activo.
+
+**Evidencia:** configuración **VERIFIED** en el perfil PSP2, Input Manager y
+consumidores de entrada del proyecto; funcionamiento general en Vita
+**OWNER-REPORTED PASS**. Esta actualización de documentación no añade una nueva
+prueba física botón por botón ni modifica los controles. Contexto histórico en
+[la integración del mando](docs/VITA_CONTROLLER_INTEGRATION_2026-10-16.md).
 
 ## Reference build
 
@@ -78,4 +155,4 @@ The PS Vita LiveArea graphics and bubble icon for this port were contributed by 
 
 See the [LiveArea asset manifest](assets/livearea/BetterWinds/README.md) and [Codex integration instructions](docs/CODEX_BETTERWINDS_LIVEAREA.md). The owner-provided binary source package is handled separately from the public documentation and is not included in this commit.
 
-**Nueva entrega (2026-10-21):** [inventario y plan de integración de BetterWinds LiveArea v2](docs/BETTERWINDS_LIVEAREA_V2_2026-10-21.md), con nuevos `pic0.png` y `Manual/001.png`. Los recursos binarios permanecen privados. **Aún no se ha integrado ni comprobado esta versión en el VPK/PS Vita.**
+**BetterWinds LiveArea v2:** los nuevos `pic0.png`, manual y presentación se integraron en el VPK nativo; consulta el [informe de integración del 2026-10-23](docs/BETTERWINDS_LIVEAREA_V2_INTEGRATION_2026-10-23.md) y la [validación del paquete](docs/RELEASE_V1_0_PREPARATION_2026-10-23.md). El inventario original permanece en [la entrega v2](docs/BETTERWINDS_LIVEAREA_V2_2026-10-21.md).

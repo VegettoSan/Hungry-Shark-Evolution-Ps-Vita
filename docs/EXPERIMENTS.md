@@ -503,3 +503,14 @@ The disclosed compiler paths remain intact and documented for maintainer review.
 | Date (UTC) | ID | Input / tools / settings | Observed result | Evidence / next action |
 | --- | --- | --- | --- | --- |
 | 2026-10-23 | RELEASE-009 | Prior checked base `e2fa13d3...`,patch `572baf37...`,extractor `2ddc6e54...`,decoder `67f84255...`; Python3.14 package_release.py,existing owner-approved target; manifest status metadata only | **PASS VERIFIED:** local HSEVita_v1.0_Windows.zip 118953873bytes SHA-256 `89aea8f6747101b0b2bffcdca2bcdfff5d29786d36f63fa7c2867aba05a1821a`;10 entries,CRC/checksums/fresh extraction. Real Windows reconstruction from that extracted ZIP produces previous approved134206165-byte VPK/hash; all214 entries compare byte for byte. No APK/complete VPK in package,all four native/data components exact. ES/EN end-user instructions and external checksum prepared | [Package receipt](evidence/RELEASE_PACKAGE_2026-10-23.json),[end-user guide](RELEASE_V1_0_README_ES_EN.md); private ReleaseZipVerification/rebuild.log and archive. Compiler paths retained in base with maintainer note; no assertion that renewed functional validation alone clears their public exposure. Not uploaded; phases unchanged |
+
+
+## Owner-requested README usage and controls — 2026-10-23 UTC
+
+Documentation-only follow-up on existing `main`: owner requests README usage
+instructions and game controls. No Unity/input/project change, new branch, upload
+or phase approval. Prior user-owned native/data inputs remain private and intact.
+
+| Date (UTC) | ID | Input / tools / settings | Observed result | Evidence / next action |
+| --- | --- | --- | --- | --- |
+| 2026-10-23 | RELEASE-DOC-001 | Existing verified v1.0 package; Python3.14 ZIP/hash/link checks; read-only PSP2Controller/InputManager and movement/boost/navigation/HUD consumers | **PASS VERIFIED documentation:** main README quickstart,APK/output SHA,installation/troubleshooting and ES/EN controls; bundle guide matches. New HSEVita_v1.0_Windows_README.zip 118954513bytes SHA-256 `318198f01361ec1df01fdc27618638d88bb365e34a0c51e68263d8b7bdf4b30d`,CRC/checksums PASS. Only README_ES_EN.md and SHA256SUMS.txt differ internally; all executable/base/patch/manifest bytes exact. Old archive preserved. Stale README save-failure and unintegrated-LiveArea claims updated to dated evidence | [Main README](../README.md),[guide](RELEASE_V1_0_README_ES_EN.md),[receipt documentation_revision](evidence/RELEASE_PACKAGE_2026-10-23.json). Controls configured statically,global hardware PASS remains owner-reported; no new per-button Vita test or build |

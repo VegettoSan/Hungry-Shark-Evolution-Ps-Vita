@@ -72,5 +72,24 @@
   "privacy_decision": "Local packaging only; the disclosed compiler paths remain unchanged and documented. No claim of separate approval to expose them publicly.",
   "github_published": false,
   "branch": "main",
-  "phase_gate_approval": false
+  "phase_gate_approval": false,
+  "documentation_revision": {
+    "date_utc": "2026-10-23",
+    "archive": {
+      "name": "HSEVita_v1.0_Windows_README.zip",
+      "bytes": 118954513,
+      "sha256": "318198f01361ec1df01fdc27618638d88bb365e34a0c51e68263d8b7bdf4b30d"
+    },
+    "changed_zip_members": [
+      "README_ES_EN.md",
+      "SHA256SUMS.txt"
+    ],
+    "zip_crc": "PASS",
+    "all_component_checksums": "PASS",
+    "runtime_and_manifest_bytes": "UNCHANGED",
+    "new_game_or_device_test": "NOT TESTED; documentation-only revision",
+    "controls_source": "VERIFIED profile/InputManager/action consumers; owner-reported general Vita validation retained",
+    "controls_profile_sha256": "0eb42313ade072668b18a9a84ef6a8162fc6cb48644e7e303621c9283460b520",
+    "input_manager_sha256": "1a8fa257e034c4832a2277392dc20afccff59a72771786ae564a37562fa4c4df"
+  }
 }

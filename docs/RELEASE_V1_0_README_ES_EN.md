@@ -110,6 +110,28 @@ package components.
   leave a `.hse-rebuild-*` sibling containing `HSE_TEMP.txt`. Remove only that
   directory after confirming the tool has stopped.
 
+## Controles de PS Vita / PS Vita controls
+
+| Control | Español | English |
+| --- | --- | --- |
+| Stick izquierdo / Left stick | Mover el tiburón; navegar por menús | Move the shark; navigate menus |
+| Cruceta / D-pad | Movimiento alternativo; navegar y cambiar selección | Alternative movement; navigate and change selection |
+| R, mantenido / Hold R | Turbo durante la partida | Boost during gameplay |
+| START | Pausar/reanudar | Pause/resume |
+| ✕ / Cross | Confirmar o activar la opción seleccionada | Confirm or activate the selected option |
+| ○ / Circle | Volver/cancelar | Back/cancel |
+| □ / Square | Abrir/cerrar misiones durante la partida | Toggle missions during gameplay |
+| △ / Triangle | Abrir/cerrar mapa durante la partida | Toggle map during gameplay |
+| Pantalla táctil / Touchscreen | Controles táctiles originales y botones en pantalla | Original touch controls and on-screen buttons |
+
+Misiones y mapa dependen de su disponibilidad en el estado actual del juego.
+El turbo consume la energía original; suelta R para dejar de solicitarlo.
+Mientras hay un toque activo, se da prioridad a la entrada táctil.
+
+Missions and map depend on availability in the current game state. Boost uses the
+original energy system; release R to stop requesting it. Active touches take
+priority over controller movement.
+
 ## Credits / Créditos
 
 Port: **VegettoSan**. LiveArea artwork: **[BetterWinds](https://github.com/BetterWinds)**.
