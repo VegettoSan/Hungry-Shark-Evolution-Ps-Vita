@@ -1,160 +1,167 @@
-# Hungry Shark Evolution — PS Vita Port
+<div align="center">
 
-Community research and development repository for a **native PlayStation Vita port** of *Hungry Shark Evolution*, preserving original gameplay logic and Unity assets wherever technically possible.
+# 🦈 Hungry Shark Evolution Vita
 
-> **Estado (2026-10-23):** **OWNER-REPORTED PASS:** el propietario validó el VPK reconstruido en PS Vita, incluyendo gameplay, audio, menús, evolución, tiburones especiales, pausa, guardado/carga, reinicio en frío, actualización y reinstalación. **VERIFIED:** el extractor Windows reconstruye los 214 archivos internos idénticos byte por byte al VPK de referencia. El paquete v1.0 está preparado localmente; aún no se ha publicado una Release en GitHub. Véanse [preparación y límites](docs/RELEASE_V1_0_PREPARATION_2026-10-23.md) y [recibo del paquete](docs/evidence/RELEASE_PACKAGE_2026-10-23.json). Las aprobaciones formales siguen **P00–P02 APPROVED; P03 ACTIVE; P04–P12 LOCKED**; la validación del paquete no modifica el [ledger](docs/PHASE_GATES.json).
+**Hungry Shark Evolution, now on PlayStation Vita.**
 
-> **Aviso de publicación:** la v1.0 todavía **no está disponible para descarga pública**. El paquete para Windows existe y se validó localmente, pero la auditoría detectó dos rutas privadas de compilación en un módulo nativo y hay avisos de terceros/permisos pendientes de revisión documental. **No subas el ZIP candidato, el stub, el parche ni el VPK** hasta completar la [lista de comprobación para publicar](docs/RELEASE_V1_0_PUBLICATION_CHECKLIST.md). Consulta también las [notas de lanzamiento v1.0](docs/RELEASE_V1_0_GITHUB_NOTES.md). La aprobación de un paquete local no equivale a autorización para distribuir sus binarios.
+A native PS Vita port of the classic shark survival game, adapted from the Android release.
 
-## Uso del paquete v1.0 / Getting started
+[![Version](https://img.shields.io/badge/Version-1.0-00b6bd?style=for-the-badge)](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases)
+![Platform](https://img.shields.io/badge/Platform-PS%20Vita-1857a4?style=for-the-badge)
+![Game](https://img.shields.io/badge/Game-HSE%206.4.2-173b58?style=for-the-badge)
 
-**Necesitas:** Windows de 64 bits con .NET Framework 4.8, al menos **2 GB libres**
-y tu propio APK de **Hungry Shark Evolution 6.4.2, build 228**. No necesitas
-instalar Python, Unity ni un SDK para reconstruir el VPK.
+[**Releases**](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases) · [**Instalación**](#-instalación) · [**Controles**](#-controles) · [**English**](#english) · [**Reportar un error**](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/issues/new/choose)
 
-El APK exacto tiene **104296014 bytes** y SHA-256:
+</div>
 
-```text
-52b7d8754ab8fec75c3b656a0dc5ec8dc849565adc402487a3ac093f6a481f7a
+---
+
+## 🌊 Sobre el port
+
+**Hungry Shark Evolution Vita** lleva la experiencia de *Hungry Shark Evolution* a PlayStation Vita, manteniendo el gameplay y el contenido de la versión **6.4.2 (build 228)**.
+
+| | Características |
+| :-- | :-- |
+| 🎮 | Gameplay, exploración, alimentación y evolución de tiburones |
+| 🕹️ | Controles adaptados a PS Vita, además de soporte táctil |
+| 🔊 | Música y efectos de sonido del juego |
+| 💾 | Guardado y carga de progreso |
+| 🦈 | Menús de evolución y tiburones especiales |
+| 📱 | Integración con LiveArea de PS Vita |
+
+> **Versión 1.0** · **Title ID:** `HGSKE1178` · **Plataforma:** PlayStation Vita
+
+## 📦 Descarga
+
+Consulta la sección [**GitHub Releases**](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases) para obtener el paquete de la versión 1.0 **cuando esté publicado**.
+
+El port utiliza un **reconstructor para Windows**: a partir de tu propia copia del APK original de Android y los archivos del paquete, genera el VPK que instalarás en tu PS Vita.
+
+**El APK original y el VPK completo no están incluidos en la descarga.** No necesitas Unity, Python ni un SDK para utilizar el reconstructor.
+
+## 📋 Requisitos
+
+| Requisito | Detalle |
+| :-- | :-- |
+| Consola | PlayStation Vita con posibilidad de instalar VPK mediante VitaShell |
+| PC | Windows de 64 bits |
+| Software | .NET Framework 4.8 |
+| Espacio libre | Al menos 2 GB para la reconstrucción |
+| Juego original | **Hungry Shark Evolution 6.4.2**, build **228**, APK sin modificar |
+
+<details>
+<summary><strong>🔎 Comprobar que tienes el APK correcto</strong></summary>
+
+El reconstructor acepta el APK original exacto de la versión **6.4.2 (228)**, con estos datos:
+
+| Campo | Valor |
+| :-- | :-- |
+| Paquete Android | `com.fgol.HungrySharkEvolution` |
+| Tamaño | `104296014` bytes |
+| SHA-256 | `52b7d8754ab8fec75c3b656a0dc5ec8dc849565adc402487a3ac093f6a481f7a` |
+
+Puedes comprobar el hash desde PowerShell:
+
+```powershell
+Get-FileHash "C:\Ruta\HungrySharkEvolution.apk" -Algorithm SHA256
 ```
 
-1. Usa `HSEVita_v1.0_Windows*.zip` proporcionado por el propietario. Cuando se
-   publique, estará en [Releases](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases).
-   Extrae **todo el ZIP** a una carpeta local escribible.
-2. Mantén juntos `HSERebuild.exe`, `xdelta3decode.exe`, `HSEVita_Stub.vpk`,
-   `HSEVita_Data.xdelta` y `HSEVita_Release.json`.
-3. Arrastra tu APK sobre `HSERebuild.exe`, o abre el EXE y selecciona el APK.
-   Espera al mensaje **PASS**. El VPK se genera junto al APK con el nombre
-   `HungrySharkEvolutionVita_1.0.vpk`.
-4. Respalda tu progreso antes de actualizar. Transfiere **el VPK completo
-   reconstruido** a la Vita e instálalo con VitaShell. Title ID: **`HGSKE1178`**;
-   ubicación estándar de la app: `ux0:app/HGSKE1178/`.
+Otras versiones, APK modificados o archivos con un hash diferente no son compatibles con este paquete.
 
-**No instales `HSEVita_Stub.vpk`: es una base incompleta.** El paquete no incluye
-el APK ni el VPK completo; el extractor necesita el APK exacto del usuario.
-No copies los datos Android por encima del runtime PSP2.
+</details>
 
-Para elegir otra ubicación de salida, abre PowerShell en la carpeta del paquete:
+## 🚀 Instalación
+
+1. **Descarga** el paquete de la versión 1.0 desde [Releases](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases), cuando esté disponible.
+2. **Extrae el ZIP completo** en una carpeta de tu PC. No muevas ni borres los archivos que acompañan al reconstructor.
+3. **Arrastra el APK original 6.4.2 (228)** sobre `HSERebuild.exe`. También puedes abrir el programa y seleccionar el APK.
+4. **Espera a que aparezca `PASS`**. Se generará el archivo `HungrySharkEvolutionVita_1.0.vpk` junto al APK.
+5. **Copia el VPK generado a tu PS Vita** e instálalo con **VitaShell**.
+
+> [!IMPORTANT]
+> Instala únicamente **`HungrySharkEvolutionVita_1.0.vpk`**, el archivo completo creado por el reconstructor. **No instales `HSEVita_Stub.vpk`**: es una base incompleta. Si ya tenías una versión instalada, respalda tu progreso antes de actualizar.
+
+**¿Prefieres indicar la carpeta de salida?** Abre PowerShell en la carpeta del paquete:
 
 ```powershell
 .\HSERebuild.exe "C:\MisJuegos\HSE_6.4.2.apk" --out "C:\Salida\HSEVita_1.0.vpk"
 ```
 
-El extractor comprueba los hashes y **no sobrescribe archivos existentes**. Si
-el destino existe, elige otro nombre con `--out`. El VPK generado por el EXE
-incluido tiene SHA-256:
+El reconstructor no sobrescribe un archivo de salida existente. Para más detalles, consulta la [guía de instalación completa (ES/EN)](docs/RELEASE_V1_0_README_ES_EN.md).
+
+## 🎮 Controles
+
+| Botón | Función |
+| :--: | :-- |
+| **Stick izquierdo** | Mover el tiburón y navegar por los menús |
+| **Cruceta** | Movimiento alternativo y navegación |
+| **R** (mantener) | Turbo |
+| **✕** | Confirmar / seleccionar |
+| **○** | Volver / cancelar |
+| **□** | Mostrar u ocultar misiones |
+| **△** | Mostrar u ocultar el mapa |
+| **START** | Pausar / reanudar |
+| **Pantalla táctil** | Interacción táctil con el juego y los menús |
+
+El turbo consume la energía del juego. Las funciones de mapa y misiones dependen del estado de la partida.
+
+## 🛠️ Solución de problemas
+
+| Problema | Qué hacer |
+| :-- | :-- |
+| El programa rechaza el APK | Comprueba que sea la versión **6.4.2 (228)** y verifica su SHA-256. |
+| Faltan archivos o hay errores de checksum | Extrae **todo el ZIP** de nuevo y mantén sus componentes juntos. |
+| El programa no puede crear el VPK | Comprueba el espacio disponible y los permisos de escritura de la carpeta. |
+| El VPK ya existe | Elige otro nombre con `--out` o guarda una copia del VPK anterior. |
+| La Vita no inicia correctamente el juego | Comprueba que instalaste el **VPK final**, no el archivo `Stub`. |
+
+¿Encontraste otro problema? Puedes [**abrir un Issue**](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/issues/new/choose) e indicar qué ocurrió, tu modelo de PS Vita y los pasos para reproducirlo. No adjuntes APKs, VPKs ni datos personales.
+
+---
+
+## English
+
+**Hungry Shark Evolution Vita** is a native PlayStation Vita port based on the original Android game, **version 6.4.2 (build 228)**. It includes gameplay, evolution and special-shark menus, audio, save/load support, Vita button controls and touchscreen input.
+
+### Download and installation
+
+Visit [**GitHub Releases**](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases) to get the v1.0 package **once published**.
+
+You need a **64-bit Windows PC**, **.NET Framework 4.8**, at least **2 GB of free space**, a PS Vita capable of installing VPKs through VitaShell, and your **own unmodified Hungry Shark Evolution 6.4.2 (228) APK**.
+
+1. Download and **fully extract** the release ZIP.
+2. Drag your original APK onto **`HSERebuild.exe`**, or launch the tool and select the APK.
+3. Wait until it displays **`PASS`**. The generated file is **`HungrySharkEvolutionVita_1.0.vpk`**.
+4. Transfer the **complete rebuilt VPK** to your PS Vita and install it using **VitaShell**.
+
+**Do not install `HSEVita_Stub.vpk` on its own.** It is incomplete. Back up your save data before updating.
+
+**Required APK SHA-256:**
 
 ```text
-03f752c91d936765c20d9b7494deae319486763f4bf4f4005dbff45353fe2f9b
+52b7d8754ab8fec75c3b656a0dc5ec8dc849565adc402487a3ac093f6a481f7a
 ```
 
-Si el APK es rechazado, comprueba su tamaño y SHA-256. Si faltan componentes o
-falla un checksum, vuelve a extraer el ZIP completo. Para comprobar un archivo:
-`Get-FileHash -Algorithm SHA256`, comparando con `SHA256SUMS.txt` del paquete.
-Consulta la [guía completa en español e inglés](docs/RELEASE_V1_0_README_ES_EN.md)
-para instalación, uso, cancelación y solución de problemas.
+**Controls:** Left stick or D-pad to move/navigate; hold **R** to boost; **✕** confirm; **○** back; **□** missions; **△** map; **START** pause/resume; touchscreen supported.
 
-**English:** extract the complete package, launch `HSERebuild.exe` or drop your
-exact 6.4.2 (228) APK onto it, and wait for **PASS**. Install only the complete
-reconstructed VPK with VitaShell. Never install the incomplete stub by itself.
-See the [English instructions](docs/RELEASE_V1_0_README_ES_EN.md#english).
+For detailed troubleshooting and custom output paths, read the [**full English installation guide**](docs/RELEASE_V1_0_README_ES_EN.md#english). Report issues [here](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/issues/new/choose).
 
-## Controles de PS Vita / PS Vita controls
+---
 
-| Control | Español | English |
-| --- | --- | --- |
-| Stick izquierdo / Left stick | Mover el tiburón; navegar por menús | Move the shark; navigate menus |
-| Cruceta / D-pad | Movimiento alternativo; navegar y cambiar selección | Alternative movement; navigate and change selection |
-| R, mantenido / Hold R | Turbo durante la partida | Boost during gameplay |
-| START | Pausar/reanudar | Pause/resume |
-| ✕ / Cross | Confirmar o activar la opción seleccionada | Confirm or activate the selected option |
-| ○ / Circle | Volver/cancelar | Back/cancel |
-| □ / Square | Abrir/cerrar misiones durante la partida | Toggle missions during gameplay |
-| △ / Triangle | Abrir/cerrar mapa durante la partida | Toggle map during gameplay |
-| Pantalla táctil / Touchscreen | Controles táctiles originales y botones en pantalla | Original touch controls and on-screen buttons |
+## ❤️ Créditos / Credits
 
-Misiones y mapa están sujetos a su disponibilidad en el estado actual del juego.
-El turbo consume la energía original: suelta R para dejar de solicitarlo. La
-pantalla táctil conserva prioridad mientras hay un toque activo.
+- **Port y adaptación / Port & adaptation:** [VegettoSan](https://github.com/VegettoSan)
+- **Arte de LiveArea / LiveArea artwork:** [BetterWinds](https://github.com/BetterWinds)
+- **Reconstrucción mediante xdelta3 / xdelta3 utility:** [Joshua MacDonald](https://github.com/jmacd/xdelta)
 
-**Evidencia:** configuración **VERIFIED** en el perfil PSP2, Input Manager y
-consumidores de entrada del proyecto; funcionamiento general en Vita
-**OWNER-REPORTED PASS**. Esta actualización de documentación no añade una nueva
-prueba física botón por botón ni modifica los controles. Contexto histórico en
-[la integración del mando](docs/VITA_CONTROLLER_INTEGRATION_2026-10-16.md).
+*Hungry Shark Evolution* y su contenido original pertenecen a sus respectivos titulares. Este es un proyecto comunitario independiente, no afiliado ni respaldado por Ubisoft o los desarrolladores originales. Utiliza únicamente copias del juego obtenidas legítimamente y respeta las licencias aplicables.
 
-## Reference build
+*Hungry Shark Evolution and its original content belong to their respective rights holders. This is an independent community project, not affiliated with or endorsed by Ubisoft or the original developers. Use only lawfully obtained game copies and respect all applicable licenses.*
 
-| Item | Audited result |
-| --- | --- |
-| Game | Hungry Shark Evolution **6.4.2**, Android versionCode **228** |
-| Original Unity player | **5.6.4p3** (official editor released November 20, 2017) |
-| Backend | **Mono**, not IL2CPP |
-| Main assembly | `Assembly-CSharp.dll` (4,958,208 bytes) |
-| Other assemblies | `Assembly-CSharp-firstpass.dll`, `Assembly-UnityScript.dll`, `Assembly-UnityScript-firstpass.dll` |
-| Serialized scenes | `level0` through `level17` (18 files; not necessarily 18 gameplay levels) |
-| Android architecture | `armeabi-v7a` |
-| Candidate Vita editor | **Unity 2018.2.19f1 PSP2 / Mono2x — native HSE VPK builds and owner-reported hardware tests documented** |
+<div align="center">
 
-The newer 14.5.0 package uses Unity 6 / IL2CPP and is not our initial porting baseline.
+**Hungry Shark Evolution Vita · v1.0**
 
-## Vita identity and game data layout
+[Releases](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases) · [Issues](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/issues) · [Installation guide](docs/RELEASE_V1_0_README_ES_EN.md)
 
-**Official port name: Hungry Shark Evolution Vita** · **Title ID: `HGSKE1178`**. The intended application directory is `ux0:app/HGSKE1178/`, subject to actual PSP2 packaging tests. The APK's original Unity `Data/` is **developer recovery input**, NOT a verified copy-and-play PSP2 asset pack. Read [APK extraction and Vita data/app/save layout](docs/DATA_EXTRACTION_AND_LAYOUT.md) and [canonical identity](config/port_identity.json). The Vita identity is used by privately tested Unity 2018 PSP2 VPKs; the **formal phase gates for later work are not yet approved**. See the 2026-10-17 retrospective audit.
-
-## NON-NEGOTIABLE development order
-
-**6.4.2 APK → recover Unity 5.6.4p3 project → get original gameplay working in Unity 5.6.4p3 on PC → explicitly approve the original-engine baseline → migrate a separate copy to Unity 2018.2 → prove gameplay again on PC → verify PSP2 toolchain on actual Vita → port and test actual game on Vita.**
-
-This is the **formal acceptance order**. Private Unity 2018/PSP2 experiments already happened under direct owner requests; they are documented without inventing retroactive full gate passes. Agents must not perform new phase-skipping work without a fresh, scoped owner authorization and **must not create branches without prior authorization**. Formal phase approvals are maintained in [`docs/PHASE_GATES.json`](docs/PHASE_GATES.json), validated by a [CI checker](tools/check_phase_gates.py). Each phase needs evidence **and an explicit owner approval**; automated validation cannot substitute for hardware testing or human review.
-
-**Read the [full start-to-finish gated plan](docs/PORTING_PLAN.md) before doing any work.**
-
-## Repository index
-
-- [Detailed sequential project plan](docs/PORTING_PLAN.md)
-- [Current phase approval ledger](docs/PHASE_GATES.json)
-- **[Retrospective audit of P00–P12 and physical Vita evidence (2026-10-17)](docs/PHASE_AUDIT_2026-10-17.md)**
-- **[Historical Unity 5.6 recovery report from October 15](docs/RECOVERY_STATUS_2026-10-15.md)**
-- **[Unity 5.6 confirmed systems, freeze checklist and Unity 2018 handoff](docs/UNITY56_BASELINE_AND_UNITY2018_HANDOFF.md)**
-- [Codex task: stage private Unity 5.6 baseline and evidence (no migration yet)](docs/CODEX_FREEZE_UNITY56_PREP.md)
-- [Codex future P05/P06 migration instructions (locked until P04 approval)](docs/CODEX_UNITY2018_MIGRATION_PREP.md)
-- [Rules for Codex, AI agents and contributors](AGENTS.md)
-- [Halo 2D PSP2 evidence / Unity 2018.2.19f1](docs/HALO2D_PSP2_REFERENCE.md)
-- [PS Vita shader research, visual parity and 30/60 FPS targets](docs/SHADERS_PSVITA_REFERENCE.md)
-- [Developer vs. user APK extraction and Vita app data storage](docs/DATA_EXTRACTION_AND_LAYOUT.md)
-- [xdelta3 research: Predators, Pocket Mortys and future HSE delivery](docs/XDELTA_UNITY_PORTS_RESEARCH.md)
-- [Set up ignored local Tool Codex and official download links](docs/TOOL_CODEX_LOCAL_SETUP.md)
-- [Codex unattended local first-run task (P00 → approved P01)](docs/CODEX_LOCAL_RECOVERY_TASK.md)
-- **[Codex offline Unity 5.6 project staging (scoped owner authorization; no Unity installed)](docs/CODEX_UNITY56_OFFLINE_EXPORT_PROMPT.md)**
-- [Technical audit and reproducible APK identity](docs/TECHNICAL_AUDIT.md)
-- [Experiment history: PASS / FAIL / NOT TESTED](docs/EXPERIMENTS.md)
-- **[Complete toolchain: current downloads, dependencies and install order](docs/TOOLS.md)**
-
-## Local source preparation
-
-Requires Python 3 and a **user-supplied** copy of the original APK.
-
-Windows: drag the APK onto [`tools/ARRASTRAR_HUNGRY_SHARK_6.4.2.bat`](tools/ARRASTRAR_HUNGRY_SHARK_6.4.2.bat).
-
-Cross-platform:
-```shell
-python tools/Preparar_Hungry_Shark_Evolution_6.4.2.py path/to/game.apk local-work/HSE642
-python tools/check_phase_gates.py
-```
-
-This prepares split Unity `Data/` files, including `Data/Managed/`, **not** a complete Unity editor project. AssetRipper and script recovery are separate steps.
-
-## Legal and reproducibility notes
-
-*Hungry Shark Evolution* and original game code/assets belong to their rights holders. **Do not distribute** APK/XAPK/OBB, decompiled code, extracted game assets, Sony/Unity restricted SDKs, credentials or unauthorized VPKs. Work from individually obtained lawful inputs; the repository contains only public tools, technical reports, rules and scripts. Not affiliated with Ubisoft or the game's developers.
-
-Individual source/editor test results are documented with their limits. Full runtime, parity and performance claims require the corresponding platform tests and gate evidence; a successful editor probe does not establish standalone PC or Vita gameplay.
-
-## LiveArea artwork credits
-
-The PS Vita LiveArea graphics and bubble icon for this port were contributed by **[BetterWinds](https://github.com/BetterWinds)**. Thank you for the artwork. This acknowledgement covers the LiveArea contribution, not ownership of *Hungry Shark Evolution* or its underlying characters, logos and artwork, which remain with their respective rights holders.
-
-See the [LiveArea asset manifest](assets/livearea/BetterWinds/README.md) and [Codex integration instructions](docs/CODEX_BETTERWINDS_LIVEAREA.md). The owner-provided binary source package is handled separately from the public documentation and is not included in this commit.
-
-**BetterWinds LiveArea v2:** los nuevos `pic0.png`, manual y presentación se integraron en el VPK nativo; consulta el [informe de integración del 2026-10-23](docs/BETTERWINDS_LIVEAREA_V2_INTEGRATION_2026-10-23.md) y la [validación del paquete](docs/RELEASE_V1_0_PREPARATION_2026-10-23.md). El inventario original permanece en [la entrega v2](docs/BETTERWINDS_LIVEAREA_V2_2026-10-21.md).
+</div>
