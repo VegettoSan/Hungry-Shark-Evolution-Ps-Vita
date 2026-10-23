@@ -10,7 +10,7 @@ A native PS Vita port of the classic shark survival game, adapted from the Andro
 ![Platform](https://img.shields.io/badge/Platform-PS%20Vita-1857a4?style=for-the-badge)
 ![Game](https://img.shields.io/badge/Game-HSE%206.4.2-173b58?style=for-the-badge)
 
-[**Releases**](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases) · [**Instalación**](#-instalación) · [**Controles**](#-controles) · [**English**](#english) · [**Reportar un error**](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/issues/new/choose)
+[**Descargar v1.0**](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases/tag/01.00) · [**Instalación**](#-instalación) · [**Controles**](#-controles) · [**English**](#english) · [**Reportar un error**](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/issues/new/choose)
 
 </div>
 
@@ -33,7 +33,7 @@ A native PS Vita port of the classic shark survival game, adapted from the Andro
 
 ## 📦 Descarga
 
-Consulta la sección [**GitHub Releases**](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases) para obtener el paquete de la versión 1.0 **cuando esté publicado**.
+Descarga la versión **1.0** desde [**GitHub Releases · 01.00**](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases/tag/01.00): **`HSEVita_v1.0_Windows.zip`**.
 
 El port utiliza un **reconstructor para Windows**: a partir de tu propia copia del APK original de Android y los archivos del paquete, genera el VPK que instalarás en tu PS Vita.
 
@@ -72,7 +72,7 @@ Otras versiones, APK modificados o archivos con un hash diferente no son compati
 
 ## 🚀 Instalación
 
-1. **Descarga** el paquete de la versión 1.0 desde [Releases](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases), cuando esté disponible.
+1. **Descarga** [`HSEVita_v1.0_Windows.zip`](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases/download/01.00/HSEVita_v1.0_Windows.zip) desde la [Release 01.00](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases/tag/01.00).
 2. **Extrae el ZIP completo** en una carpeta de tu PC. No muevas ni borres los archivos que acompañan al reconstructor.
 3. **Arrastra el APK original 6.4.2 (228)** sobre `HSERebuild.exe`. También puedes abrir el programa y seleccionar el APK.
 4. **Espera a que aparezca `PASS`**. Se generará el archivo `HungrySharkEvolutionVita_1.0.vpk` junto al APK.
@@ -125,7 +125,7 @@ El turbo consume la energía del juego. Las funciones de mapa y misiones depende
 
 ### Download and installation
 
-Visit [**GitHub Releases**](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases) to get the v1.0 package **once published**.
+Download [**HSEVita_v1.0_Windows.zip**](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases/download/01.00/HSEVita_v1.0_Windows.zip) from the public [**01.00 Release**](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/releases/tag/01.00).
 
 You need a **64-bit Windows PC**, **.NET Framework 4.8**, at least **2 GB of free space**, a PS Vita capable of installing VPKs through VitaShell, and your **own unmodified Hungry Shark Evolution 6.4.2 (228) APK**.
 
