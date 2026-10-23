@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "date_utc": "2026-10-23",
+  "classification": "VERIFIED local packaging; owner-reported partial hardware",
+  "phase": "P03 ACTIVE; 3/13 APPROVED; no gate change",
+  "owner_scope": "2026-10-23 distribution request and explicit final VPK selection in chat; existing main only",
+  "apk": {
+    "bytes": 104296014,
+    "sha256": "52b7d8754ab8fec75c3b656a0dc5ec8dc849565adc402487a3ac093f6a481f7a"
+  },
+  "original_vpk": {
+    "bytes": 136185607,
+    "sha256": "3e3dffc4a175f8e11ca769c1f0cec69d5cb79b1095fcbccf312f9a4c58df9db3",
+    "files": 214,
+    "uncompressed_bytes": 380836805
+  },
+  "reconstructed_vpk": {
+    "name": "HungrySharkEvolutionVita_1.0.vpk",
+    "bytes": 134206165,
+    "sha256": "03f752c91d936765c20d9b7494deae319486763f4bf4f4005dbff45353fe2f9b",
+    "member_compare_python": "PASS 214",
+    "member_compare_csharp": "PASS 214",
+    "crc": "PASS"
+  },
+  "candidate_artifacts": [
+    {
+      "name": "HSERebuild.exe",
+      "bytes": 22016,
+      "sha256": "2ddc6e541628c0c671cd5af808830f372f214477d0353ff0ce5d7c1484be408e"
+    },
+    {
+      "name": "HSEVita_Data.xdelta",
+      "bytes": 93302025,
+      "sha256": "572baf37fc53fc285d725ae8055f403d58e8aeb815182ef6a6d6f960fc9e5e41"
+    },
+    {
+      "name": "HSEVita_Release.json",
+      "bytes": 51240,
+      "sha256": "aedec0da049c4045e5f315e3518af6df7287a222aca92b1834ae6f7900d843d4"
+    },
+    {
+      "name": "HSEVita_Stub.vpk",
+      "bytes": 41705984,
+      "sha256": "e2fa13d32dc099f399f7a91c392e024adce3b2fe2fa32c71dd9886d852ef9f58"
+    },
+    {
+      "name": "PRIVATE_NOT_CLEARED.txt",
+      "bytes": 250,
+      "sha256": "c3a81da1ba02cd9071d341ad3f90844130a49d82788d763b58482798d85beb43"
+    },
+    {
+      "name": "README_ES_EN.md",
+      "bytes": 5983,
+      "sha256": "a3800e4b8f800f2b67dd0ba86ea4baecefd558dc4d667389ee58c40a6da29b08"
+    },
+    {
+      "name": "xdelta3-LICENSE.txt",
+      "bytes": 9156,
+      "sha256": "6cf63d87586c7c25c3ab8e62eef5c75bbaa982b0a6f9c00c59e2720255aac9ec"
+    },
+    {
+      "name": "xdelta3decode.exe",
+      "bytes": 48128,
+      "sha256": "67f84255bd009a65b1252784f8b3ebc72b5907766bc366c571e8b85fa7002a06"
+    },
+    {
+      "name": "HSE_v1.0_PRIVATE_REVIEW_VALIDATED.zip",
+      "bytes": 118214499,
+      "sha256": "2c68fc6976e6119597c641d379352632e086844704a424b72e2c2ecec47ac58c"
+    }
+  ],
+  "benchmarks": [
+    {
+      "variant": "apk-deflated",
+      "author_roundtrip_compare_seconds": 25.769,
+      "source_bytes": 104296014,
+      "data_bytes": 94484202,
+      "stub_bytes": 41705984,
+      "patch_bytes": 94273281,
+      "patch_sha256": "9758fe9596a6daa1b4241fd378ce7f8076bbf2367b9455fa515eb7681d9a1ed6",
+      "status": "PASS",
+      "rights": "NOT CLEARED",
+      "hardware": "NOT TESTED",
+      "instructions": {
+        "source_copy_bytes": 28093,
+        "target_copy_bytes": 721950,
+        "add_bytes": 93727395,
+        "run_bytes": 6764
+      },
+      "instruction_total_bytes": 94484202,
+      "target_window_bytes": 94484202,
+      "printdelta_exit": 3221225477,
+      "patch_transport_zip_bytes": 94010046,
+      "independent_vcdiff_accounting": {
+        "instructions": {
+          "source_copy_bytes": 28093,
+          "target_copy_bytes": 721950,
+          "add_bytes": 93727395,
+          "run_bytes": 6764
+        },
+        "target_bytes": 94484202,
+        "windows": 12,
+        "literal_section_bytes": 93727560,
+        "warning": "COPY counts are output bytes, not unique bytes or redistribution permission."
+      }
+    },
+    {
+      "variant": "apk-stored",
+      "author_roundtrip_compare_seconds": 30.784,
+      "source_bytes": 104296014,
+      "data_bytes": 237643804,
+      "stub_bytes": 41705984,
+      "patch_bytes": 110139062,
+      "patch_sha256": "b33b5a144c641e0b27edb6df2d465d142157198884ee64eaa1efdec04bc5d96c",
+      "status": "PASS",
+      "rights": "NOT CLEARED",
+      "hardware": "NOT TESTED",
+      "instructions": {
+        "source_copy_bytes": 2466493,
+        "target_copy_bytes": 154536477,
+        "add_bytes": 70937861,
+        "run_bytes": 9702973
+      },
+      "instruction_total_bytes": 237643804,
+      "target_window_bytes": 237643804,
+      "printdelta_exit": 3221225477,
+      "patch_transport_zip_bytes": 92385286,
+      "independent_vcdiff_accounting": {
+        "instructions": {
+          "source_copy_bytes": 2466493,
+          "target_copy_bytes": 154536477,
+          "add_bytes": 70937861,
+          "run_bytes": 9702973
+        },
+        "target_bytes": 237643804,
+        "windows": 29,
+        "literal_section_bytes": 71061035,
+        "warning": "COPY counts are output bytes, not unique bytes or redistribution permission."
+      }
+    },
+    {
+      "variant": "unity-data-v1-stored",
+      "author_roundtrip_compare_seconds": 26.743,
+      "source_bytes": 311224301,
+      "data_bytes": 237643804,
+      "stub_bytes": 41705984,
+      "patch_bytes": 93302025,
+      "patch_sha256": "572baf37fc53fc285d725ae8055f403d58e8aeb815182ef6a6d6f960fc9e5e41",
+      "status": "PASS",
+      "rights": "NOT CLEARED",
+      "hardware": "NOT TESTED",
+      "instructions": {
+        "source_copy_bytes": 51558156,
+        "target_copy_bytes": 116129342,
+        "add_bytes": 60405613,
+        "run_bytes": 9550693
+      },
+      "instruction_total_bytes": 237643804,
+      "target_window_bytes": 237643804,
+      "printdelta_exit": 3221225477,
+      "patch_transport_zip_bytes": 77293827,
+      "independent_vcdiff_accounting": {
+        "instructions": {
+          "source_copy_bytes": 51558156,
+          "target_copy_bytes": 116129342,
+          "add_bytes": 60405613,
+          "run_bytes": 9550693
+        },
+        "target_bytes": 237643804,
+        "windows": 29,
+        "literal_section_bytes": 60479697,
+        "warning": "COPY counts are output bytes, not unique bytes or redistribution permission."
+      }
+    }
+  ],
+  "windows": {
+    "native_checks": "PASS 32",
+    "python_tests": "PASS 5",
+    "unicode_repeat": {
+      "test": "native Unicode Windows reconstruction",
+      "seconds": 17.16,
+      "extractor_peak_working_set_bytes": 43458560,
+      "note": "Extractor process only; decoder child memory excluded.",
+      "bytes": 134206165,
+      "sha256": "03f752c91d936765c20d9b7494deae319486763f4bf4f4005dbff45353fe2f9b"
+    },
+    "manual_file_picker_and_drag_drop": "NOT TESTED",
+    "windows10_clean_pc": "NOT TESTED",
+    "forced_termination_power_loss": "NOT TESTED"
+  },
+  "hardware": {
+    "status": "OWNER-REPORTED PASS for complete requested matrix",
+    "cases": {
+      "install": "PASS (owner-reported)",
+      "boot": "PASS (owner-reported)",
+      "sound": "PASS (owner-reported)",
+      "menus": "PASS (owner-reported)",
+      "evolution": "PASS (owner-reported)",
+      "special sharks": "PASS (owner-reported)",
+      "gameplay": "PASS (owner-reported)",
+      "pause": "PASS (owner-reported)",
+      "save/load": "PASS (owner-reported)",
+      "cold restart": "PASS (owner-reported)",
+      "update": "PASS (owner-reported)",
+      "reinstall": "PASS (owner-reported)"
+    },
+    "installed_hash": "NOT PROVIDED",
+    "direct_agent_observation": "NOT TESTED",
+    "approval_quote": "ya revise y probe todo lo que me dijiste y si paso todo en orden, vpk validado"
+  },
+  "distribution_rights": {
+    "status": "OWNER-ATTESTED; documents not independently inspected",
+    "quote": "si, los tengo, todos los documentos en regla",
+    "references_provided": false
+  },
+  "github_release": {
+    "query_utc_date": "2026-10-23",
+    "list_result": [],
+    "created": false,
+    "uploaded": false
+  },
+  "failures_retained": [
+    "default LZMA encode unavailable",
+    "DJW decode unsupported in standalone decoder",
+    "FGK encoder unavailable",
+    "printdelta exit 0xC0000005; all counts independently verified",
+    "initial C# quoting compile",
+    "ArrayList manifest casting",
+    "csc relative source paths",
+    "premature bundle invocation",
+    "sandbox TEMP permissions"
+  ],
+  "privacy": {
+    "status": "BLOCKED public base: two absolute private build path strings in MonoAssembliesPSP2.suprx",
+    "facebook_build_path": "One third-party SDK build path detected",
+    "eboot_private_key_blocks": "Four complete blocks match upstream public Mbed TLS 2.6.0 test keys by DER SHA-256",
+    "github_aws_token_patterns": "No matches; limited pattern scan",
+    "native_original_modified": false
+  },
+  "tooling_source_commit": "df2510ecd9251ba909666820611b9cfc171ae513"
+}
