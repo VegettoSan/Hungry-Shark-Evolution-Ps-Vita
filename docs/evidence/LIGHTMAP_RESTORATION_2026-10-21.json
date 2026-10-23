@@ -1,0 +1,294 @@
+{
+  "scope": {
+    "owner_authorization": "Current chat, 2026-10-20 local / 2026-10-21 UTC; lighting restoration exception only",
+    "branch": "main",
+    "base_commit": "4054ce2",
+    "phase_changes": false,
+    "source_apk_sha256": "52b7d8754ab8fec75c3b656a0dc5ec8dc849565adc402487a3ac093f6a481f7a",
+    "source_editor": "5.6.4p3",
+    "target_editor": "2018.2.19f1"
+  },
+  "status": "VERIFIED Editor/native build; physical PS Vita UNTESTED",
+  "original_unity5_integrity": {
+    "files": 19591,
+    "changed": [],
+    "missing": [],
+    "added": []
+  },
+  "target_integrity": {
+    "before_files": 19662,
+    "original_user_files": 19660,
+    "auditor_installed_at_checkpoint": 2,
+    "auditor_updated_during_task": {
+      "before_sha256": "e38519d53df393b2fe95007acd6b8c69764477c9bcd02e5df015e01961faeb68",
+      "after_sha256": "0eb0dfee7376bba11fbf2ccac13055fd6faf4ce8bbb03c0ee34f45d2e1ec2451"
+    },
+    "after_files": 19673,
+    "changed": {
+      "Assets/WIP/Alien_world.unity": {
+        "before_sha256": "e98b4753e173b7a1394bd80012e21e5a6128cef994e2c34f501d3e02265e1e61",
+        "after_sha256": "151b4f4be0c570665bc35a77d4aa98b55071a56943b6a31e863c3e0b7851414a"
+      },
+      "Assets/WIP/MainMenu.unity": {
+        "before_sha256": "08ce2959621cbafb000ae88bc9401dbcad00a67ff50bba403214d8a5ba9fd3eb",
+        "after_sha256": "2b69e09ab6de0a0da5a073c75481c88b55ee31fc2ae475579f728fa62f888bf9"
+      },
+      "Assets/WIP/Master_high.unity": {
+        "before_sha256": "d7ba25a47f6fa8625754cfb07fb9a70d4f35947b809a771a3038487ecbab8556",
+        "after_sha256": "53b44a894efeb2492396913f30cdbbd9f5a4e758898f5f220ea05542c4251196"
+      },
+      "Assets/WIP/Master_low.unity": {
+        "before_sha256": "1367959fa9b959f8c2303f6ec2cd28df2fbb77610450aae6ecf681e916cbc06a",
+        "after_sha256": "1e7defeef4704aaeac8643c78f3bc733b4671d9cac15af5436c1182ab74cdb69"
+      },
+      "Assets/WIP/Master_medium.unity": {
+        "before_sha256": "ceb3bed2d8903e8e801fedbb6ef7542cc36a821b9ce7d79a9742c51ba0ae1f46",
+        "after_sha256": "bdd1c88c82a3e5c7d2f33fd06db0ba39d2d1c1720f182b843bde83cdf75c167d"
+      },
+      "Assets/WIP/Master_spawn_high.unity": {
+        "before_sha256": "ba7a8c4944476ecabeb2ab66cac290f4a7130c6d711dd0d476dcdb89c11ea6e9",
+        "after_sha256": "3667fb5fe5ec7b7a9b071c5892ac2473c0217e4a030c506aa7adbf3d07b367ba"
+      },
+      "Assets/WIP/Master_spawn_low.unity": {
+        "before_sha256": "4461fbf2a04127c326015b5de398cb980bc6ec2f3638f25d4ce4261d79a9f650",
+        "after_sha256": "c60313eeb40fc18b33cd8a3f123247d166b096a65594ec1ee054f6573880ccf8"
+      },
+      "Assets/WIP/Master_spawn_medium.unity": {
+        "before_sha256": "7cc850c74e8a734fb9720d8e86646b09cce3e8a4e4273774d1dabc55e223dc29",
+        "after_sha256": "786789b2aac69f0e312beb7515ef84587632bb8b197d828b6f5c4ed95deb2081"
+      },
+      "Assets/WIP/SplashLoaderScene.unity": {
+        "before_sha256": "25532650fa954bdb93212a6b1141c146df10026c0e64b7bad805668ae2965fd3",
+        "after_sha256": "5f7ff9458f81c21a18eb87ca7ff9cd9a979088105683ca91e3414a2b186a2895"
+      },
+      "Assets/WIP/titanic.unity": {
+        "before_sha256": "73f06e89b3f7a2505a5c82a0a91adda55d66c6cbf4c38dd17d5c20b54bc2249f",
+        "after_sha256": "91d82d43f0e617cb7807cc156f77e617acb368b5879e4a19015102bcecf9cefc"
+      },
+      "Assets/WIP/VolcanoIsland.unity": {
+        "before_sha256": "8a4adcfe5bd739f1f39220bbcc64b9ab39d9fdcfdab375dd5e2b2f60232a1e01",
+        "after_sha256": "2703a64451d13c9307e807a3d25e2ab2c2463f45a8b2728df4f76456b477d807"
+      },
+      "Assets/WIP/MainMenu/LightingData_0.asset": {
+        "before_sha256": "76523047bcfa02489373932f4a177e8e122b0ccc6ed0e34f507a4ccc1bf17bb2",
+        "after_sha256": "17d0b752288b81d7cdc9cc1d1467c97651eb1e71370b24c185c2c8f1ee8530f6"
+      },
+      "Assets/WIP/ttitanic/LightingData.asset": {
+        "before_sha256": "e3d905dfcf1e5654abf320d7498e62be8a190457693488bead23d48ac2daebb4",
+        "after_sha256": "21e93e940b67f1cec0182f0528194778b2e01effb97316790e093156deb3de79"
+      },
+      "Assets/WIP/VolcanoIsland/LightingData.asset": {
+        "before_sha256": "c525f909e8c7584c1755b751b38f7bd16ee7a94b5df81203004a1ec4929504b2",
+        "after_sha256": "52dcd24150ec5164d9e44aaa6256913116cbbdfa80a74c4989d00eb31be0fe84"
+      },
+      "Assets/Plugins/Assembly-CSharp-firstpass/PrefabLightmapData.cs": {
+        "before_sha256": "94149a160c78c9beb22542ef8c3a6af63fa6595bd1c9100015cc9e2e460d16af",
+        "after_sha256": "34be2a2c7f4608292bb296a5749e1a54e8b16ca2f79e4103e7d8f33cada53178"
+      }
+    },
+    "added": {
+      "Assets/WIP/MainMenu/LightingData.asset": "637bbee0e02cf881b6a1da5ae239abf31993c41b425a116388c300f752905270",
+      "Assets/WIP/MainMenu/LightingData.asset.meta": "3ebb13a2725ecd95f3280335fc42538c66f4d6556e6d840d3903a2b48f470c00",
+      "Assets/WIP/MainMenu/Lightmap-0_comp_light.texture2D": "e4542c5e4106f62d66798df109e5de07a3f86139208ee054f20572b946d287ae",
+      "Assets/WIP/MainMenu/Lightmap-0_comp_light.texture2D.meta": "c2fb22563ab04437497772b44262f6ce39da9dbb6db25aa424abff9281024c7b",
+      "Assets/WIP/MainMenu/Lightmap-1_comp_light.texture2D": "a077d1a3b3f045a3852413084aea12c7f5744a586f122728bbd3b2f5ea134ac3",
+      "Assets/WIP/MainMenu/Lightmap-1_comp_light.texture2D.meta": "07f08ba375832cb86e1b327c50c6eec3d094b876149b57b230dab79e10f20286",
+      "Assets/WIP/Master_spawn_high/Lightmap-0_comp_light.texture2D": "609b5266ebce221b747b70f543b7e76575d716993d2ccb809f58c2f2a469aa84",
+      "Assets/WIP/Master_spawn_high/Lightmap-0_comp_light.texture2D.meta": "8d8dfe6726755f8377b04fbaa44fd085e4e526e7f66873f1f31b252000fce4df",
+      "Assets/WIP/titanic.meta": "beb6d04e0a8d893a63a7cd3be80e1d672ea31f2a21d06111076f84fef8323467",
+      "Assets/WIP/titanic/Lightmap-0_comp_light.texture2D": "50fa9575c44d9f69c3b5fbeb19cb0b6a15e95d402f8a9019340ad6b13f77ea2e",
+      "Assets/WIP/titanic/Lightmap-0_comp_light.texture2D.meta": "f314e96376e1279008849eb890a79ee03a0f460a20f513e99510004081b979c8"
+    },
+    "missing": [],
+    "scene_byte_checks": 11,
+    "helper_exact_guard_only": true,
+    "other_authored_files_identical": true,
+    "saves_restored": 8,
+    "prefs_restored": true,
+    "temporary_helpers_archived": true,
+    "native_build": "result=Succeeded errors=0 warnings=295 time=00:02:01.5586852 scenes=18"
+  },
+  "recovered_textures": [
+    {
+      "path": "Assets/WIP/MainMenu/Lightmap-0_comp_light.texture2D",
+      "before": "missing",
+      "format": 3,
+      "original_sha256": "e4542c5e4106f62d66798df109e5de07a3f86139208ee054f20572b946d287ae",
+      "sha256": "e4542c5e4106f62d66798df109e5de07a3f86139208ee054f20572b946d287ae",
+      "guid_preserved": true,
+      "mips_preserved": 10
+    },
+    {
+      "path": "Assets/WIP/MainMenu/Lightmap-1_comp_light.texture2D",
+      "before": "missing",
+      "format": 3,
+      "original_sha256": "a077d1a3b3f045a3852413084aea12c7f5744a586f122728bbd3b2f5ea134ac3",
+      "sha256": "a077d1a3b3f045a3852413084aea12c7f5744a586f122728bbd3b2f5ea134ac3",
+      "guid_preserved": true,
+      "mips_preserved": 6
+    },
+    {
+      "path": "Assets/WIP/Master_spawn_high/Lightmap-0_comp_light.texture2D",
+      "before": "missing",
+      "format": 10,
+      "original_sha256": "c34b2776c84965f1116ebb0343906003e399540f512d94c8ddc1ca22184de164",
+      "sha256": "609b5266ebce221b747b70f543b7e76575d716993d2ccb809f58c2f2a469aa84",
+      "guid_preserved": true,
+      "mips_preserved": 12
+    },
+    {
+      "path": "Assets/WIP/titanic/Lightmap-0_comp_light.texture2D",
+      "before": "missing",
+      "format": 10,
+      "original_sha256": "ed7a03fcf364c3c64c09b144970bb5db653b8fa67b4bbc038a0dc7fe0c50c70a",
+      "sha256": "50fa9575c44d9f69c3b5fbeb19cb0b6a15e95d402f8a9019340ad6b13f77ea2e",
+      "guid_preserved": true,
+      "mips_preserved": 10
+    },
+    {
+      "path": "Assets/WIP/MainMenu/LightingData.asset",
+      "action": "restore original empty LightProbes asset; no fabricated probes"
+    }
+  ],
+  "bakes_regenerated": 0,
+  "native_build": {
+    "result": "result=Succeeded errors=0 warnings=295 time=00:02:01.5586852 scenes=18",
+    "total_textures": 724,
+    "atlas_objects": [
+      {
+        "name": "Lightmap-0_comp_light",
+        "width": 512,
+        "height": 512,
+        "format": "RGB24",
+        "mips": 10,
+        "file": "resources.assets",
+        "id": 233
+      },
+      {
+        "name": "Lightmap-1_comp_light",
+        "width": 32,
+        "height": 32,
+        "format": "RGB24",
+        "mips": 6,
+        "file": "sharedassets1.assets",
+        "id": 4
+      },
+      {
+        "name": "Lightmap-0_comp_light",
+        "width": 512,
+        "height": 512,
+        "format": "DXT1",
+        "mips": 10,
+        "file": "sharedassets14.assets",
+        "id": 27
+      },
+      {
+        "name": "Lightmap-0_comp_light",
+        "width": 2048,
+        "height": 2048,
+        "format": "DXT1",
+        "mips": 12,
+        "file": "sharedassets4.assets",
+        "id": 43
+      }
+    ],
+    "helper_contract": {
+      "result": "PASS",
+      "firstpass_sha256": "3d877f1e8b1c8621e9c32478061d1280b9157483ea8ecbaeab2ebb80b52544e7",
+      "helper_checks": [
+        "direction-map getter",
+        "global mode setter",
+        "existing append setter",
+        "original renderer application"
+      ],
+      "hardware": "UNTESTED"
+    },
+    "medium_contract": {
+      "result": "PASS",
+      "NativeClassification": "medium",
+      "ClassifierIL": "IL_0000: ldc.i4.1; IL_0001: ret",
+      "OriginalQualitySelection": true,
+      "OriginalFrameLimitCalls": true,
+      "Hardware": "UNTESTED"
+    },
+    "vpk_packaged": false
+  },
+  "lab_reference": {
+    "resolution": [
+      960,
+      544
+    ],
+    "mean_channel_error": 0.0024527200075291555,
+    "rms_channel_error": 0.005594320261732795,
+    "max_channel_error": 0.18823529411764706,
+    "context": "isolated original lab mesh/material/atlas; exact Unity5.6 versus Unity2018; not full gameplay"
+  },
+  "editor_sample": {
+    "frames": 153,
+    "mean_ms": 39.532743137254904,
+    "p95_ms": 47.7115,
+    "mean_draw_calls": 79.38562091503267,
+    "mean_batches": 79.38562091503267,
+    "managed_bytes_min": 22200320,
+    "managed_bytes_max": 95633408,
+    "scope": "single post-change Editor sample; no matched before; not Vita FPS/CPU/GPU; diagnostic overhead included"
+  },
+  "memory": {
+    "atlas_payload_bytes_full_mips": 4023662,
+    "atlas_editor_reported_bytes": 5119404,
+    "vita_memory_measured": false
+  },
+  "limitations": [
+    "No physical PS Vita test or paired performance baseline",
+    "Inherited missing UV2: 34 Master_medium and105 Volcano renderers",
+    "Empty recovered probes/realtime GI mappings; no invented bake",
+    "Earlier graphical Editor D3D11 crash retained; fresh headless final build passed",
+    "ETC1 to DXT1 recompression is lossy; quantified in full report"
+  ],
+  "tools_sha256": {
+    "tools/unity/HSELightingRestorationAudit.cs": "0eb0dfee7376bba11fbf2ccac13055fd6faf4ce8bbb03c0ee34f45d2e1ec2451",
+    "tools/restore_hse_lightmap_modes.py": "7d0b6a55ee708bccdf61dc93b51a8b100d97dd6185f535205dac991fa0a2434e",
+    "tools/fix_hse_prefab_lightmap_mode.py": "d63d1488ae1a4c2d0d59a1f3d80bc63e9b1257121de84ab499b3849f94a879be"
+  },
+  "private_test_vpk": {
+    "sha256": "488a66e4e0682f6aaa00b573277e101cb10c6f6c142003b3b7543072e33d36cc",
+    "bytes": 135759203,
+    "entries": 213,
+    "images": {
+      "sce_sys/livearea/contents/bg0.png": "452a71826ec9613c29773a4f29bebdc88c3dfe9299313048939d6a2b1152f77c",
+      "sce_sys/icon0.png": "28bafa4298a4aa7e00ce30df69d082710e1553d201bcdeacb81fb5c5cf9fb775",
+      "sce_sys/livearea/contents/startup.png": "293fff5b6e8abc7923ed2d9f3b1bb92b233843c7d6416fa5b657b8b2730a4f4d"
+    },
+    "title_id": "HGSKE1178",
+    "title": "Hungry Shark Evolution Vita",
+    "template_format": "01.03",
+    "icon_conversion": "Unity native RGBA to indexed PNG",
+    "hardware": "NOT TESTED",
+    "filename": "HSE_Lighting_Restored_HGSKE1178.vpk",
+    "utc": "2026-10-21T04:52:26.895019+00:00",
+    "authorization": "Owner current chat explicitly requests private VPK to test restored lighting; no installation/publication/phase approval",
+    "build_result": "result=Succeeded errors=0 warnings=295 time=00:02:01.5586852 scenes=18",
+    "editor_cleanup_diagnostics": {
+      "classification": "CS2001 for archived task-only Editor helpers in stale compilation input; separate from successful native runtime build",
+      "diagnostic_lines": 12,
+      "unique_archived_helpers": [
+        "HSEEditorRegression.cs",
+        "HSELabLightingReference.cs",
+        "HSELightingModeInspector.cs",
+        "HSELightingRecoveryTask.cs",
+        "HSELightingTaskDriver.cs",
+        "HSEPrefabLightingModeContract.cs"
+      ],
+      "runtime_compile_failures": 0,
+      "shader_errors": 0
+    },
+    "runtime_member_equality": true,
+    "native_input_files_unchanged": true,
+    "savedata_included": false,
+    "previous_vpk_sha256_unchanged": "c8f934129afd03034f538060c477b865107cba4fb24cb0c63a394369d1f8af02",
+    "native_assembly_sha256": "f59d15c7502a77bc082cf33cd88f521e051960aa605ea3bf46e87e9d11dc65a1",
+    "native_firstpass_sha256": "3d877f1e8b1c8621e9c32478061d1280b9157483ea8ecbaeab2ebb80b52544e7",
+    "native_texture_census_sha256": "42edebd2049005b3fb634a1afd60f3966cf11602544e165548fc21cd1422c6be",
+    "independent_verification": true
+  }
+}
