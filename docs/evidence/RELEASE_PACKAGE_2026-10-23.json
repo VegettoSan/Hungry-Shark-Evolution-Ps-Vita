@@ -1,0 +1,76 @@
+{
+  "status": "LOCAL_PACKAGE_CREATED_NOT_UPLOADED",
+  "archive": {
+    "name": "HSEVita_v1.0_Windows.zip",
+    "bytes": 118953873,
+    "sha256": "89aea8f6747101b0b2bffcdca2bcdfff5d29786d36f63fa7c2867aba05a1821a"
+  },
+  "files": [
+    {
+      "name": "HSERebuild.exe",
+      "bytes": 22016,
+      "sha256": "2ddc6e541628c0c671cd5af808830f372f214477d0353ff0ce5d7c1484be408e"
+    },
+    {
+      "name": "HSEVita_Data.xdelta",
+      "bytes": 93302025,
+      "sha256": "572baf37fc53fc285d725ae8055f403d58e8aeb815182ef6a6d6f960fc9e5e41"
+    },
+    {
+      "name": "HSEVita_Release.json",
+      "bytes": 51258,
+      "sha256": "6b8d43ac2cf428f67c5af6fb1bd68d4a251597d3ef66ac5ef925cdd2e0a0a4bf"
+    },
+    {
+      "name": "HSEVita_Stub.vpk",
+      "bytes": 41705984,
+      "sha256": "e2fa13d32dc099f399f7a91c392e024adce3b2fe2fa32c71dd9886d852ef9f58"
+    },
+    {
+      "name": "MAINTAINER_NOTES.txt",
+      "bytes": 898,
+      "sha256": "ae1f3d5522c79b37fdc33317e091e971119b196bd7d92a7c493165e6e3a09782"
+    },
+    {
+      "name": "README_ES_EN.md",
+      "bytes": 5113,
+      "sha256": "222d1df3a66dce3108ba3db23ff0a80638eb50079bf7c3f849b5f7c6ea09743b"
+    },
+    {
+      "name": "THIRD_PARTY_NOTICES.txt",
+      "bytes": 456,
+      "sha256": "4ee94a8d2a1b833b12fce4aa9df0aa7f0a30db5cc98ac62d9dc5ed810cd09ada"
+    },
+    {
+      "name": "xdelta3-LICENSE.txt",
+      "bytes": 9156,
+      "sha256": "6cf63d87586c7c25c3ab8e62eef5c75bbaa982b0a6f9c00c59e2720255aac9ec"
+    },
+    {
+      "name": "xdelta3decode.exe",
+      "bytes": 48128,
+      "sha256": "67f84255bd009a65b1252784f8b3ebc72b5907766bc366c571e8b85fa7002a06"
+    }
+  ],
+  "game_binary_changes": 0,
+  "phase_changes": 0,
+  "privacy": "Known compiler paths retained; see MAINTAINER_NOTES.txt",
+  "owner_request": "ya lo probe y lo valido, asi que podemos hacer una version para releases, asi que damelo porfas",
+  "validation": {
+    "zip_crc": "PASS",
+    "fresh_archive_extraction": "PASS 10 entries",
+    "component_checksums": "PASS",
+    "unchanged_native_binaries": "PASS",
+    "manifest_change": "distribution_status metadata only",
+    "fresh_extracted_bundle_reconstruction": "PASS",
+    "output_bytes": 134206165,
+    "output_sha256": "03f752c91d936765c20d9b7494deae319486763f4bf4f4005dbff45353fe2f9b",
+    "byte_comparison": "PASS all 214 original VPK members",
+    "apk_included": false,
+    "complete_vpk_included": false
+  },
+  "privacy_decision": "Local packaging only; the disclosed compiler paths remain unchanged and documented. No claim of separate approval to expose them publicly.",
+  "github_published": false,
+  "branch": "main",
+  "phase_gate_approval": false
+}

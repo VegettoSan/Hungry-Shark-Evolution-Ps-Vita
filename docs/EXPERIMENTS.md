@@ -491,3 +491,15 @@ credit preserved. All binary candidates, inventories and logs remain ignored/pri
 
 | 2026-10-23 | RELEASE-007 | Follow-up owner report on the reconstructed VPK delivered above | **OWNER-REPORTED PASS full requested matrix:** install,boot,audio,menus,evolution,special sharks,gameplay,pause,save/load,cold restart,update,reinstall. Owner says all requested tests passed and VPK validated. Supersedes RELEASE-005's unspecified coverage; no repeat requested. No installed hash/logs or agent device observation | Same report/receipt; no phase approval inferred |
 | 2026-10-23 | RELEASE-008 | Owner confirms all redistribution documents in order; local archive/ASCII/UTF16 privacy scan and DER-hash comparison to official MbedTLS2.6.0 certs.c | **OWNER-ATTESTED rights; VERIFIED privacy blocker:** two private absolute build paths in MonoAssembliesPSP2.suprx and a third-party Facebook build path. Four complete eboot private-key blocks match public upstream test keys; no claim of leaked personal keys. Base remains private; original/reference untouched. Documents not directly inspected. No upload | Private PrivacyScan/PrivacyTriage/PublicTestKeyComparison, sanitized report. Resolve path exposure without silently modifying the approved native player |
+
+
+## Owner-requested local v1.0 Release package — 2026-10-23 UTC
+
+Following the earlier full matrix validation, the owner requests a version for
+Releases and delivery of the file. This authorizes local packaging on existing
+`main`; no new branch, Unity edit, native patch, public upload or phase approval.
+The disclosed compiler paths remain intact and documented for maintainer review.
+
+| Date (UTC) | ID | Input / tools / settings | Observed result | Evidence / next action |
+| --- | --- | --- | --- | --- |
+| 2026-10-23 | RELEASE-009 | Prior checked base `e2fa13d3...`,patch `572baf37...`,extractor `2ddc6e54...`,decoder `67f84255...`; Python3.14 package_release.py,existing owner-approved target; manifest status metadata only | **PASS VERIFIED:** local HSEVita_v1.0_Windows.zip 118953873bytes SHA-256 `89aea8f6747101b0b2bffcdca2bcdfff5d29786d36f63fa7c2867aba05a1821a`;10 entries,CRC/checksums/fresh extraction. Real Windows reconstruction from that extracted ZIP produces previous approved134206165-byte VPK/hash; all214 entries compare byte for byte. No APK/complete VPK in package,all four native/data components exact. ES/EN end-user instructions and external checksum prepared | [Package receipt](evidence/RELEASE_PACKAGE_2026-10-23.json),[end-user guide](RELEASE_V1_0_README_ES_EN.md); private ReleaseZipVerification/rebuild.log and archive. Compiler paths retained in base with maintainer note; no assertion that renewed functional validation alone clears their public exposure. Not uploaded; phases unchanged |
