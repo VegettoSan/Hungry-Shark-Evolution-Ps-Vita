@@ -4,6 +4,8 @@ Community research and development repository for a **native PlayStation Vita po
 
 > **Estado (2026-10-23):** **OWNER-REPORTED PASS:** el propietario validó el VPK reconstruido en PS Vita, incluyendo gameplay, audio, menús, evolución, tiburones especiales, pausa, guardado/carga, reinicio en frío, actualización y reinstalación. **VERIFIED:** el extractor Windows reconstruye los 214 archivos internos idénticos byte por byte al VPK de referencia. El paquete v1.0 está preparado localmente; aún no se ha publicado una Release en GitHub. Véanse [preparación y límites](docs/RELEASE_V1_0_PREPARATION_2026-10-23.md) y [recibo del paquete](docs/evidence/RELEASE_PACKAGE_2026-10-23.json). Las aprobaciones formales siguen **P00–P02 APPROVED; P03 ACTIVE; P04–P12 LOCKED**; la validación del paquete no modifica el [ledger](docs/PHASE_GATES.json).
 
+> **Aviso de publicación:** la v1.0 todavía **no está disponible para descarga pública**. El paquete para Windows existe y se validó localmente, pero la auditoría detectó dos rutas privadas de compilación en un módulo nativo y hay avisos de terceros/permisos pendientes de revisión documental. **No subas el ZIP candidato, el stub, el parche ni el VPK** hasta completar la [lista de comprobación para publicar](docs/RELEASE_V1_0_PUBLICATION_CHECKLIST.md). Consulta también las [notas de lanzamiento v1.0](docs/RELEASE_V1_0_GITHUB_NOTES.md). La aprobación de un paquete local no equivale a autorización para distribuir sus binarios.
+
 ## Uso del paquete v1.0 / Getting started
 
 **Necesitas:** Windows de 64 bits con .NET Framework 4.8, al menos **2 GB libres**

@@ -1,0 +1,60 @@
+name: "Error del port / Port bug"
+description: "Reporta problemas de Hungry Shark Evolution Vita (español o inglés)"
+title: "[v1.0] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por reportarlo. Indica la versión del port y pasos para reproducir.
+        Thanks for reporting. Include the port version and reproduction steps.
+        **No subas APK, VPK, datos del juego, claves, rutas privadas, saves personales ni SDKs propietarios.**
+  - type: input
+    id: version
+    attributes:
+      label: "Versión del port / Port version"
+      placeholder: "v1.0"
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: "Consola y firmware / Device and firmware"
+      placeholder: "PS Vita 1000/2000, firmware, overclock sí/no"
+    validations:
+      required: true
+  - type: dropdown
+    id: section
+    attributes:
+      label: "Área afectada / Area"
+      options:
+        - "Instalación o extractor / Installation or extractor"
+        - "Arranque / Startup"
+        - "Menús y controles / Menus and controls"
+        - "Gameplay y rendimiento / Gameplay and performance"
+        - "Audio / Audio"
+        - "Guardado y carga / Save and load"
+        - "Otro / Other"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Pasos para reproducir / Steps to reproduce"
+      description: "Enumera los pasos concretos; evita datos personales."
+      placeholder: "1. Abro el juego... / 1. Launch the game..."
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: "Resultado actual y esperado / Actual and expected behavior"
+    validations:
+      required: true
+  - type: textarea
+    id: checks
+    attributes:
+      label: "Datos técnicos opcionales / Optional technical checks"
+      description: "Hashes públicos de referencia, tipo de Windows y mensajes de error sin rutas privadas. Never post proprietary files."
+      placeholder: "Windows 10/11, .NET 4.8, SHA-256 de APK o VPK (solo hash), FPS observados..."
+    validations:
+      required: false
