@@ -16,6 +16,7 @@ Swim, hunt, evolve, and explore the ocean with adapted PS Vita controls, touchsc
 ### Requirements
 
 - A PlayStation Vita able to install VPKs through VitaShell
+- **Required kernel plugin: [CapUnlocker](https://github.com/GrapheneCt/CapUnlocker)** installed and active as `ur0:tai/CapUnlocker.skprx` under `*KERNEL`
 - **Windows 64-bit** with **.NET Framework 4.8**
 - **At least 2 GB of free disk space**
 - Your own **unmodified Hungry Shark Evolution 6.4.2 (build 228) APK**
@@ -27,6 +28,22 @@ Swim, hunt, evolve, and explore the ocean with adapted PS Vita controls, touchsc
 
 **Required APK size:** `104296014` bytes.
 
+### Required PS Vita Plugin — CapUnlocker
+
+**CapUnlocker is mandatory for Hungry Shark Evolution Vita v1.0.** Without it, the game may launch and immediately close.
+
+1. Download [CapUnlocker](https://github.com/GrapheneCt/CapUnlocker) from its official project and copy `CapUnlocker.skprx` to `ur0:tai/` on your Vita.
+2. In the active taiHEN configuration (`ur0:tai/config.txt` on the standard setup), ensure the plugin is listed under the existing `*KERNEL` section:
+
+   ```ini
+   *KERNEL
+   ur0:tai/CapUnlocker.skprx
+   ```
+
+3. Save the configuration and **fully reboot** the console before launching the game.
+
+The plugin is also required if you install the complete game from **PSVitaAlive Store**. **Overclocking with PSVshell is recommended for smoother gameplay but is not mandatory.** See the [full setup guide](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/blob/main/docs/CAPUNLOCKER_SETUP.md).
+
 ### How to install
 
 1. Download **`HSEVita_v1.0_Windows.zip`** from the Assets section below.
@@ -34,6 +51,7 @@ Swim, hunt, evolve, and explore the ocean with adapted PS Vita controls, touchsc
 3. Drag your original **6.4.2 (228)** APK onto **`HSERebuild.exe`**, or open the program and select it.
 4. Wait for the **`PASS`** message. The tool generates **`HungrySharkEvolutionVita_1.0.vpk`** next to your APK.
 5. Transfer the completed VPK to your Vita and install it using **VitaShell**.
+6. Confirm **CapUnlocker is enabled**, reboot the Vita if needed, and launch the game.
 
 > [!IMPORTANT]
 > **Do not install `HSEVita_Stub.vpk`**. It is an incomplete base used by the reconstruction process. Install **only the finished VPK** produced by the utility. Back up your save data before updating or reinstalling.
@@ -65,7 +83,7 @@ The download **does not include the original APK or a complete ready-to-install 
 03f752c91d936765c20d9b7494deae319486763f4bf4f4005dbff45353fe2f9b
 ```
 
-If your APK is rejected, check the exact version and hash. If a component is missing or verification fails, extract the entire ZIP again. The reconstruction tool will not overwrite an existing output VPK.
+If the game opens and then closes, first check that **CapUnlocker.skprx** is enabled in the active `*KERNEL` section and reboot the Vita. If your APK is rejected, check the exact version and hash. If a component is missing or verification fails, extract the entire ZIP again. The reconstruction tool will not overwrite an existing output VPK.
 
 ### Credits
 

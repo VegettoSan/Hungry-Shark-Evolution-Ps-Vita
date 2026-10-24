@@ -15,6 +15,8 @@ El APK exacto tiene **104296014 bytes** y este SHA-256:
 Una versión diferente o modificada no se acepta aunque indique 6.4.2. La
 herramienta no descarga el juego. El APK y el VPK completo no están incluidos.
 
+**Plugin obligatorio de PS Vita:** instala [CapUnlocker](https://github.com/GrapheneCt/CapUnlocker), coloca `CapUnlocker.skprx` en `ur0:tai/`, añade `ur0:tai/CapUnlocker.skprx` bajo `*KERNEL` en el `config.txt` activo de taiHEN y **reinicia completamente la consola**. Sin el plugin, se ha observado que el juego abre y se cierra enseguida. También es obligatorio si instalaste el juego completo desde **PSVitaAlive Store**. Consulta la [guía del plugin](CAPUNLOCKER_SETUP.md). El overclock es opcional.
+
 1. Extrae **todo el ZIP** en una carpeta local escribible.
 2. Mantén juntos el EXE, decoder, base, parche y manifiesto. **No instales
    `HSEVita_Stub.vpk`: es una base incompleta.**
@@ -47,6 +49,7 @@ compara con `SHA256SUMS.txt`.
 
 **Problemas habituales**
 
+- El juego abre y se cierra: comprueba que **CapUnlocker** esté cargado bajo `*KERNEL` y reinicia la PS Vita. Comprueba también cuál es el `config.txt` activo.
 - APK incorrecto: comprueba el tamaño y SHA-256 indicados arriba.
 - Falta un componente o no coincide su checksum: extrae otra vez todo el ZIP.
 - Decoder no reconocido: conserva el `xdelta3decode.exe` incluido; no lo sustituyas.
@@ -70,6 +73,8 @@ The exact APK is **104296014 bytes**, SHA-256:
 
 Other or modified APKs are rejected, even if they report version 6.4.2. The tool
 does not download the game. The APK and complete VPK are not included.
+
+**Required PS Vita plugin:** install [CapUnlocker](https://github.com/GrapheneCt/CapUnlocker). Copy `CapUnlocker.skprx` to `ur0:tai/`, add `ur0:tai/CapUnlocker.skprx` under `*KERNEL` in the active taiHEN `config.txt`, and **fully reboot the Vita**. Without this plugin, the game has been observed to launch and then close. This also applies to complete installs from **PSVitaAlive Store**. See the [plugin setup guide](CAPUNLOCKER_SETUP.md). Overclocking is optional.
 
 1. Extract the **entire ZIP** into a writable local folder.
 2. Keep the EXE, decoder, base, patch and manifest together. **Do not install
@@ -101,6 +106,7 @@ package components.
 
 **Troubleshooting**
 
+- Game opens and immediately closes: confirm that **CapUnlocker** is actually loaded from `*KERNEL`, then reboot and try again. Check which taiHEN configuration is active.
 - Wrong APK: compare its size and full SHA-256 above.
 - Missing component/checksum mismatch: extract the complete ZIP again.
 - Unknown decoder: keep the included pinned `xdelta3decode.exe`.

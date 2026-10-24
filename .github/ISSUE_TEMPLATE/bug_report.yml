@@ -23,6 +23,17 @@ body:
     validations:
       required: true
   - type: dropdown
+    id: capunlocker
+    attributes:
+      label: "CapUnlocker active? / ¿CapUnlocker está activo?"
+      description: "Required for v1.0: ur0:tai/CapUnlocker.skprx under *KERNEL; reboot after installation."
+      options:
+        - "Yes / Sí — enabled under *KERNEL and rebooted"
+        - "No / No"
+        - "Not sure / No estoy seguro"
+    validations:
+      required: true
+  - type: dropdown
     id: section
     attributes:
       label: "Área afectada / Area"

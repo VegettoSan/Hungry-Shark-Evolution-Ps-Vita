@@ -64,10 +64,14 @@ Get-FileHash ".\HSEVita_v1.0_Windows.zip" -Algorithm SHA256
 | | Requirement |
 | :-- | :-- |
 | **Console** | PlayStation Vita able to install VPK files using VitaShell |
+| **Required Vita plugin** | **[CapUnlocker](https://github.com/GrapheneCt/CapUnlocker)** (`ur0:tai/CapUnlocker.skprx`) — must be enabled before launching the game |
 | **Computer** | 64-bit Windows |
 | **Runtime** | .NET Framework 4.8 |
 | **Disk space** | At least 2 GB of free space for reconstruction |
 | **Game files** | An unmodified **Hungry Shark Evolution 6.4.2 (build 228)** Android APK |
+
+> [!IMPORTANT]
+> **CapUnlocker is required to run v1.0.** Without it, the game may open and then immediately close. Install `CapUnlocker.skprx` to `ur0:tai/`, add `ur0:tai/CapUnlocker.skprx` under `*KERNEL` in the active taiHEN `config.txt`, then **fully reboot your PS Vita**. See the [CapUnlocker setup guide](docs/CAPUNLOCKER_SETUP.md) for details. This also applies to the complete game installed from **PSVitaAlive Store**.
 
 <details>
 <summary><strong>How to verify your APK</strong></summary>
@@ -98,7 +102,8 @@ Different or modified APKs are not supported, even if they show the same version
 2. **Extract the entire ZIP** into a writable folder on your Windows PC. Keep the included files together.
 3. **Drag your original Hungry Shark Evolution 6.4.2 (228) APK** onto `HSERebuild.exe`. Alternatively, open the program and select the APK.
 4. **Wait for `PASS`**. The tool checks the input and reconstructed content, then creates `HungrySharkEvolutionVita_1.0.vpk` next to your APK.
-5. **Transfer the generated VPK** to your PlayStation Vita and install it with **VitaShell**. You can then launch the game from LiveArea.
+5. **Transfer the generated VPK** to your PlayStation Vita and install it with **VitaShell**.
+6. **Confirm CapUnlocker is installed and enabled**, then reboot your PS Vita if you just configured the plugin. Launch the game from LiveArea.
 
 > [!IMPORTANT]
 > **Install the completed `HungrySharkEvolutionVita_1.0.vpk` only.** Do not install `HSEVita_Stub.vpk` on its own: it is an incomplete package. **Back up your saved progress before updating or reinstalling.**
@@ -129,6 +134,8 @@ The tool will not overwrite an existing output file. For additional details, see
 
 Boost uses the game's energy system. The map and mission functions are available when supported by the current game state.
 
+**Required vs. optional:** CapUnlocker is a **startup requirement**; overclocking via PSVshell is **optional** and recommended only for smoother performance.
+
 ## ⚡ Performance Recommendation
 
 For **smoother gameplay and more consistent frame rates**, **overclocking your PS Vita is recommended**, especially in more demanding areas of the game.
@@ -144,7 +151,8 @@ A PS Vita clock-control plugin, such as **PSVshell**, can be used to adjust perf
 | **Checksum verification fails** | Re-extract the original download and check its SHA-256. |
 | **The VPK cannot be created** | Check for available disk space and write permissions. |
 | **An output VPK already exists** | Move your previous VPK or choose another name using `--out`. |
-| **The game does not launch** | Confirm that you installed the completed VPK rather than `HSEVita_Stub.vpk`. |
+| **Game opens and immediately closes** | Make sure **CapUnlocker** is installed at `ur0:tai/CapUnlocker.skprx`, loaded under `*KERNEL` in the active taiHEN configuration, and that the Vita has been rebooted. See the [setup guide](docs/CAPUNLOCKER_SETUP.md). |
+| **The game does not launch** | Confirm that you installed the completed VPK rather than `HSEVita_Stub.vpk`, and check the required CapUnlocker plugin. |
 
 Need help? [**Open an issue**](https://github.com/VegettoSan/Hungry-Shark-Evolution-Ps-Vita/issues/new/choose) with your Vita model, firmware, a short description, and steps to reproduce the problem. **Do not upload APKs, VPKs, proprietary game files, or personal information.**
 

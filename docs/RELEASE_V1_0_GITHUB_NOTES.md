@@ -2,6 +2,8 @@
 
 > **NO PUBLICAR BINARIOS TODAVÍA.** Este archivo prepara el texto de la Release, pero los artefactos privados aún no están autorizados para subirse. Consultar la [lista de comprobación](RELEASE_V1_0_PUBLICATION_CHECKLIST.md) antes de crear o publicar la Release. No existe descarga pública confirmada al 23 de octubre de 2026.
 
+**Actualización de requisitos (23 de octubre de 2026):** se confirmó mediante pruebas del propietario que la v1.0 requiere **CapUnlocker** instalado como `ur0:tai/CapUnlocker.skprx` bajo `*KERNEL`; sin el plugin el juego puede abrirse y cerrarse inmediatamente. Reinicia la consola tras instalarlo. Consulta [instalación](CAPUNLOCKER_SETUP.md). El overclock sigue siendo opcional.
+
 ## Español
 
 ¡Hungry Shark Evolution llega a PS Vita! La versión 1.0 es un port nativo creado a partir de la versión original de Android **6.4.2 (build 228)**, usando Unity con soporte PSP2.
@@ -23,6 +25,8 @@ Cuando se autorice la distribución, descarga el ZIP de la Release, descompríme
 **Limitaciones y comprobaciones pendientes:** el rendimiento puede variar según la escena y la configuración de Vita; no se publican cifras de rendimiento no medidas. La selección manual del APK/arrastrar y soltar y la compatibilidad en un Windows 10 limpio no tienen una prueba manual documentada. La reconstrucción y comprobación de 214 entradas del VPK sí fueron verificadas por herramientas en Windows. El juego original y sus recursos no vienen en forma de APK ni de VPK completo.
 
 **Créditos:** port por **VegettoSan**; arte de LiveArea por [BetterWinds](https://github.com/BetterWinds). *Hungry Shark Evolution* pertenece a sus respectivos titulares; proyecto comunitario no afiliado con Ubisoft. xdelta3 3.2.2 por Joshua MacDonald, licencia Apache-2.0; conservar los avisos de terceros.
+
+**Requirements update (October 23, 2026):** The owner observed that v1.0 requires **CapUnlocker**, installed as `ur0:tai/CapUnlocker.skprx` under `*KERNEL`. Without the plugin, the game may open and immediately close. Reboot the Vita after enabling it; see the [installation guide](CAPUNLOCKER_SETUP.md). Overclocking remains optional.
 
 ## English
 

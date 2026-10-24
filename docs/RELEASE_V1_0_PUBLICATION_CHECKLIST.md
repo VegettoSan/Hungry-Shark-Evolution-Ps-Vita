@@ -9,8 +9,11 @@
 - [ ] **Avisos de terceros:** comprobar y completar los avisos exigibles a Unity/Mono/Sony y librerías integradas, cuando apliquen. Mantener licencia xdelta3 Apache-2.0 y atribución a BetterWinds.
 - [ ] **Paquete libre de secretos:** revisar el ZIP exacto y sus miembros en busca de rutas locales, tokens, claves o recursos restringidos. El informe solo descarta patrones concretos; no demuestra ausencia general.
 
+**Hallazgo posterior a la publicación (2026-10-23):** El propietario verificó que el port v1.0 necesita `ur0:tai/CapUnlocker.skprx` cargado bajo `*KERNEL`; sin él, la app abre y se cierra. Este requisito se incorporó a las instrucciones, el README y la descripción pública. No modifica los binarios ni los resultados históricos de las pruebas previas. Consultar [guía de CapUnlocker](CAPUNLOCKER_SETUP.md).
+
 ## Verificación técnica final
 
+- [ ] Verificar en una Vita de prueba limpia la dependencia de **CapUnlocker** y registrar configuración taiHEN, firmware, resultado con el plugin activo y fallo observado sin él; conservar solo logs sanitizados.
 - [x] APK de referencia comprobado con tamaño 104296014 bytes y SHA-256 `52b7d8754ab8fec75c3b656a0dc5ec8dc849565adc402487a3ac093f6a481f7a` (comprobado también contra el APK aportado en esta conversación).
 - [x] Según los recibos, extractor nativo reconstruyó los **214 miembros internos** byte por byte a partir del APK y se validaron ZIP CRC, hashes y salida VPK; ver [recibo](evidence/RELEASE_PACKAGE_2026-10-23.json).
 - [x] Según testimonio del propietario, la matriz solicitada de instalación, gameplay, audio, menú, guardado, reinicio y reinstalación pasó en PS Vita. **OWNER-REPORTED**, no ejecutada por este asistente.
