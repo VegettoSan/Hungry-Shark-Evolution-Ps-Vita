@@ -1,0 +1,21 @@
+name: Update HSE 01.00 plugin requirement (one-time)
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/one-time-capunlocker-release-notes.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-existing-release:
+    if: github.repository == 'VegettoSan/Hungry-Shark-Evolution-Ps-Vita'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update public 01.00 description
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release edit '01.00' --repo "$GITHUB_REPOSITORY" --notes-file docs/RELEASE_01.00_BODY.md
