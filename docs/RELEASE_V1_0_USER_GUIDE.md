@@ -6,6 +6,9 @@ No redistribuir base, parche, APK ni VPK. Ver [expediente](RELEASE_V1_0_PREPARAT
 
 ## Español
 
+**Requisito añadido después de las pruebas originales:** el propietario comprobó que el port v1.0 necesita **CapUnlocker** (`ur0:tai/CapUnlocker.skprx`) cargado bajo `*KERNEL` en la configuración activa de taiHEN. **Sin el plugin, el juego abre y se cierra.** Instálalo, reinicia completamente la consola y consulta la [guía de configuración](CAPUNLOCKER_SETUP.md). Esto también afecta a la instalación completa desde PSVitaAlive Store; el overclock es opcional.
+
+
 Usa tu propio APK **Hungry Shark Evolution 6.4.2, build228**, 104296014 bytes:
 
 ```text
@@ -53,6 +56,9 @@ LiveArea: [BetterWinds](https://github.com/BetterWinds). Hashes/tamaños de cand
 en el expediente; aún no existen hashes de assets de una Release publicada.
 
 ## English
+
+**Requirement discovered after the original tests:** the owner observed that v1.0 requires **CapUnlocker** (`ur0:tai/CapUnlocker.skprx`) loaded under `*KERNEL` in the active taiHEN configuration. **Without the plugin the game starts and closes.** Install it, fully reboot the Vita and follow the [setup guide](CAPUNLOCKER_SETUP.md). This also applies to complete installations from PSVitaAlive Store; overclocking is optional.
+
 
 **Private candidate; not published.** The owner confirms rights and PASS for the
 requested Vita matrix. Private build paths in the base still need resolution.
